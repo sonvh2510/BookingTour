@@ -19,8 +19,13 @@ const copyFonts = () => {
 	}).pipe(dest('_dist/fonts'));
 };
 
+const copyDownloads = () => {
+	return src(['src/downloads/**.pdf']).pipe(dest('_dist/downloads'));
+};
+
 module.exports = {
 	copyFavicon,
 	copyAssets,
 	copyFonts,
+	copyDownloads,
 };

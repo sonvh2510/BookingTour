@@ -1,8 +1,8 @@
 {
-	"Code": 200,
-	"Result": {
-		"Message": "Lorem là test",
-		"Products": [
+	"code": 200,
+	"result": {
+		"message": "Lorem là test",
+		"products": [
 			{
 				"id": 1,
 				"description": "lorem products 1",

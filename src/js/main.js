@@ -1,8 +1,7 @@
-import { getSVGs, Loading } from './utilities/util';
+import { Loading } from './libraries/Loading';
+import { getSVGs } from './utilities/util';
 
 document.addEventListener('DOMContentLoaded', () => {
 	getSVGs();
-	Loading();
+	Loading().then();
 });
-
-window.test ='asdasd'

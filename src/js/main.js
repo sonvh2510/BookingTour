@@ -5,5 +5,3 @@ document.addEventListener('DOMContentLoaded', () => {
 	getSVGs();
 	Loading().then();
 });
-
-window.test = 'asdasd';

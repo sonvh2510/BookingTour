@@ -1,57 +1,25 @@
+/* MaterialDesignIcons.com */
 @font-face {
-	font-family: 'Linearicons-Free';
-	src: url('../fonts/Linearicons-Free.eot?w118d');
-	src: url('../fonts/Linearicons-Free.eot?#iefixw118d')
+	font-family: 'Material Design Icons';
+	src: url('../fonts/materialdesignicons-webfont.eot?v=5.6.55');
+	src: url('../fonts/materialdesignicons-webfont.eot?#iefix&v=5.6.55')
 			format('embedded-opentype'),
-		url('../fonts/Linearicons-Free.woff2?w118d') format('woff2'),
-		url('../fonts/Linearicons-Free.woff?w118d') format('woff'),
-		url('../fonts/Linearicons-Free.ttf?w118d') format('truetype'),
-		url('../fonts/Linearicons-Free.svg?w118d#Linearicons-Free')
-			format('svg');
+		url('../fonts/materialdesignicons-webfont.woff2?v=5.6.55')
+			format('woff2'),
+		url('../fonts/materialdesignicons-webfont.woff?v=5.6.55') format('woff'),
+		url('../fonts/materialdesignicons-webfont.ttf?v=5.6.55')
+			format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
-.lnr {
-	font-family: 'Linearicons-Free';
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
+.mdi:before,
+.mdi-set {
+	display: inline-block;
+	font: normal normal normal 24px/1 'Material Design Icons';
+	font-size: inherit;
+	text-rendering: auto;
+	line-height: inherit;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-.lnr-chevron-up:before {
-	content: '\e873';
-}
-.lnr-chevron-down:before {
-	content: '\e874';
-}
-.lnr-chevron-left:before {
-	content: '\e875';
-}
-.lnr-chevron-right:before {
-	content: '\e876';
-}
-.lnr-cart:before {
-	content: '\e82e';
-}
-.lnr-arrow-left:before {
-	content: '\e879';
-}
-.lnr-list:before {
-	content: '\e872';
-}
-.lnr-funnel:before {
-	content: '\e88f';
-}
-.lnr-cross:before {
-	content: '\e870';
-}
-.lnr-magnifier:before {
-	content: '\e86f';
 }

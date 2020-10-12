@@ -1,9 +1,13 @@
 {
-	"fonts": ["src/fonts/**", "node_modules/@mdi/font/fonts"],
-
+	"fonts": [
+		"src/fonts/**",
+		"node_modules/@mdi/font/fonts"
+	],
 	"js": [
 		"node_modules/lazysizes/lazysizes.js",
 		"node_modules/swiper/js/swiper.js"
 	],
-	"css": ["node_modules/swiper/swiper-bundle.css"]
+	"css": [
+		"node_modules/swiper/swiper-bundle.css"
+	]
 }

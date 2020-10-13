@@ -1,63 +1,79 @@
 @font-face {
-    font-family: 'Muli';
-    src: local('Muli Light'), local('Muli-Light'),
-        url('../fonts/Muli-Light.woff2') format('woff2'),
-        url('../fonts/Muli-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Muli';
+	src: local('Muli Light'), local('Muli-Light'),
+		url('../fonts/Muli-Light.woff2') format('woff2'),
+		url('../fonts/Muli-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Muli';
-    src: local('Muli Bold'), local('Muli-Bold'),
-        url('../fonts/Muli-Bold.woff2') format('woff2'),
-        url('../fonts/Muli-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Muli';
+	src: local('Muli Bold'), local('Muli-Bold'),
+		url('../fonts/Muli-Bold.woff2') format('woff2'),
+		url('../fonts/Muli-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Muli';
-    src: local('Muli ExtraLight'), local('Muli-ExtraLight'),
-        url('../fonts/Muli-ExtraLight.woff2') format('woff2'),
-        url('../fonts/Muli-ExtraLight.woff') format('woff');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Muli';
+	src: local('Muli ExtraLight'), local('Muli-ExtraLight'),
+		url('../fonts/Muli-ExtraLight.woff2') format('woff2'),
+		url('../fonts/Muli-ExtraLight.woff') format('woff');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Muli';
-    src: local('Muli'),
-        url('../fonts/Muli.woff2') format('woff2'),
-        url('../fonts/Muli.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Muli';
+	src: local('Muli'), url('../fonts/Muli.woff2') format('woff2'),
+		url('../fonts/Muli.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Muli';
-    src: local('Muli SemiBold'), local('Muli-SemiBold'),
-        url('../fonts/Muli-SemiBold.woff2') format('woff2'),
-        url('../fonts/Muli-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Muli';
+	src: local('Muli SemiBold'), local('Muli-SemiBold'),
+		url('../fonts/Muli-SemiBold.woff2') format('woff2'),
+		url('../fonts/Muli-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Linearicons-Free';
+	src: local('Linearicons Free'), local('Linearicons-Free'),
+		url('../fonts/Linearicons-Free.woff2?w118d') format('woff2'),
+		url('../fonts/Linearicons-Free.woff?w118d') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.lnr {
+	font-family: 'Linearicons-Free';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 /* MaterialDesignIcons.com */
 @font-face {
 	font-family: 'Material Design Icons';
-	src: url('../fonts/materialdesignicons-webfont.eot?v=5.6.55');
-	src: url('../fonts/materialdesignicons-webfont.eot?#iefix&v=5.6.55')
-			format('embedded-opentype'),
+	src: local('Linearicons Free'), local('Linearicons-Free'),
 		url('../fonts/materialdesignicons-webfont.woff2?v=5.6.55')
 			format('woff2'),
-		url('../fonts/materialdesignicons-webfont.woff?v=5.6.55') format('woff'),
-		url('../fonts/materialdesignicons-webfont.ttf?v=5.6.55')
-			format('truetype');
+		url('../fonts/materialdesignicons-webfont.woff?v=5.6.55') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -71,4 +87,20 @@
 	line-height: inherit;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.mdi-cart:before {
+	content: '\F0110';
+}
+.mdi-chevron-down:before {
+	content: '\F0140';
+}
+.mdi-home:before {
+	content: '\F02DC';
+}
+.lnr-magnifier:before {
+	content: '\e86f';
+}
+.lnr-chevron-down:before {
+	content: '\e874';
 }

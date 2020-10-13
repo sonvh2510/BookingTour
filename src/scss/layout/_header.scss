@@ -1,0 +1,193 @@
+.mainHeader {
+	background-color: map-get($color, main);
+}
+.header__top {
+	padding-top: 10px;
+}
+.header__bottom {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.header__search {
+	width: 100%;
+	max-width: 700px;
+	@media (max-width: 1439.98px) {
+		max-width: 500px;
+	}
+	@media (max-width: 1199.98px) {
+		max-width: 300px;
+	}
+}
+.header__searchIcon {
+	display: none;
+}
+.header__searchWrapper {
+	display: flex;
+	width: 100%;
+	background-color: map-get($color, trang);
+	border-radius: 20px;
+	input {
+		height: 40px;
+		border-radius: 20px;
+		width: 100%;
+		padding: 7px 15px;
+		&::placeholder {
+			color: map-get($color, placeholder);
+		}
+	}
+	button {
+		-ms-flex: 0 0 40px;
+		flex: 0 0 40px;
+		max-width: 40px;
+		height: 40px;
+		border-radius: 20px;
+		background-color: map-get($color, trang);
+	}
+}
+.header__makeMyTrip {
+	margin-left: 4rem;
+	a {
+		font-size: 1.6rem;
+		display: inline-block;
+		padding: 5px 10px;
+		border-radius: 5px;
+		color: map-get($color, trang);
+		transition: all 0.3s ease;
+		+ a {
+			margin-left: 2rem;
+		}
+	}
+	@media (min-width: 1025px) {
+		a {
+			&:hover {
+				background-color: map-get($color, trang);
+				color: map-get($color, main);
+			}
+		}
+	}
+}
+.header__language,
+.header__currency {
+	margin-left: 4rem;
+	select {
+		border: 0;
+		color: map-get($color, trang);
+		background-color: map-get($color, none);
+		option {
+			color: map-get($color, den);
+		}
+	}
+}
+
+.header__cart {
+	margin-left: 4rem;
+}
+.header__cartIcon {
+	color: map-get($color, trang);
+	cursor: pointer;
+	position: relative;
+	font-size: 1.6rem;
+	.mdi-cart {
+		font-size: 18px;
+	}
+}
+
+.header__cartNumber {
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: #ffa13d;
+	font-size: 1.2rem;
+	top: -5px;
+	left: 10px;
+}
+.header__cartText {
+	margin-left: 10px;
+}
+.header__navItem {
+	@extend .d-flex;
+	@extend .align-center;
+	position: relative;
+	color: map-get($color, trang);
+	> .mdi-chevron-down {
+		font-size: 3rem;
+	}
+	@media (min-width: 1025px) {
+		&:hover {
+			.header__navSub {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		}
+	}
+}
+.header__navLink {
+	@extend .text-uppercase;
+	@extend .fw-700;
+	@extend .d-flex;
+	@extend .align-center;
+	color: map-get($color, trang);
+	font-size: 1.5rem;
+	.mdi-home {
+		font-size: 2rem;
+		margin-right: 10px;
+	}
+}
+.header__nav {
+	> .header__navItem {
+		+ .header__navItem {
+			margin-left: 35px;
+			@media (max-width: 1199.98px) {
+				margin-left: 15px;
+			}
+		}
+	}
+}
+
+.header__navSub {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 240px;
+	background-color: map-get($color, main);
+	border-radius: 5px;
+	box-shadow: 0px 3px 10px rgba(map-get($color, den), 0.15);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	overflow: hidden;
+	transition: all 0.3s ease;
+	.header__navLink {
+		padding: 10px;
+		width: 100%;
+		color: map-get($color, trang);
+		transition: all 0.3s ease;
+	}
+	.header__navItem {
+		+ .header__navItem {
+			border-top: 1px solid rgba(map-get($color, trang), 0.5);
+		}
+		@media (min-width: 1025px) {
+			&:hover {
+				.header__navLink {
+					background-color: map-get($color, trang);
+					color: map-get($color, main);
+				}
+			}
+		}
+	}
+}
+.header__buttons {
+	.btn-contact {
+		+ .btn-contact {
+			margin-left: 2rem;
+		}
+	}
+}
+
+.test {
+	@include mg-scale(700/1920 * 100%);
+}

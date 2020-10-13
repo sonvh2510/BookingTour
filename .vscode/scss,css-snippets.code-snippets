@@ -19,7 +19,7 @@
 	"get-color": {
 		"scope": "css,less,scss",
 		"prefix": "clg",
-		"body": ["map-get(\\$color, $0);"]
+		"body": ["map-get(\\$color, $0)"]
 	},
 	"media-up": {
 		"scope": "css,less,scss",

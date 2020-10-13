@@ -1,8 +1,152 @@
-header
+header.mainHeader
 	.container-fluid
 		.mainWrapper
-			.row
-				.col-lg-4
-					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores pariatur at vitae perferendis esse impedit ab sit distinctio accusamus hic placeat, nulla, fugiat deserunt deleniti vero amet nesciunt! Iure, odit.
-				.col-lg-8
-					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores pariatur at vitae perferendis esse impedit ab sit distinctio accusamus hic placeat, nulla, fugiat deserunt deleniti vero amet nesciunt! Iure, odit.
+			.header__top.d-flex.align-center
+				.header__logo
+					img(src="./assets/logo.svg")
+				.header__search.ml-auto
+					.header__searchIcon
+						span.lnr.lnr-magnifier
+					form.header__searchWrapper
+						input#header__search(type="text", name="Search", placeholder="Find Destination")
+						button
+							span.lnr.lnr-magnifier
+				.header__makeMyTrip
+					a.text-uppercase(href="#") Make my trip
+					a(href="#") Help
+				.header__language
+					select#header__language(name="Language")
+						option EN
+						option VI
+				.header__currency
+					select#header__currency(name="Currency")
+						option USD ($)
+						option VND (đ)
+				.header__cart
+					.header__cartIcon
+						span.mdi.mdi-cart
+						span.header__cartText Cart
+						span.header__cartNumber.flex-center.d-flex 29
+			.header__bottom.d-flex.align-center
+				.header__nav.d-flex
+					.header__navItem
+						a.header__navLink(href="/")
+							span.mdi.mdi-home
+							span HOME
+					.header__navItem
+						a.header__navLink(href="#")
+							span Destination
+						span.mdi.mdi-chevron-down
+						.header__navSub
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+					.header__navItem
+						a.header__navLink(href="#")
+							span TRAVEL STYLE
+						span.mdi.mdi-chevron-down
+						.header__navSub
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+					.header__navItem
+						a.header__navLink(href="#")
+							span Travel Services
+						span.mdi.mdi-chevron-down
+						.header__navSub
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+					.header__navItem
+						a.header__navLink(href="#")
+							span Blog
+						span.mdi.mdi-chevron-down
+						.header__navSub
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+					.header__navItem
+						a.header__navLink(href="#")
+							span About Us
+						span.mdi.mdi-chevron-down
+						.header__navSub
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+							.header__navItem
+								a.header__navLink(href="#")
+									span TRAVEL STYLE
+				.header__buttons.d-flex.align-center.ml-auto
+					a.btn.btn-contact(href="#") Agent Hub
+					a.btn.btn-contact(href="#") Contact Us
+
+
+
+.test
+	img(src="./assets/banner_1.jpg", alt="")
+
+.test
+	img(src="./assets/banner_1.jpg", alt="")
+
+.test
+	img(src="./assets/banner_1.jpg", alt="")
+
+.test
+	img(src="./assets/banner_1.jpg", alt="")

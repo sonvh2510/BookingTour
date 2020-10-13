@@ -13,6 +13,7 @@ import { jsTask } from './script';
 import { htmlTask } from './html';
 import { cssCore } from './core-css';
 import { cssTask } from './css';
+import { copyFonts } from './copy';
 
 const imageChangeTask = (path, stats) => {
 	const filePathnameGlob = path.replace(/[\/\\]/g, '/');
@@ -47,10 +48,10 @@ const server = () => {
 	watch(['src/**.pug']).on('change', (path, stats) => {
 		console.log(path);
 		let pageName;
-		if(path.indexOf('/') >=0){
+		if (path.indexOf('/') >= 0) {
 			pageName = path.split('/')[1];
-		}else{
-			pageName =path.split('\\')[1];
+		} else {
+			pageName = path.split('\\')[1];
 		}
 		const filePathnameGlob = path.replace(/[\\\/]/g, '/');
 		console.log(`Render file ${pageName}`);
@@ -74,10 +75,10 @@ const server = () => {
 		(path, stats) => {
 			console.log(`Render file ${path}`);
 			let pageName;
-			if(path.indexOf('/') >=0){
+			if (path.indexOf('/') >= 0) {
 				pageName = path.split('/')[2];
-			}else{
-				pageName =path.split('\\')[2];
+			} else {
+				pageName = path.split('\\')[2];
 			}
 			const filePathnameGlob = `src/${pageName}.pug`;
 
@@ -144,7 +145,7 @@ const server = () => {
 
 	watch(
 		['_vendors.json', 'vendors/**/**.css', 'vendors/**/**.js'],
-		parallel(jsCore, cssCore),
+		parallel(jsCore, cssCore, copyFonts),
 	);
 	watch(['src/api/**.json', 'src/api/**.html'], series(fakeAPITask));
 

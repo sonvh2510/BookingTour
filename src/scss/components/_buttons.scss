@@ -6,3 +6,24 @@
 	border: 0;
 	appearance: none;
 }
+.btn-contact {
+	@extend .text-uppercase;
+	border: 1px solid map-get($color, trang);
+	color: map-get($color, trang);
+	font-size: 1.6rem;
+	border-radius: 8px;
+	padding: 1.5rem 2rem;
+	transition: all .3s ease;
+	@media (max-width: 1439.98px) {
+		padding: 1rem 1.5rem;
+	}
+	@media (max-width: 1024.98px) {
+		padding: 0.75rem 1rem;
+	}
+	@media (min-width: 1025px) {
+		&:hover {
+			background-color: map-get($color, trang);
+			color: map-get($color, main);
+		}
+	}
+}

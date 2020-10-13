@@ -1,11 +1,12 @@
 {
 	"fonts": [
-		"src/fonts/**",
-		"node_modules/@mdi/font/fonts"
+		"src/fonts/**.{woff,woff2}",
+		"node_modules/linearicons/dist/web-font/fonts/**.{woff,woff2}",
+		"node_modules/@mdi/font/fonts/**.{woff,woff2}"
 	],
 	"js": [
 		"node_modules/lazysizes/lazysizes.js",
-		"node_modules/swiper/js/swiper.js"
+		"node_modules/swiper/swiper-bundle.js"
 	],
 	"css": [
 		"node_modules/swiper/swiper-bundle.css"

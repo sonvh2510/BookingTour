@@ -1,4 +1,4 @@
-export default class Mapping {
+export default class MoveElement {
 	constructor(selector, option) {
 		this.selector = selector;
 		this.mobileMethod = option.mobileMethod;
@@ -36,16 +36,16 @@ export default class Mapping {
 	}
 
 	run(method, destinationSelector) {
-		if (method === "insertBefore") {
+		if (method === 'insertBefore') {
 			return this.method(destinationSelector).insertBefore();
 		}
-		if (method === "insertAfter") {
+		if (method === 'insertAfter') {
 			return this.method(destinationSelector).insertAfter();
 		}
-		if (method === "appendTo") {
+		if (method === 'appendTo') {
 			return this.method(destinationSelector).appendTo();
 		}
-		if (method === "prependTo") {
+		if (method === 'prependTo') {
 			return this.method(destinationSelector).prependTo();
 		}
 	}
@@ -63,7 +63,7 @@ export default class Mapping {
 		};
 		if (!this.selectorNode) {
 			return (() => {
-				console.log("Selector not found");
+				console.log('Selector not found');
 			})();
 		}
 		return (() => {

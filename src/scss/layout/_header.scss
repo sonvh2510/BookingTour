@@ -3,10 +3,21 @@
 }
 .header__top {
 	padding-top: 10px;
+	@media (max-width: 1024.98px) {
+		padding-bottom: 10px;
+	}
 }
 .header__bottom {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	@media (min-width: 1025px) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+
+.header__logo {
+	-ms-flex: 0 0 80px;
+	flex: 0 0 80px;
+	max-width: 80px;
 }
 
 .header__search {
@@ -71,6 +82,7 @@
 .header__currency {
 	margin-left: 4rem;
 	select {
+		cursor: pointer;
 		border: 0;
 		color: map-get($color, trang);
 		background-color: map-get($color, none);
@@ -78,8 +90,11 @@
 			color: map-get($color, den);
 		}
 	}
+	span {
+		color: map-get($color, trang);
+		background-color: map-get($color, none);
+	}
 }
-
 .header__cart {
 	margin-left: 4rem;
 }
@@ -92,7 +107,6 @@
 		font-size: 18px;
 	}
 }
-
 .header__cartNumber {
 	position: absolute;
 	width: 18px;
@@ -146,7 +160,6 @@
 		}
 	}
 }
-
 .header__navSub {
 	position: absolute;
 	top: 100%;
@@ -187,7 +200,181 @@
 		}
 	}
 }
+.header__toggleMobile {
+	font-size: 24px;
+	font-weight: 300;
+	color: map-get($color, trang);
+}
+.header__mobile {
+	background-color: map-get($color, trang);
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	max-width: 305px;
+	padding: 10px;
+	z-index: 2001;
+	transform: translateX(-100%);
+	transition: all 0.3s ease;
+	&.active {
+		transform: translateX(0);
+	}
+}
+.header__mobileWrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
 
-.test {
-	@include mg-scale(700/1920 * 100%);
+@media (max-width: 1024.98px) {
+	.header__logo {
+		-ms-flex: 0 0 60px;
+		flex: 0 0 60px;
+		max-width: 60px;
+		margin-right: 10px;
+	}
+	.header__cart {
+		margin-right: 25px;
+		margin-left: 15px;
+	}
+	.header__language {
+		margin-left: 10px;
+	}
+	.header__makeMyTrip {
+		margin-left: 0;
+		a {
+			border: 1px solid map-get($color, main);
+			color: map-get($color, trang);
+			background-color: map-get($color, main);
+			+ a {
+				margin-left: 10px;
+			}
+		}
+	}
+	.header__currency {
+		margin-left: 10px;
+		-ms-flex-preferred-size: 0;
+		flex-basis: 0;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+		max-width: 100%;
+		span {
+			border: 1px solid map-get($color, main);
+			color: map-get($color, main);
+			border-radius: 5px;
+			height: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		}
+	}
+	.header__navLink {
+		-ms-flex-preferred-size: 0;
+		flex-basis: 0;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+		max-width: 100%;
+		padding: 15px 0;
+		font-size: 1.8rem;
+		color: map-get($color, text);
+	}
+	.header__navItem {
+		color: map-get($color, text);
+		position: static;
+		> .mdi-chevron-down {
+			-ms-flex: 0 0 35px;
+			flex: 0 0 35px;
+			transform: rotate(-90deg);
+			max-width: 37px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	.header__nav {
+		position: absolute;
+		top: 100px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		padding: 0 10px;
+		border-top: 1px solid darken(map-get($color, trang), 12%);
+		flex-direction: column;
+		overflow-y: auto;
+		> .header__navItem {
+			+ .header__navItem {
+				margin-left: 0;
+			}
+		}
+	}
+	.header__navSub {
+		position: absolute;
+		top: 0px;
+		left: 0;
+		bottom: 0;
+		transform: translateY(0) translateX(-100%);
+		width: 100%;
+		z-index: 2;
+		padding: 0;
+		border-radius: 0;
+		background-color: map-get($color, trang);
+		box-shadow: none;
+		border-right: 1px solid darken(map-get($color, trang), 10%);
+		.header__navLink {
+			color: map-get($color, text);
+			padding: 15px 10px;
+		}
+		.js__closeNavSub {
+			display: flex;
+			justify-content: flex-end;
+			padding: 5px 10px;
+			font-size: 1.6rem;
+			text-transform: uppercase;
+			background-color: darken(map-get($color, trang), 35%);
+			color: map-get($color, trang);
+			.mdi-chevron-down {
+				transform: rotate(90deg);
+			}
+		}
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0) translateX(0);
+		}
+	}
+	.header__buttons {
+		margin-left: 0 !important;
+		margin-top: 10px;
+		justify-content: space-between;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+		.btn-contact {
+			border: 1px solid map-get($color, main);
+			color: map-get($color, main);
+			-ms-flex: 0 0 48%;
+			flex: 0 0 48%;
+			max-width: 48%;
+			+ .btn-contact {
+				margin-left: 0;
+			}
+		}
+	}
+	.header__currency {
+		select {
+			width: 75px;
+		}
+	}
+}
+@media (max-width: 767.98px) {
+	.header__mobile {
+		max-width: 285px;
+	}
+}
+@media (max-width: 575.98px) {
+	.header__search {
+		margin-right: auto;
+		margin-left: 0 !important;
+	}
 }

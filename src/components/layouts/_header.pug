@@ -19,25 +19,28 @@ header.mainHeader
 						option EN
 						option VI
 				.header__currency
-					select#header__currency(name="Currency")
-						option USD ($)
-						option VND (đ)
-				.header__cart
+					span USD ($)
+				.header__cart()
 					.header__cartIcon
 						span.mdi.mdi-cart
-						span.header__cartText Cart
+						span.header__cartText.desktop Cart
 						span.header__cartNumber.flex-center.d-flex 29
+				.header__toggleMobile.mobile
+					span.mdi-menu.mdi
 			.header__bottom.d-flex.align-center
 				.header__nav.d-flex
 					.header__navItem
 						a.header__navLink(href="/")
 							span.mdi.mdi-home
 							span HOME
-					.header__navItem
+					.header__navItem.header__navItem--hasSub
 						a.header__navLink(href="#")
 							span Destination
-						span.mdi.mdi-chevron-down
+						span.mdi.mdi-chevron-down.js__toggleNavSub
 						.header__navSub
+							.js__closeNavSub.mobile
+								span.mdi.mdi-chevron-down
+								span Back
 							.header__navItem
 								a.header__navLink(href="#")
 									span TRAVEL STYLE
@@ -53,11 +56,14 @@ header.mainHeader
 							.header__navItem
 								a.header__navLink(href="#")
 									span TRAVEL STYLE
-					.header__navItem
+					.header__navItem.header__navItem--hasSub
 						a.header__navLink(href="#")
 							span TRAVEL STYLE
-						span.mdi.mdi-chevron-down
+						span.mdi.mdi-chevron-down.js__toggleNavSub
 						.header__navSub
+							.js__closeNavSub.mobile
+								span.mdi.mdi-chevron-down
+								span Back
 							.header__navItem
 								a.header__navLink(href="#")
 									span TRAVEL STYLE
@@ -73,11 +79,14 @@ header.mainHeader
 							.header__navItem
 								a.header__navLink(href="#")
 									span TRAVEL STYLE
-					.header__navItem
+					.header__navItem.header__navItem--hasSub
 						a.header__navLink(href="#")
 							span Travel Services
-						span.mdi.mdi-chevron-down
+						span.mdi.mdi-chevron-down.js__toggleNavSub
 						.header__navSub
+							.js__closeNavSub.mobile
+								span.mdi.mdi-chevron-down
+								span Back
 							.header__navItem
 								a.header__navLink(href="#")
 									span TRAVEL STYLE
@@ -93,11 +102,14 @@ header.mainHeader
 							.header__navItem
 								a.header__navLink(href="#")
 									span TRAVEL STYLE
-					.header__navItem
+					.header__navItem.header__navItem--hasSub
 						a.header__navLink(href="#")
 							span Blog
-						span.mdi.mdi-chevron-down
+						span.mdi.mdi-chevron-down.js__toggleNavSub
 						.header__navSub
+							.js__closeNavSub.mobile
+								span.mdi.mdi-chevron-down
+								span Back
 							.header__navItem
 								a.header__navLink(href="#")
 									span TRAVEL STYLE
@@ -113,11 +125,14 @@ header.mainHeader
 							.header__navItem
 								a.header__navLink(href="#")
 									span TRAVEL STYLE
-					.header__navItem
+					.header__navItem.header__navItem--hasSub
 						a.header__navLink(href="#")
 							span About Us
-						span.mdi.mdi-chevron-down
+						span.mdi.mdi-chevron-down.js__toggleNavSub
 						.header__navSub
+							.js__closeNavSub.mobile
+								span.mdi.mdi-chevron-down
+								span Back
 							.header__navItem
 								a.header__navLink(href="#")
 									span TRAVEL STYLE
@@ -136,3 +151,6 @@ header.mainHeader
 				.header__buttons.d-flex.align-center.ml-auto
 					a.btn.btn-contact(href="#") Agent Hub
 					a.btn.btn-contact(href="#") Contact Us
+.backdrop
+.header__mobile.mobile
+	.header__mobileWrapper

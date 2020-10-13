@@ -10,33 +10,39 @@ html {
 		font-size: 62.5%;
 	}
 }
-
-.backdrop {
-	background: rgba(map-get($color, den), 1);
-	z-index: 2000;
-	width: 200%;
-	height: 200%;
-	position: fixed;
-	top: 0;
-	left: -50%;
-	transform: translateY(-100%);
-	opacity: 0.85;
-	visibility: hidden;
-	transition: all 0.7s cubic-bezier(0.35, 0.6, 0.5, 1);
-	border-bottom-left-radius: 60%;
-	border-bottom-right-radius: 60%;
-	&.show {
-		opacity: 1;
-		visibility: visible;
-		transform: translateY(0);
-		border-bottom-left-radius: 0%;
-		border-bottom-right-radius: 0%;
-	}
+main,
+footer {
+	transition: all 0.3s ease;
 }
 
 button,
 input {
 	border: 0;
+}
+
+.backdrop {
+	background: rgba(map-get($color, den), 0.85);
+	z-index: 2000;
+	width: 200%;
+	height: 200%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s cubic-bezier(0.35, 0.6, 0.5, 1);
+	border-bottom-left-radius: 60%;
+	border-bottom-right-radius: 60%;
+	&.show {
+		opacity: 1;
+		visibility: visible;
+		border-bottom-left-radius: 0%;
+		border-bottom-right-radius: 0%;
+	}
+}
+
+.pushedRight {
+	transform: translateX(50%);
 }
 
 .mainWrapper {

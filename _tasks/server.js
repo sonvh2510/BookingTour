@@ -45,7 +45,13 @@ const server = () => {
 	watch(['src/components/layouts/**.pug'], series(htmlTask));
 
 	watch(['src/**.pug']).on('change', (path, stats) => {
-		const pageName = path.split('\\' || '/')[1];
+		console.log(path);
+		let pageName;
+		if(path.indexOf('/') >=0){
+			pageName = path.split('/')[1];
+		}else{
+			pageName =path.split('\\')[1];
+		}
 		const filePathnameGlob = path.replace(/[\\\/]/g, '/');
 		console.log(`Render file ${pageName}`);
 
@@ -66,9 +72,14 @@ const server = () => {
 	watch(['src/components/**/**.pug', '!src/components/layouts/**.pug']).on(
 		'change',
 		(path, stats) => {
-			const pageName = path.split('\\' || '/')[2];
+			console.log(`Render file ${path}`);
+			let pageName;
+			if(path.indexOf('/') >=0){
+				pageName = path.split('/')[2];
+			}else{
+				pageName =path.split('\\')[2];
+			}
 			const filePathnameGlob = `src/${pageName}.pug`;
-			console.log(`Render file ${pageName}.pug`);
 
 			return src(filePathnameGlob)
 				.pipe(

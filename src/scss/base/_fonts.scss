@@ -109,6 +109,10 @@
 }
 
 //lineicons
+.mdi-menu:before {
+	content: '\F035C';
+}
+
 .lnr-magnifier:before {
 	content: '\e86f';
 }

@@ -159,6 +159,9 @@
 		padding-bottom: 30px;
 	}
 }
+.pt-50 {
+	padding-top: 50px;
+}
 
 .pd-85 {
 	@extend .pt-85;
@@ -205,4 +208,8 @@
 	font-weight: 700;
 	color: #20284f;
 	text-align: center;
+	padding-bottom: 55px;
+	@media (max-width: 575.98px){
+		padding-bottom: 30px;
+	}
 }

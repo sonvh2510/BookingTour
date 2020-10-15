@@ -1,0 +1,32 @@
+.ab-4 {
+    .content {
+        padding: 0 25%;
+        text-align: center;
+        .section-title {
+            padding-top: 85px;
+            margin: 0 -8.33%;
+            font-size: 3.6rem;
+            font-weight: 700;
+            color: map-get($color, text);
+        }
+    }
+}
+.ab-img {
+    .background-img{
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .text-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            p {
+                font-size: 4.8rem;
+                color: map-get($color, trang);
+            }
+        }
+    }
+}

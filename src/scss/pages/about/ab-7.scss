@@ -1,0 +1,15 @@
+.ab-7 {
+    .slide-image {
+        position: relative;
+        .swiper-button-child {
+            .swiper-prev {
+                left: -15px;
+                z-index: 9;
+            }
+            .swiper-next {
+                right: -15px;
+                z-index: 9;
+            }
+        }
+    }
+}

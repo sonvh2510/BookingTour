@@ -123,7 +123,3 @@ function swiperSlider(){
 		},
 	  });
 }
-
-funtion question(){
-	
-}

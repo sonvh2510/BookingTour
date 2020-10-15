@@ -43,9 +43,6 @@ function swiperSlider() {
 			576: {
 				slidesPerView: 2,
 			},
-			768: {
-				slidesPerView: 3,
-			},
 			1025: {
 				slidesPerView: 4,
 			},
@@ -159,8 +156,6 @@ const backdropClickHandler = () => {
 		},
 		spaceBetween: 20,
 		speed: 500,
-		centeredSlides: true,
-		loop: true,
 		navigation: {
 			nextEl: '.slide-raiting .swiper-next',
 			prevEl: '.slide-raiting .swiper-prev',
@@ -174,12 +169,14 @@ const backdropClickHandler = () => {
 			320: {
 				slidesPerView: 1,
 			},
-			576: {
+			1024: {
 				slidesPerView: 2,
 			},
-			768: {
+			1500: {
 				slidesPerView: 3,
-			},
+				centeredSlides: true,
+				loop: true,
+			}
 		}
 	});
 	//about-slide-year
@@ -205,4 +202,3 @@ const backdropClickHandler = () => {
 		},
 	  });
 }
-};

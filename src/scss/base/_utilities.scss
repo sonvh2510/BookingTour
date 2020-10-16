@@ -140,20 +140,20 @@
 	font-weight: 700;
 }
 
-.pt-85 {
-	padding-top: 85px;
+.pt-80 {
+	padding-top: 80px;
 	@media (max-width: 1199.98px) {
-		padding-top: 50px;
+		padding-top: 55px;
 	}
 	@media (max-width: 767.98px) {
 		padding-top: 30px;
 	}
 }
 
-.pb-85 {
-	padding-bottom: 85px;
+.pb-80 {
+	padding-bottom: 80px;
 	@media (max-width: 1199.98px) {
-		padding-bottom: 50px;
+		padding-bottom: 55px;
 	}
 	@media (max-width: 767.98px) {
 		padding-bottom: 30px;
@@ -164,8 +164,8 @@
 }
 
 .pd-85 {
-	@extend .pt-85;
-	@extend .pb-85;
+	@extend .pt-80;
+	@extend .pb-80;
 }
 
 .lcl {

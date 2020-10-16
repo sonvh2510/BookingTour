@@ -107,6 +107,7 @@
 		padding-bottom: 20px;
 		input[type='text'],
 		input[type='email'],
+		select,
 		textarea {
 			width: 100%;
 			height: 79px;
@@ -120,6 +121,33 @@
 			color: #333333;
 			&::placeholder {
 				color: #b0b0b0;
+			}
+		}
+		label {
+			font-size: 2.4rem;
+			color: #333;
+			padding-bottom: 20px;
+			@media (max-width: 575.98px) {
+				font-size: 1.6rem;
+			}
+		}
+		.select {
+			select {
+				appearance: none;
+			}
+			position: relative;
+			&:after {
+				content: '\F0140';
+				position: absolute;
+				top: 50%;
+				right: 20px;
+				transform: translateY(-50%);
+				pointer-events: none;
+				font: normal normal normal 24px/1 'Material Design Icons';
+				font-size: 32px;
+				@media (max-width: 575.98px) {
+					font-size: 24px;
+				}
 			}
 		}
 		textarea {
@@ -139,7 +167,8 @@
 		}
 		@media (max-width: 575.98px) {
 			input[type='text'],
-			input[type='email'] {
+			input[type='email'],
+			select {
 				height: 49px;
 				&::placeholder {
 					font-size: 1.6rem;

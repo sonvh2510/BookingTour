@@ -133,18 +133,6 @@
 	font-weight: 900;
 }
 
-.lnr {
-	font-family: 'Linearicons-Free';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 .fa,
 .fab,
 .fad,
@@ -162,51 +150,6 @@
 .fa-external-link-alt:before {
 	content: '\f35d';
 }
-
-//material
-.mdi:before,
-.mdi-set {
-	display: inline-block;
-	font: normal normal normal 24px/1 'Material Design Icons';
-	font-size: inherit;
-	text-rendering: auto;
-	line-height: inherit;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.mdi-cart:before {
-	content: '\F0110';
-}
-.mdi-chevron-down:before {
-	content: '\F0140';
-}
-.mdi-home:before {
-	content: '\F02DC';
-}
-.mdi-chevron-left:before {
-	content: '\F0141';
-}
-.mdi-chevron-right:before {
-	content: '\F0142';
-}
-.mdi-star:before {
-	content: '\F04CE';
-}
-
-//lineicons
-.mdi-menu:before {
-	content: '\F035C';
-}
-
-.lnr-magnifier:before {
-	content: '\e86f';
-}
-.lnr-chevron-down:before {
-	content: '\e874';
-}
-
-//font awesome
 .fa-facebook-f::before {
 	content: '\f39e';
 }

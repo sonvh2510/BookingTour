@@ -24,6 +24,15 @@
                 background: map-get($color, main);
             }
         }
+        @media (max-width: 575.98px) {
+            font-size: 3.6rem;
+            padding-bottom: 45px;
+            &.line {
+                &::before {
+                    bottom: 20px;
+                }
+            }
+        }
     }
     .content {
         p {
@@ -41,9 +50,21 @@
                 font-weight: 700;
                 color: map-get($color, main);
             }
+            @media (max-width: 575.98px) {
+                font-size: 1.8rem;
+                span {
+                    font-size: 1.6rem;
+                }
+                a {
+                    font-size: 1.6rem;
+                }
+            }
         }
         .contact, .social {
             padding-top: 80px;
+            @media (max-width: 575.98px) {
+                padding-top: 40px;
+            }
         }
         .social {
             ul {
@@ -118,6 +139,7 @@
             }
             button {
                 height: 50px;
+                max-width: 100%ßß;
             }
         }
     }

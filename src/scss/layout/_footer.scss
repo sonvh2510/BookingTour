@@ -1,11 +1,9 @@
 footer {
 	background-color: map-get($color, main);
+
+	p,
+	a,
 	h4 {
-		color: map-get($color, trang);
-		line-height: 1.5;
-	}
-	p {
-		line-height: 1.5;
 		color: map-get($color, trang);
 	}
 }

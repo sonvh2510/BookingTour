@@ -81,7 +81,6 @@
 		"@fancyapps/fancybox": "^3.5.7",
 		"@fortawesome/fontawesome-free": "^5.15.1",
 		"@mdi/font": "^5.6.55",
-		"fancybox": "^3.0.1",
 		"image-map-resizer": "^1.0.10",
 		"jquery": "^3.5.1",
 		"lazysizes": "^5.2.2",

@@ -103,6 +103,23 @@
             border-radius: 8px;
             text-transform: uppercase;
         }
+        @media (max-width: 575.98px) {
+            input[type=text], input[type=email] {
+                height: 49px;
+                &::placeholder {
+                    font-size: 1.6rem;
+                }
+            }
+            textarea {
+                height: 150px;
+                &::placeholder {
+                    font-size: 1.6rem;
+                }
+            }
+            button {
+                height: 50px;
+            }
+        }
     }
     .captcha {
         width: 100%;
@@ -115,14 +132,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        &::placeholder {
-            color: #b0b0b0;
-            font-size: 2.4rem;
-            font-weight: 600;
-        }
         .form-group {
             display: flex;
             align-items: center;
+            padding: 0;
             input[type=checkbox] {
                 width: 24px;
                 height: 24px;
@@ -140,6 +153,24 @@
                 height: 65px;
             }
         }
+        @media (max-width: 575.98px) {
+            height: 49px;
+            .form-group {
+                input[type=checkbox] {
+                    width: 16px;
+                    height: 16px;
+                }
+                label {
+                    font-size: 1.6rem;
+                }
+            }
+            a {
+                img {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        }
     }
     .form-title {
         font-size: 2.4rem;
@@ -152,6 +183,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width: 575.98px) {
+            flex-wrap: wrap;
+            .form-group {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
         input{
             display: none;
         }

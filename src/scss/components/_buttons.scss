@@ -13,7 +13,7 @@
 	font-size: 1.6rem;
 	border-radius: 8px;
 	padding: 1.5rem 2rem;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	@media (max-width: 1439.98px) {
 		padding: 1rem 1.5rem;
 	}
@@ -24,6 +24,40 @@
 		&:hover {
 			background-color: map-get($color, trang);
 			color: map-get($color, main);
+		}
+	}
+}
+
+.btn__submit {
+	border-radius: 8px;
+	font-size: 1.6rem;
+	transition: all 0.3s ease;
+	box-shadow: 0px 3px 6px rgba(map-get($color, den), 0.15);
+	padding: 0 60px;
+	
+	color: map-get($color, main);
+	background-color: map-get($color, trang);
+	border: 1px solid map-get($color, trang);
+	@media (min-width: 1025px) {
+		&:hover {
+			background-color: darken(map-get($color, trang), 6%);
+		}
+	}
+}
+
+.btn__submit--reverse {
+	border-radius: 8px;
+	font-size: 1.6rem;
+	transition: all 0.3s ease;
+	box-shadow: 0px 3px 6px rgba(map-get($color, den), 0.15);
+	padding: 0 60px;
+
+	color: map-get($color, trang);
+	background-color: map-get($color, main);
+	border: 1px solid map-get($color, main);
+	@media (min-width: 1025px) {
+		&:hover {
+			background-color: darken(map-get($color, main), 6%);
 		}
 	}
 }

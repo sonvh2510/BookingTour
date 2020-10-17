@@ -103,7 +103,7 @@
 	cursor: pointer;
 	position: relative;
 	font-size: 1.6rem;
-	.mdi-cart {
+	.fa-shopping-cart {
 		font-size: 18px;
 	}
 }
@@ -125,8 +125,9 @@
 	@extend .align-center;
 	position: relative;
 	color: map-get($color, trang);
-	> .mdi-chevron-down {
-		font-size: 3rem;
+	> .fa-chevron-down {
+		margin-left: 5px;
+		font-size: 1.6rem;
 	}
 	@media (min-width: 1025px) {
 		&:hover {
@@ -145,8 +146,8 @@
 	@extend .align-center;
 	color: map-get($color, trang);
 	font-size: 1.5rem;
-	.mdi-home {
-		font-size: 2rem;
+	.fa-home-lg-alt {
+		font-size: 1.7rem;
 		margin-right: 10px;
 	}
 }
@@ -163,6 +164,7 @@
 .header__navSub {
 	position: absolute;
 	top: 100%;
+	z-index: 10;
 	left: 0;
 	width: 240px;
 	background-color: map-get($color, main);
@@ -201,7 +203,7 @@
 	}
 }
 .header__toggleMobile {
-	font-size: 24px;
+	font-size: 2.2rem;
 	font-weight: 300;
 	color: map-get($color, trang);
 }
@@ -222,8 +224,8 @@
 	}
 }
 .header__mobileWrapper {
-	display: flex;
-	flex-wrap: wrap;
+	@extend .row;
+	@extend .no-gutters;
 }
 
 @media (max-width: 1024.98px) {
@@ -282,7 +284,7 @@
 	.header__navItem {
 		color: map-get($color, text);
 		position: static;
-		> .mdi-chevron-down {
+		> .fa-chevron-down {
 			-ms-flex: 0 0 35px;
 			flex: 0 0 35px;
 			transform: rotate(-90deg);
@@ -309,13 +311,10 @@
 		}
 	}
 	.header__navSub {
-		position: absolute;
 		top: 0px;
-		left: 0;
 		bottom: 0;
 		transform: translateY(0) translateX(-100%);
 		width: 100%;
-		z-index: 2;
 		padding: 0;
 		border-radius: 0;
 		background-color: map-get($color, trang);
@@ -328,13 +327,17 @@
 		.js__closeNavSub {
 			display: flex;
 			justify-content: flex-end;
+			align-items: center;
 			padding: 5px 10px;
 			font-size: 1.6rem;
 			text-transform: uppercase;
 			background-color: darken(map-get($color, trang), 35%);
 			color: map-get($color, trang);
-			.mdi-chevron-down {
+			.fa-chevron-down {
 				transform: rotate(90deg);
+			}
+			span:not(.fa-chevron-down) {
+				margin-left: 5px;
 			}
 		}
 		&.active {

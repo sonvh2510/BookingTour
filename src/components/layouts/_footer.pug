@@ -2,7 +2,7 @@ footer
 	.container-fluid
 		.mainWrapper.pd-85
 			.row
-				.col-xl-3.fs-18
+				.col-md-6.col-xl-3.fs-18
 					h4.text-uppercase ERA CO.,LTD
 					p Address: 34 Lo 7, Den Lu 1, Hoang Mai Dist, Hanoi, Vietnam
 					p Email: info@eratour.vn
@@ -28,15 +28,30 @@ footer
 						li
 							a(href="#")
 								em.fab.fa-tripadvisor
-				.col-xl-3
-					h4 OUR INDUSTRY AFFILIATIONS AND PARTNERSHIPS
+				.col-md-6.col-xl-3.fs-18
+					h4.text-uppercase OUR INDUSTRY AFFILIATIONS AND PARTNERSHIPS
 					p And we are really proud of them
-					span.far.fa-external-link-alt
 					br
 					.footer__list
-						a.d-block(href="#") SHIFA TRAVELS
-						a.d-block(href="#") VNHOLIDAYS.COM
-						a.d-block(href="#") COUNTRY TRAVEL DISCOVERIES
-						a.d-block(href="#") VIETNAM TIMELESS CHARM
-				.col-xl-3
-				.col-xl-3
+						a.d-flex.align-center(href="#") SHIFA TRAVELS 
+							span.fal.fa-external-link-alt
+						a.d-flex.align-center(href="#") VNHOLIDAYS.COM 
+							span.fal.fa-external-link-alt
+						a.d-flex.align-center(href="#") COUNTRY TRAVEL DISCOVERIES 
+							span.fal.fa-external-link-alt
+						a.d-flex.align-center(href="#") VIETNAM TIMELESS CHARM 
+							span.fal.fa-external-link-alt
+				.col-md-6.col-xl-3.fs-18
+					h4.text-uppercase Stay in the loop
+					p The latest travel tips and insider insights delivered straight to your inbox.
+					form.footer__form
+						.form-group
+							input.form-control(type="text" placeholder="First name")
+						.form-group
+							input.form-control(type="text" placeholder="Last name")
+						.form-group
+							input.form-control(type="text" placeholder="Email")
+						.form-button
+							button.btn.btn__submit Subscribe
+				.col-md-6.col-xl-3
+					img(src="./assets/footer_rate.jpg")

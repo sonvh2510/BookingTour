@@ -1,13 +1,9 @@
-@mixin mg-scale($ratio) {
+@mixin imgscale($ratio) {
 	padding-top: $ratio;
 	display: block;
 	position: relative;
 	img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		object-fit: cover;
+		@extend .fullsize;
+		@extend .object-cover;
 	}
 }

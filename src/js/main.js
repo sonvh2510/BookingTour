@@ -1,6 +1,7 @@
 import { Loading } from './libraries/Loading';
 import { getSVGs } from './utilities/util';
-import MoveElement from './libraries/MoveElement';
+import { MoveElement } from './libraries/MoveElement';
+
 const backdrop = document.querySelector('.backdrop');
 const headerMobile = document.querySelector('.header__mobile');
 const headerToggleMobile = document.querySelector('.header__toggleMobile');
@@ -8,12 +9,15 @@ const menuWrapper = document.querySelector('.header__mobile');
 const main = document.querySelector('main');
 const footer = document.querySelector('footer');
 const body = document.body;
+// window.disableLitepickerStyles = true;
 
 document.addEventListener('DOMContentLoaded', () => {
-	getSVGs();
+	getSVGs('.svg');
 	Loading().then();
 	HeaderResponse();
 	HeaderToggle();
+	tourSearch();
+	openFormSearch();
 	backdropClickHandler();
 	swiperSlider();
 });
@@ -148,7 +152,7 @@ const backdropClickHandler = () => {
 			1025: {
 				slidesPerView: 4,
 			},
-		}
+		},
 	});
 	let raiting = new Swiper('.slide-raiting .swiper-container', {
 		autoplay: {
@@ -176,8 +180,8 @@ const backdropClickHandler = () => {
 				slidesPerView: 3,
 				centeredSlides: true,
 				loop: true,
-			}
-		}
+			},
+		},
 	});
 	//about-slide-year
 	let galleryThumbs = new Swiper('.slide-year .gallery-thumbs', {
@@ -188,17 +192,50 @@ const backdropClickHandler = () => {
 		loopedSlides: 5, //looped slides should be the same
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
-	  });
-	  let galleryTop = new Swiper('.gallery-top', {
+	});
+	let galleryTop = new Swiper('.gallery-top', {
 		spaceBetween: 10,
 		loop: true,
 		loopedSlides: 5, //looped slides should be the same
 		navigation: {
-		  nextEl: '.swiper-button-next',
-		  prevEl: '.swiper-button-prev',
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
 		},
 		thumbs: {
-		  swiper: galleryThumbs,
+			swiper: galleryThumbs,
 		},
-	  });
-}
+	});
+};
+
+const tourSearch = () => {
+	let searchTourDate = new Litepicker({
+		element: document.getElementById('tourSearch__date'),
+		format: 'DD/MM/YYYY',
+		mobileFriendly: true,
+		autoApply: true,
+		showTooltip: true,
+		allowRepick: true,
+		singleMode: false,
+		inlineMode: false,
+	});
+	window.addEventListener('resize', () => {
+		searchTourDate.hide();
+	});
+};
+
+const openFormSearch = () => {
+	const btn = document.querySelector('.tourSearch__iconToggle');
+	const btnHandler = () => {
+		$.fancybox.open({
+			src: '#tourSearch__form',
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+			},
+		});
+	};
+	if (btn) {
+		btn.addEventListener('click', btnHandler);
+	}
+};

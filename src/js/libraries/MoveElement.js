@@ -1,4 +1,4 @@
-export default class MoveElement {
+export class MoveElement {
 	constructor(selector, option) {
 		this.selector = selector;
 		this.mobileMethod = option.mobileMethod;

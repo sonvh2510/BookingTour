@@ -1,0 +1,22 @@
+.tourSearch
+	.mobile.tourSearch__iconToggle
+		img.svg(src="./assets/icons/searching.svg")
+	.tourSearch__container.desktop
+		form.tourSearch__form.row.no-gutters#tourSearch__form(action="")
+			.tourSearch__formGroup.col.d-flex
+				.tourSearch__keyword
+					input.input-control.fs-18(type="text" placeholder="Where are you going?")
+				.tourSearch__date
+					input.input-control#tourSearch__date(autocomplete="off" disabled)
+					label.tourSearch__dateLabel.fs-18.d-flex.align-center
+						span.fal.fa-calendar-alt.tourSearch__dateLabelIcon
+						span.label.tourSearch__dateLabelText Start
+						img.svg(src="./assets/icons/arrow_long.svg")
+						span.label.tourSearch__dateLabelText End
+				.tourSearch__select
+					select.input-control.fs-18
+						option() 1 Adults
+						option() 2 Adults
+						option() 2 Childs asd asdasd asd asdasd
+			.tourSearch__button.col-auto
+				button.btn.btn__submit--reverse Find now

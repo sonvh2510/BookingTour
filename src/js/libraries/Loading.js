@@ -18,7 +18,9 @@ export const Loading = () => {
 			function progressing() {
 				counter += 1;
 				let progressBar = loading.querySelector('#progress-bar');
-				let progressPercentage = loading.querySelector('#progress-percentage');
+				let progressPercentage = loading.querySelector(
+					'#progress-percentage',
+				);
 				let n = Math.round((100 / imagesLength) * counter);
 
 				if (progressBar) {
@@ -41,7 +43,7 @@ export const Loading = () => {
 					img.src = images[i].src;
 				}
 			}
-		})
+		});
 	}
 	return;
 };

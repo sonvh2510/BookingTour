@@ -1,38 +1,27 @@
 export default class Fullpage {
-	slidesLength;
-	container;
-	prevEl;
-	nextEl;
-	navigationsWrapper;
-	slides = [];
-	titles = [];
-	opts = {};
-	afterChangeSlide;
-	beforeSlideChange;
-	state = {
-		currentIndex: 0,
-		nextIndex: 0,
-		canScroll: true,
-		scrollDirection: "down",
-	};
-
 	constructor(container, opts) {
+		this.state = {
+			currentIndex: 0,
+			nextIndex: 0,
+			canScroll: true,
+			scrollDirection: 'down',
+		};
 		this.container = document.querySelector(container);
 		this.opts = [].concat(opts)[0];
 		this.prevEl = document.querySelector(this.opts.prevEl);
 		this.nextEl = document.querySelector(this.opts.nextEl);
 		this.slides = Array.from(
-			this.container.querySelectorAll(this.opts.slideClass)
+			this.container.querySelectorAll(this.opts.slideClass),
 		);
-		// this.afterChangeSlide = opts.on.afterChangeSlide();
-		if (typeof opts.on.afterSlideChange == "function") {
+		if (typeof opts.on.afterSlideChange == 'function') {
 			this.afterSlideChange = opts.on.afterSlideChange;
 		}
-		if (typeof opts.on.beforeSlideChange == "function") {
+		if (typeof opts.on.beforeSlideChange == 'function') {
 			this.beforeSlideChange = opts.on.beforeSlideChange;
 		}
+		this.titles = [];
 		this.slides.forEach((slide) => {
-			this.titles.push(slide.getAttribute("fp-title"));
+			this.titles.push(slide.getAttribute('fp-title'));
 		});
 		this.slidesLength = this.slides.length;
 		this.init();
@@ -40,9 +29,9 @@ export default class Fullpage {
 
 	init() {
 		for (let i = 0; i < this.slidesLength; i++) {
-			this.slides[i].setAttribute("fp-index", i.toString());
+			this.slides[i].setAttribute('fp-index', i.toString());
 			if (i === 0) {
-				this.slides[i].classList.add("active");
+				this.slides[i].classList.add('active');
 			}
 		}
 		this.generateNavigation();
@@ -54,9 +43,9 @@ export default class Fullpage {
 
 	generateNavigation() {
 		if (this.opts.navigation) {
-			this.navigationsWrapper = document.createElement("div");
-			this.navigationsWrapper.classList.add("fp-navigation");
-			let navigationItemsString = "";
+			this.navigationsWrapper = document.createElement('div');
+			this.navigationsWrapper.classList.add('fp-navigation');
+			let navigationItemsString = '';
 			for (let i = 0; i < this.slidesLength; i++) {
 				navigationItemsString += `<div class="fp-nav-item" fp-target=${i}><span class="fp-number">${
 					i + 1
@@ -71,31 +60,31 @@ export default class Fullpage {
 
 	setStateForButtons() {
 		if (this.state.currentIndex >= this.slidesLength - 1) {
-			this.nextEl.classList.add("disabled");
+			this.nextEl.classList.add('disabled');
 		} else {
-			this.nextEl.classList.remove("disabled");
+			this.nextEl.classList.remove('disabled');
 		}
 
 		if (this.state.currentIndex <= 0) {
-			this.prevEl.classList.add("disabled");
+			this.prevEl.classList.add('disabled');
 		} else {
-			this.prevEl.classList.remove("disabled");
+			this.prevEl.classList.remove('disabled');
 		}
 	}
 
 	mouseOnScroll() {
-		document.addEventListener("wheel", (e) => {
+		document.addEventListener('wheel', (e) => {
 			if (this.state.canScroll) {
 				this.state.canScroll = false;
 				if (e.deltaY > 0) {
 					if (this.state.nextIndex < this.slidesLength - 1) {
 						this.state.nextIndex += 1;
-						this.state.scrollDirection = "down";
+						this.state.scrollDirection = 'down';
 					}
 				} else {
 					if (this.state.nextIndex > 0) {
 						this.state.nextIndex -= 1;
-						this.state.scrollDirection = "up";
+						this.state.scrollDirection = 'up';
 					}
 				}
 				this.changeSlide();
@@ -107,7 +96,7 @@ export default class Fullpage {
 	}
 
 	buttonsOnClick() {
-		this.prevEl.addEventListener("click", () => {
+		this.prevEl.addEventListener('click', () => {
 			if (this.state.canScroll) {
 				this.state.canScroll = false;
 				if (this.state.nextIndex > 0) {
@@ -119,7 +108,7 @@ export default class Fullpage {
 				}, this.opts.speed + 400);
 			}
 		});
-		this.nextEl.addEventListener("click", () => {
+		this.nextEl.addEventListener('click', () => {
 			if (this.state.canScroll) {
 				this.state.canScroll = false;
 				if (this.state.nextIndex < this.slidesLength - 1) {
@@ -135,18 +124,18 @@ export default class Fullpage {
 
 	navigationsOnClick() {
 		const navigationItems = Array.from(
-			this.navigationsWrapper.querySelectorAll(".fp-nav-item")
+			this.navigationsWrapper.querySelectorAll('.fp-nav-item'),
 		);
 		navigationItems.forEach((navItem) => {
-			navItem.addEventListener("click", () => {
+			navItem.addEventListener('click', () => {
 				if (this.state.canScroll) {
 					this.state.canScroll = false;
-					const target = navItem.getAttribute("fp-target");
+					const target = navItem.getAttribute('fp-target');
 					this.state.nextIndex = Number(target);
 					if (this.state.nextIndex > this.state.currentIndex) {
-						this.state.scrollDirection = "down";
+						this.state.scrollDirection = 'down';
 					} else {
-						this.state.scrollDirection = "up";
+						this.state.scrollDirection = 'up';
 					}
 					this.changeSlide();
 					setTimeout(() => {
@@ -160,31 +149,31 @@ export default class Fullpage {
 	autoChangeNavigationOnSlide() {
 		const currentIndex = this.state.currentIndex;
 		const navigationItems = Array.from(
-			this.navigationsWrapper.querySelectorAll(".fp-nav-item")
+			this.navigationsWrapper.querySelectorAll('.fp-nav-item'),
 		);
 		navigationItems.forEach((navItem, navItemIndex) => {
 			if (navItemIndex == currentIndex) {
-				navItem.classList.add("active");
+				navItem.classList.add('active');
 			} else {
-				navItem.classList.remove("active");
+				navItem.classList.remove('active');
 			}
 		});
 	}
 
 	changeSlide() {
 		if (this.state.currentIndex != this.state.nextIndex) {
-			if (typeof this.beforeSlideChange == "function") {
+			if (typeof this.beforeSlideChange == 'function') {
 				this.beforeSlideChange(
 					this.slides[this.state.currentIndex],
 					this.slides[this.state.nextIndex],
 					this.state.currentIndex,
-					this.state.nextIndex
+					this.state.nextIndex,
 				);
 			}
 			const element = this.slides[this.state.nextIndex];
 			const prevElement = this.slides[this.state.currentIndex];
 			let start;
-			element.classList.add("changing");
+			element.classList.add('changing');
 			const slide = (timestamp) => {
 				if (start === undefined) {
 					start = timestamp;
@@ -192,13 +181,13 @@ export default class Fullpage {
 				const elapsed = timestamp - start;
 
 				// `Math.min()` is used here to make sure that the element stops at exactly 200px.
-				if (this.state.scrollDirection == "down")
+				if (this.state.scrollDirection == 'down')
 					// slideUp when scroll down
 					element.style.transform = `translateY(${
 						window.innerHeight -
 						Math.min(
 							(window.innerHeight / this.opts.speed) * elapsed,
-							window.innerHeight
+							window.innerHeight,
 						)
 					}px)`;
 				else {
@@ -206,7 +195,7 @@ export default class Fullpage {
 					element.style.transform = `translateY(${
 						Math.min(
 							(window.innerHeight / this.opts.speed) * elapsed,
-							window.innerHeight
+							window.innerHeight,
 						) - window.innerHeight
 					}px)`;
 				}
@@ -215,17 +204,17 @@ export default class Fullpage {
 					window.requestAnimationFrame(slide);
 				} else {
 					// Stop the animation after 1 seconds
-					element.classList.remove("changing");
-					element.classList.add("active");
-					prevElement.classList.remove("active");
+					element.classList.remove('changing');
+					element.classList.add('active');
+					prevElement.classList.remove('active');
 					this.state.currentIndex = this.state.nextIndex;
 					this.setStateForButtons();
 					this.autoChangeNavigationOnSlide();
 
-					if (typeof this.afterSlideChange == "function") {
+					if (typeof this.afterSlideChange == 'function') {
 						this.afterSlideChange(
 							this.slides[this.state.currentIndex],
-							this.state.currentIndex
+							this.state.currentIndex,
 						);
 					}
 				}

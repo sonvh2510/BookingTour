@@ -1,9 +1,9 @@
+.mobile.tourSearch__iconToggle.d-flex.flex-center
+	span.fal.fa-calendar-alt
 .tourSearch
-	.mobile.tourSearch__iconToggle
-		img.svg(src="./assets/icons/searching.svg")
 	.tourSearch__container.desktop
-		form.tourSearch__form.row.no-gutters#tourSearch__form(action="")
-			.tourSearch__formGroup.col.d-flex
+		form.tourSearch__form.d-flex.flex-wrap#tourSearch__form(action="")
+			.tourSearch__formGroup.d-flex
 				.tourSearch__keyword
 					input.input-control.fs-18(type="text" placeholder="Where are you going?")
 				.tourSearch__date
@@ -18,5 +18,5 @@
 						option() 1 Adults
 						option() 2 Adults
 						option() 2 Childs asd asdasd asd asdasd
-			.tourSearch__button.col-auto
+			.tourSearch__button
 				button.btn.btn__submit--reverse Find now

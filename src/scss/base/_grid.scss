@@ -209,6 +209,26 @@
 }
 
 @media (min-width: 768px) {
+	.container-fluid,
+	.container {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.container {
+		max-width: 1200px;
+	}
+
+	.row {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	.col,
+	[class*='col-'] {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
 	.col-md {
 		-ms-flex-preferred-size: 0;
 		flex-basis: 0;
@@ -298,26 +318,6 @@
 }
 
 @media (min-width: 1025px) {
-	.container-fluid,
-	.container {
-		padding-right: 15px;
-		padding-left: 15px;
-	}
-	.container {
-		max-width: 1200px;
-	}
-
-	.row {
-		margin-left: -15px;
-		margin-right: -15px;
-	}
-
-	.col,
-	[class*='col-'] {
-		padding-right: 15px;
-		padding-left: 15px;
-	}
-
 	.col-lg {
 		-ms-flex-preferred-size: 0;
 		flex-basis: 0;

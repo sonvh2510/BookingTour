@@ -1,17 +1,21 @@
 .tourSearch {
-	max-width: 1160px;
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	z-index: 100;
-	margin-top: -70px;
-	background-color: map-get($color, trang);
-	border-radius: 6px;
-	box-shadow: 0 3px 10px #d6d6d6;
+	@media (min-width: 1025px) {
+		max-width: 1200px;
+		padding: 0 20px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: -70px;
+		// margin-bottom: 70px;
+		position: relative;
+		z-index: 100;
+	}
 }
 .tourSearch__container {
 	padding: 35px;
+	background-color: map-get($color, trang);
+	border-radius: 6px;
+	box-shadow: 0 3px 10px #d6d6d6;
 }
 
 .tourSearch__form {
@@ -31,8 +35,17 @@
 	overflow: hidden;
 	border: 1px solid #707070;
 	margin-right: 35px;
+	-ms-flex-preferred-size: 0;
+	flex-basis: 0;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	max-width: 100%;
 }
 .tourSearch__button {
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
+	width: auto;
+	max-width: 100%;
 	.btn__submit--reverse {
 		height: 60px;
 	}
@@ -93,11 +106,16 @@
 }
 .tourSearch__iconToggle {
 	position: fixed;
-	top: 200px;
+	top: 150px;
 	right: 10px;
-	background-color: map-get($color, main);
+	background-color: map-get($color, trang);
 	border-radius: 5px;
 	box-shadow: 0px 3px 6px rgba(map-get($color, den), 0.15);
+	z-index: 10;
+	width: 35px;
+	height: 35px;
+	color: map-get($color, main);
+	font-size: 2.4rem;
 }
 @media (max-width: 1024.98px) {
 	.tourSearch {
@@ -118,9 +136,11 @@
 		display: block;
 		max-width: 500px;
 		height: 388px;
+		.input-control {
+			padding: 0 15px;
+		}
 	}
 	.tourSearch__formGroup {
-		// display: block;
 		border: 0;
 		height: auto;
 		flex-wrap: wrap;
@@ -141,6 +161,7 @@
 	}
 	.tourSearch__dateLabel {
 		border: 0;
+		padding: 0 15px;
 	}
 	.tourSearch__select {
 		display: inline-block;
@@ -150,12 +171,12 @@
 			appearance: none;
 			background-image: url('../assets/icons/arrow-up-down.svg');
 			background-repeat: no-repeat;
-			background-position: 95% center;
+			background-position: 97% center;
 		}
 	}
 	.tourSearch__button {
 		text-align: center;
-		.btn__submit--reverse{
+		.btn__submit--reverse {
 			width: 100%;
 		}
 	}

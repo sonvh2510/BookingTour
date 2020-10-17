@@ -1,5 +1,113 @@
 .homeBanner {
 	.swiper-slide {
-		height: 700px;
+		img {
+			animation: zoomInOut infinite forwards 10s linear;
+			min-height: 350px;
+		}
+	}
+	.swiper-pagination-bullets {
+		.swiper-pagination-bullet {
+			opacity: 1;
+			width: 10px;
+			height: 10px;
+			background-color: map-get($color, trang);
+		}
+		.swiper-pagination-bullet-active {
+			background-color: map-get($color, main);
+		}
+	}
+	@media (min-width: 1025px) {
+		.swiper-pagination {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			bottom: 0;
+			left: initial;
+			right: 80px;
+			top: 0;
+			width: initial;
+		}
+		.swiper-pagination-bullets {
+			.swiper-pagination-bullet {
+				margin: 10px 0;
+			}
+		}
+	}
+}
+
+.homePopularDestination {
+	.swiper-navigations {
+		position: absolute;
+		bottom: 100%;
+		right: 80px;
+		display: flex;
+		margin-bottom: 5rem;
+	}
+	.homePopularDestination__slideWrapper {
+		position: relative;
+		padding: 0 10px;
+		@media (min-width: 768px) {
+			padding: 0 15px;
+		}
+		@media (min-width: 1200px) {
+			padding: 0 0 0 50px;
+		}
+		@media (min-width: 1440px) {
+			padding: 0 0 0 70px;
+		}
+	}
+	.swiper-btn {
+		@extend .flex-center;
+		@extend .d-flex;
+		cursor: pointer;
+		width: 4.2rem;
+		height: 4.2rem;
+		border-radius: 50%;
+		border: 1px solid map-get($color, main);
+		color: map-get($color, main);
+		font-size: 2rem;
+		transition: all 0.3s ease;
+		@media (min-width: 1025px) {
+			&:hover {
+				color: map-get($color, trang);
+				background-color: map-get($color, main);
+			}
+		}
+	}
+	.swiper-prev {
+		margin-right: 40px;
+	}
+	.swiper-container {
+		border-radius: 26px;
+		@media (min-width: 1200px) {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+	.swiper-pagination {
+		display: none;
+	}
+	@media (max-width: 1199.98px) {
+		.swiper-navigations {
+			display: none;
+		}
+		.swiper-pagination {
+			display: block;
+		}
+		.swiper-pagination-bullets {
+			position: static;
+			margin-top: 15px;
+			.swiper-pagination-bullet {
+				opacity: 1;
+				margin: 0 6px;
+				width: 10px;
+				height: 10px;
+				background-color: map-get($color, trang);
+				border: 1px solid map-get($color, main);
+			}
+			.swiper-pagination-bullet-active {
+				background-color: map-get($color, main);
+			}
+		}
 	}
 }

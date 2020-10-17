@@ -1,24 +1,43 @@
 import { Loading } from './libraries/Loading';
 import { getSVGs } from './utilities/util';
 import { MoveElement } from './libraries/MoveElement';
+import { Subject } from 'rxjs';
+// import Swiper from 'swiper';
 
-const backdrop = document.querySelector('.backdrop');
 const headerMobile = document.querySelector('.header__mobile');
 const headerToggleMobile = document.querySelector('.header__toggleMobile');
 const menuWrapper = document.querySelector('.header__mobile');
-const main = document.querySelector('main');
+const backdrop = document.querySelector('.backdrop');
+const header = document.querySelector('header');
 const footer = document.querySelector('footer');
+const main = document.querySelector('main');
 const body = document.body;
-// window.disableLitepickerStyles = true;
 
+const backdropObserver = new Subject();
+backdropObserver.subscribe((isActive) => {
+	if (isActive) {
+		backdrop.classList.add('show');
+		body.classList.add('overflow-hidden');
+	} else {
+		backdrop.classList.remove('show');
+		body.classList.remove('overflow-hidden');
+	}
+});
+
+// window.disableLitepickerStyles = true;
 document.addEventListener('DOMContentLoaded', () => {
 	getSVGs('.svg');
 	Loading().then();
+	// Header
 	HeaderResponse();
 	HeaderToggle();
+	backdropHandler();
+	// Form search at head of page
 	tourSearch();
 	openFormSearch();
-	backdropClickHandler();
+	// Index
+	homeSliders();
+
 	swiperSlider();
 });
 
@@ -51,77 +70,6 @@ function swiperSlider() {
 				slidesPerView: 4,
 			},
 		},
-	});
-}
-
-const HeaderResponse = () => {
-	const moveMakeMyTrip = new MoveElement('.header__makeMyTrip', {
-		desktopNode: '.header__search',
-		desktopMethod: 'insertAfter',
-		mobileNode: '.header__mobileWrapper',
-		mobileMethod: 'appendTo',
-	});
-	const moveCurrency = new MoveElement('.header__currency', {
-		desktopNode: '.header__language',
-		desktopMethod: 'insertAfter',
-		mobileNode: '.header__mobileWrapper',
-		mobileMethod: 'appendTo',
-	});
-	const moveNav = new MoveElement('.header__nav', {
-		desktopNode: '.header__bottom',
-		desktopMethod: 'prependTo',
-		mobileNode: '.header__mobileWrapper',
-		mobileMethod: 'appendTo',
-	});
-	const moveButtons = new MoveElement('.header__buttons', {
-		desktopNode: '.header__bottom',
-		desktopMethod: 'appendTo',
-		mobileNode: '.header__mobileWrapper',
-		mobileMethod: 'appendTo',
-	});
-};
-
-const HeaderToggle = () => {
-	headerToggleMobile.addEventListener('click', () => {
-		menuWrapper.classList.add('active');
-		backdrop.classList.add('show');
-		main.classList.add('pushedRight');
-		footer.classList.add('pushedRight');
-		body.classList.add('overflow-hidden');
-	});
-	Array.from(document.querySelectorAll('.header__navItem--hasSub')).forEach(
-		(item) => {
-			const btnOpen = item.querySelector('.js__toggleNavSub');
-			const btnClose = item.querySelector('.js__closeNavSub');
-			const navSub = item.querySelector('.header__navSub');
-			if (btnOpen) {
-				btnOpen.addEventListener('click', (e) => {
-					e.preventDefault();
-					navSub.classList.add('active');
-				});
-			}
-			if (btnClose) {
-				btnClose.addEventListener('click', (e) => {
-					e.preventDefault();
-					navSub.classList.remove('active');
-				});
-			}
-		},
-	);
-};
-
-const backdropClickHandler = () => {
-	backdrop.addEventListener('click', () => {
-		Array.from(document.querySelectorAll('.header__navSub')).forEach(
-			(item) => {
-				item.classList.remove('active');
-			},
-		);
-		headerMobile.classList.remove('active');
-		backdrop.classList.remove('show');
-		main.classList.remove('pushedRight');
-		footer.classList.remove('pushedRight');
-		body.classList.remove('overflow-hidden');
 	});
 	let imgGallery = new Swiper('.slide-image .swiper-container', {
 		autoplay: {
@@ -205,37 +153,191 @@ const backdropClickHandler = () => {
 			swiper: galleryThumbs,
 		},
 	});
+}
+
+const HeaderResponse = () => {
+	const moveMakeMyTrip = new MoveElement('.header__makeMyTrip', {
+		desktopNode: '.header__search',
+		desktopMethod: 'insertAfter',
+		mobileNode: '.header__mobileWrapper',
+		mobileMethod: 'appendTo',
+	});
+	const moveCurrency = new MoveElement('.header__currency', {
+		desktopNode: '.header__language',
+		desktopMethod: 'insertAfter',
+		mobileNode: '.header__mobileWrapper',
+		mobileMethod: 'appendTo',
+	});
+	const moveNav = new MoveElement('.header__nav', {
+		desktopNode: '.header__bottom',
+		desktopMethod: 'prependTo',
+		mobileNode: '.header__mobileWrapper',
+		mobileMethod: 'appendTo',
+	});
+	const moveButtons = new MoveElement('.header__buttons', {
+		desktopNode: '.header__bottom',
+		desktopMethod: 'appendTo',
+		mobileNode: '.header__mobileWrapper',
+		mobileMethod: 'appendTo',
+	});
+};
+
+const HeaderToggle = () => {
+	headerToggleMobile.addEventListener('click', () => {
+		menuWrapper.classList.add('active');
+		main.classList.add('pushedRight');
+		footer.classList.add('pushedRight');
+		backdropObserver.next(true);
+	});
+	Array.from(document.querySelectorAll('.header__navItem--hasSub')).forEach(
+		(item) => {
+			const btnOpen = item.querySelector('.js__toggleNavSub');
+			const btnClose = item.querySelector('.js__closeNavSub');
+			const navSub = item.querySelector('.header__navSub');
+			if (btnOpen) {
+				btnOpen.addEventListener('click', (e) => {
+					e.preventDefault();
+					navSub.classList.add('active');
+				});
+			}
+			if (btnClose) {
+				btnClose.addEventListener('click', (e) => {
+					e.preventDefault();
+					navSub.classList.remove('active');
+				});
+			}
+		},
+	);
+};
+
+const backdropHandler = () => {
+	backdrop.addEventListener('click', () => {
+		Array.from(document.querySelectorAll('.header__navSub')).forEach(
+			(item) => {
+				item.classList.remove('active');
+			},
+		);
+		backdropObserver.next(false);
+		headerMobile.classList.remove('active');
+		main.classList.remove('pushedRight');
+		footer.classList.remove('pushedRight');
+	});
 };
 
 const tourSearch = () => {
-	let searchTourDate = new Litepicker({
-		element: document.getElementById('tourSearch__date'),
-		format: 'DD/MM/YYYY',
-		mobileFriendly: true,
-		autoApply: true,
-		showTooltip: true,
-		allowRepick: true,
-		singleMode: false,
-		inlineMode: false,
-	});
-	window.addEventListener('resize', () => {
-		searchTourDate.hide();
-	});
+	const element = document.getElementById('tourSearch__date');
+	if (element) {
+		let searchTourDate = new Litepicker({
+			element: document.getElementById('tourSearch__date'),
+			format: 'DD/MM/YYYY',
+			mobileFriendly: true,
+			autoApply: true,
+			showTooltip: true,
+			allowRepick: true,
+			singleMode: false,
+			inlineMode: false,
+		});
+		window.addEventListener('resize', () => {
+			searchTourDate.hide();
+		});
+	}
 };
 
 const openFormSearch = () => {
-	const btn = document.querySelector('.tourSearch__iconToggle');
-	const btnHandler = () => {
+	const clickHandler = () => {
 		$.fancybox.open({
 			src: '#tourSearch__form',
 			type: 'inline',
 			opts: {
 				hash: false,
 				closeExisting: true,
+				touch: false,
 			},
 		});
 	};
-	if (btn) {
-		btn.addEventListener('click', btnHandler);
-	}
+	const openSearchTourFormOnClick = (e) => {
+		if (btn) {
+			if (e.matches) {
+				btn.addEventListener('click', clickHandler);
+			} else {
+				btn.removeEventListener('click', clickHandler);
+				document
+					.querySelector('#tourSearch__form')
+					.removeAttribute('style');
+			}
+		}
+	};
+	const btn = document.querySelector('.tourSearch__iconToggle');
+	const matchMedia = window.matchMedia('(max-width: 1024.98px)');
+	openSearchTourFormOnClick(matchMedia);
+	matchMedia.addEventListener('change', openSearchTourFormOnClick);
+};
+
+const homeSliders = () => {
+	let homeBanner = new Swiper('.js__homeBanner .swiper-container', {
+		slidesPerView: 1,
+		loop: true,
+		speed: 1200,
+		effect: 'fade',
+		simulateTouch: false,
+		fadeEffect: {
+			crossFade: true,
+		},
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.js__homeBanner .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+		// on: {
+		// 	init: function (e) {
+		// 		e.$el[0].setAttribute(
+		// 			'style',
+		// 			`height: ${window.innerHeight - header.clientHeight}px`,
+		// 		);
+		// 	},
+		// },
+	});
+
+	let homePopularDestination = new Swiper(
+		'.homePopularDestination__slideWrapper .swiper-container',
+		{
+			slidesPerView: 2,
+			spaceBetween: 10,
+			loop: true,
+			pagination: {
+				el: '.homePopularDestination__slideWrapper .swiper-pagination',
+				type: 'bullets',
+				clickable: true,
+			},
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 15,
+				},
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				},
+				1200: {
+					slidesPerView: 3.5,
+					navigation: {
+						prevEl: '.homePopularDestination .swiper-prev',
+						nextEl: '.homePopularDestination .swiper-next',
+					},
+				},
+				1360: {
+					spaceBetween: 40,
+					slidesPerView: 3.7,
+					navigation: {
+						prevEl: '.homePopularDestination .swiper-prev',
+						nextEl: '.homePopularDestination .swiper-next',
+					},
+				},
+			},
+		},
+	);
 };

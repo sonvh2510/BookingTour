@@ -224,8 +224,8 @@
 	}
 }
 .header__mobileWrapper {
-	@extend .row;
-	@extend .no-gutters;
+	@extend .d-flex;
+	@extend .flex-wrap;
 }
 
 @media (max-width: 1024.98px) {
@@ -368,11 +368,6 @@
 		select {
 			width: 75px;
 		}
-	}
-}
-@media (max-width: 767.98px) {
-	.header__mobile {
-		max-width: 285px;
 	}
 }
 @media (max-width: 575.98px) {

@@ -1,0 +1,32 @@
+section.agent-login(style="display : none" id="login")
+    .title
+        h2.main-title AGENT HUB Login
+        p Please login to access the full Agent Hub
+    form
+        .form-wrapper
+            .form-group
+                input(type="text", name="", placeholder="User name or Email Address")
+            .form-group
+                input(type="password", name="", placeholder="Password")
+            .form-password
+                .form-checked
+                    .form-group
+                        input(type="checkbox",name="remember", id="remember")
+                        label(for="remember") Remember me
+                a(href="#") Forget Your Password
+            .form-group
+                button(type="submit") Sign in
+    .login-social
+        p Or connect with:
+        ul
+            li
+                a.facebook.d-block(href="#")
+                    em.fab.fa-facebook-square
+                    span Facebook
+            li
+                a.google.d-block(href="#")
+                    em.fab.fa-google
+                    span Google
+        .follow
+            p Not registered? 
+            a(href="#") Please complete the form below

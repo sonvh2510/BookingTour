@@ -194,3 +194,154 @@ input {
 		}
 	}
 }
+.shadow--1 {
+	box-shadow: 0px 3px 6px rgba(map-get($color, den), 0.15);
+}
+.swiper-btn {
+	@extend .d-flex;
+	@extend .flex-center;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+	color: map-get($color, main);
+	background-color: map-get($color, trang);
+	@media (min-width: 1025px) {
+		&:hover {
+			color: map-get($color, trang);
+			background-color: map-get($color, main);
+		}
+	}
+}
+.index__swiper-pagination {
+	margin-top: 15px;
+	&.swiper-pagination-bullets {
+		position: static;
+		.swiper-pagination-bullet {
+			opacity: 1;
+			margin: 0 6px;
+			width: 14px;
+			height: 14px;
+			background-color: map-get($color, trang);
+			border: 1px solid map-get($color, main);
+		}
+		.swiper-pagination-bullet-active {
+			background-color: map-get($color, main);
+		}
+	}
+	@media (min-width: 768px) {
+		margin-top: 35px;
+	}
+	@media (min-width: 1200px) {
+		margin-top: 50px;
+	}
+}
+
+// rating bar
+.rating__bar {
+	position: relative;
+	height: 20px;
+	width: 100px;
+	.star,
+	.star__color {
+		position: absolute;
+		height: 100%;
+		background-repeat: repeat-x;
+		background-position: 0 center;
+		background-size: 20px;
+	}
+	.star {
+		width: 100%;
+		background-image: url('../assets/icons/star.svg');
+		z-index: 1;
+	}
+	.star__color {
+		z-index: 2;
+		background-image: url('../assets/icons/star_color.svg');
+	}
+}
+
+// tourItem
+.tourNewsItem {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.tourNewsItem__img {
+	border-top-left-radius: 26px;
+	border-top-right-radius: 26px;
+}
+.tourNewsItem__content {
+	height: 100%;
+	padding: 25px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	box-shadow: 0px 3px 6px #d6d6d6;
+	@media (max-width: 1199.98px) {
+		padding: 20px;
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 15px;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+}
+.tourNewsItem__title {
+	color: map-get($color, text);
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+.tourNewsItem__bottom {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	.btn__submit {
+		padding: 0 20px;
+		font-size: 1.6rem;
+		height: 50px;
+		border: 1px solid map-get($color, main);
+		box-shadow: none;
+		margin-left: auto;
+	}
+}
+.tourNewsItem__price {
+	span {
+		color: #707070;
+		font-size: 1.4rem;
+	}
+	b {
+		font-size: 2.4rem;
+		color: map-get($color, main);
+		margin-left: 5px;
+	}
+}
+.tourNewsItem__review {
+	margin-top: 10px;
+}
+.tourNewsItem__reviewFlag {
+	margin-left: auto;
+}
+.tourNewsItem__reviewContent {
+	margin-right: 10px;
+	p,
+	time {
+		font-weight: 600;
+		font-size: 1.4rem;
+		color: #b0b0b0;
+	}
+}
+.tourNewsItem__description {
+	margin-top: 15px;
+	p {
+		font-size: 1.6rem;
+		color: #333333;
+	}
+}
+.tourNewsItem__button {
+	margin-top: 15px;
+	text-align: right;
+	span,a {
+		color: map-get($color, main);
+	}
+}

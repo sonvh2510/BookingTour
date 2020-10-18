@@ -57,57 +57,165 @@
 		}
 	}
 	.swiper-btn {
-		@extend .flex-center;
-		@extend .d-flex;
-		cursor: pointer;
-		width: 4.2rem;
-		height: 4.2rem;
-		border-radius: 50%;
-		border: 1px solid map-get($color, main);
-		color: map-get($color, main);
+		width: 42px;
+		height: 42px;
 		font-size: 2rem;
-		transition: all 0.3s ease;
-		@media (min-width: 1025px) {
-			&:hover {
-				color: map-get($color, trang);
-				background-color: map-get($color, main);
-			}
-		}
+		border: 1px solid map-get($color, main);
 	}
 	.swiper-prev {
 		margin-right: 40px;
 	}
-	.swiper-container {
-		border-radius: 26px;
-		@media (min-width: 1200px) {
+	.index__swiper-pagination {
+		display: none;
+	}
+	@media (min-width: 1200px) {
+		.swiper-navigations {
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}
-	}
-	.swiper-pagination {
-		display: none;
+		.swiper-container {
+			border-top-left-radius: 26px;
+			border-bottom-left-radius: 26px;
+		}
 	}
 	@media (max-width: 1199.98px) {
+		.index__swiper-pagination {
+			display: block;
+		}
 		.swiper-navigations {
 			display: none;
 		}
-		.swiper-pagination {
-			display: block;
+	}
+}
+
+.charmingDestination {
+	.tourNewsItem__img {
+		@include imgscale(1);
+	}
+}
+
+.charmingDestination__slideWrapper {
+	padding: 0 60px;
+	position: relative;
+	.swiper-container {
+		padding: 15px;
+	}
+	.swiper-btn {
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		top: 50%;
+		transform: translateY(-50%);
+		border-radius: 50%;
+		font-size: 2.6rem;
+	}
+	.swiper-prev {
+		left: 0;
+	}
+	.swiper-next {
+		right: 0;
+	}
+	@media (max-width: 1024.98px) {
+		padding: 0;
+		margin: 0 -10px;
+		.swiper-container {
+			padding: 10px;
 		}
-		.swiper-pagination-bullets {
-			position: static;
-			margin-top: 15px;
-			.swiper-pagination-bullet {
-				opacity: 1;
-				margin: 0 6px;
-				width: 10px;
-				height: 10px;
-				background-color: map-get($color, trang);
-				border: 1px solid map-get($color, main);
-			}
-			.swiper-pagination-bullet-active {
-				background-color: map-get($color, main);
-			}
+	}
+}
+.testimonials {
+	.mainWrapper {
+		border-top: 1px solid #d6d6d6;
+	}
+	.tourNewsItem__description {
+		p {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 9;
 		}
+	}
+}
+.testimonials__slideWrapper {
+	padding: 0 30px;
+	position: relative;
+	.swiper-slide {
+		height: auto;
+	}
+	.swiper-container {
+		padding: 15px;
+		margin: -15px;
+	}
+	.swiper-btn {
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		top: 50%;
+		transform: translateY(-50%);
+		border-radius: 50%;
+		font-size: 2.6rem;
+		z-index: 10;
+	}
+	.swiper-prev {
+		left: 0;
+	}
+	.swiper-next {
+		right: 0;
+	}
+	.tourNewsItem__img {
+		@include imgscale(240/410);
+	}
+	@media (max-width: 1024.98px) {
+		padding: 0;
+		margin: 0 -10px;
+		.swiper-container {
+			padding: 10px;
+			margin: 0;
+		}
+	}
+}
+
+.indexNews {
+	.mainWrapper {
+		border-top: 1px solid #d6d6d6;
+	}
+	.tourNewsItem__description {
+		p {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 5;
+		}
+	}
+}
+.indexNews__slideWrapper {
+	@extend .testimonials__slideWrapper;
+}
+
+.tourNewsItem__socials {
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	a {
+		margin-right: 10px;
+	}
+}
+
+.indexContact__content {
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+	.btn__submit--reverse {
+		height: 8rem;
+		padding: 0 6.5rem;
+		border-radius: 4px;
+		font-size: 2.4rem;
+	}
+	p {
+		margin-top: 2rem;
+		font-size: 2rem;
+		color: #707070;
 	}
 }

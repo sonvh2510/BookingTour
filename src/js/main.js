@@ -28,6 +28,8 @@ backdropObserver.subscribe((isActive) => {
 document.addEventListener('DOMContentLoaded', () => {
 	getSVGs('.svg');
 	Loading().then();
+	// Raing
+	rating();
 	// Header
 	HeaderResponse();
 	HeaderToggle();
@@ -154,6 +156,13 @@ function swiperSlider() {
 		},
 	});
 }
+
+const rating = () => {
+	Array.from(document.querySelectorAll('[data-rating]')).forEach((item) => {
+		const percent = Number(item.getAttribute('data-rating'));
+		item.setAttribute('style', `width:${percent * 100}%`);
+	});
+};
 
 const HeaderResponse = () => {
 	const moveMakeMyTrip = new MoveElement('.header__makeMyTrip', {
@@ -336,6 +345,100 @@ const homeSliders = () => {
 						prevEl: '.homePopularDestination .swiper-prev',
 						nextEl: '.homePopularDestination .swiper-next',
 					},
+				},
+			},
+		},
+	);
+
+	let charmingSlider = new Swiper(
+		'.charmingDestination__slideWrapper .swiper-container',
+		{
+			slidesPerView: 1,
+			spaceBetween: 20,
+			loop: true,
+			simulateTouch: false,
+			navigation: {
+				prevEl: '.charmingDestination__slideWrapper .swiper-prev',
+				nextEl: '.charmingDestination__slideWrapper .swiper-next',
+			},
+			pagination: {
+				el: '.charmingDestination__slideWrapper .swiper-pagination',
+				type: 'bullets',
+				clickable: true,
+			},
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+				},
+				1200: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1440: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+		},
+	);
+	let testimonialsSlider = new Swiper(
+		'.testimonials__slideWrapper .swiper-container',
+		{
+			slidesPerView: 1,
+			spaceBetween: 20,
+			loop: true,
+			simulateTouch: false,
+			navigation: {
+				prevEl: '.testimonials__slideWrapper .swiper-prev',
+				nextEl: '.testimonials__slideWrapper .swiper-next',
+			},
+			pagination: {
+				el: '.testimonials__slideWrapper .swiper-pagination',
+				type: 'bullets',
+				clickable: true,
+			},
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+				},
+				1200: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1440: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+		},
+	);
+	let indexNewsSlider = new Swiper(
+		'.indexNews__slideWrapper .swiper-container',
+		{
+			slidesPerView: 1,
+			spaceBetween: 20,
+			loop: true,
+			simulateTouch: false,
+			navigation: {
+				prevEl: '.indexNews__slideWrapper .swiper-prev',
+				nextEl: '.indexNews__slideWrapper .swiper-next',
+			},
+			pagination: {
+				el: '.indexNews__slideWrapper .swiper-pagination',
+				type: 'bullets',
+				clickable: true,
+			},
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+				},
+				1200: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1440: {
+					slidesPerView: 4,
+					spaceBetween: 30,
 				},
 			},
 		},

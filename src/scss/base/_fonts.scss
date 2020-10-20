@@ -128,6 +128,7 @@
 }
 
 .fa,
+.fad,
 .fas {
 	font-family: 'Font Awesome 5 Pro';
 	font-weight: 900;
@@ -211,5 +212,17 @@
 	content: '\f00c';
 }
 .fa-redo-alt:before {
+	content: '\f2f9';
+}
+.fa-star:before {
+	content: '\f005';
+}
+.fa-thumbs-up::before {
+	content: '\f164'
+}
+.fa-plus-square:before {
+	content: '\f0fe'
+}
+.fa-redo-alt::before {
 	content: '\f2f9';
 }

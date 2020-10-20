@@ -1,0 +1,12 @@
+extends components/layouts/_layout.pug
+
+block var
+	- let title = 'Page | Hotel';
+	- let bodyClass = 'Hotel';
+
+block loading
+	include components/layouts/_loading
+block banner,breadcrumb
+block main
+	include components/hotel/h-1
+block scripts

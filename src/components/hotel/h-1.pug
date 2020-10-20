@@ -1,0 +1,36 @@
+section.booking.pd-85
+    .mainWrapper
+        .row
+            .col-lg-3
+            .col-lg-9
+                p.information 234 properties
+                    span  in Hotels
+                .row
+                    - for(i=1;i<10;i++)
+                        .col-lg-4
+                            .product-item
+                                figure
+                                    a(href="#").item__image
+                                        img(src="./assets/destination/i1.png", alt="")
+                                    figcaption
+                                        p.item__hashtab #Day Trip Excursion
+                                        a(href="#").item__title 7 Days Vietnam at Glance 
+                                        .item__rating
+                                            ul
+                                                li
+                                                    em.fas.fa-star
+                                                li
+                                                    em.fas.fa-star
+                                                li
+                                                    em.fas.fa-star
+                                                li
+                                                    em.fas.fa-star
+                                                li
+                                                    em.fas.fa-star
+                                        .item__price
+                                            p Form
+                                                span $300
+                                            a.d-block.item__button(href="#") See more
+                    .item__loading
+                        a(href="#") Load more
+                            em.far.fa-redo-alt

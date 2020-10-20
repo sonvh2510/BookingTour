@@ -1,0 +1,44 @@
+section.de-6.pt-80
+    .container-fluid
+        .mainWrapper.line
+            p.de__title Blog
+            h2.main-title Vietnam travel articles
+            .slide-image
+                .swiper-container
+                    .swiper-wrapper
+                        - for(i=1;i<6;i++)
+                            .swiper-slide
+                                .product-item
+                                    figure
+                                        a(href="#").item__image
+                                            img(src="./assets/destination/i1.png", alt="")
+                                        figcaption
+                                            a(href="#").item__title Vietnam records 11 more Covid-19 community transmissions
+                                            p.item__name By Le Nga
+                                                time July 27, 2020
+                                            .item__social
+                                                ul
+                                                    li
+                                                        a.d-block(href="#")
+                                                            em.fal.fa-thumbs-up
+                                                            span Like
+                                                    li
+                                                        a.d-block(href="#")
+                                                            em.fab.fa-twitter
+                                                            span Twitter
+                                                    li
+                                                        a.d-block(href="#")
+                                                            em.fad.fa-plus-square
+                                                            span Share
+                                            .item__content
+                                                p Eleven new cases, including seven patients and four medical staff of Da Nang Hospital, have raised Vietnam’s Covid-19 community transmissions to 15 in the last three days.
+                                            a(href="#").item__seemore See more
+                                    //- .item__seeall
+                                        a(href="#") See All
+                    .pagination
+                        .swiper-pagination
+                .swiper-button-child
+                    .swiper-prev
+                        em.mdi.mdi-chevron-left
+                    .swiper-next
+                        em.mdi.mdi-chevron-right

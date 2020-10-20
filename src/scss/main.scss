@@ -10,13 +10,16 @@
 
 @import 'components/forms';
 @import 'components/buttons';
+@import 'components/tour-news-item';
 
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/loading';
 @import 'layout/search-tour';
+@import 'layout/step-breadcrumb';
 
 @import 'pages/index';
+@import 'pages/make-my-trip';
 @import 'pages/about/main';
 @import 'pages/contact/main';
 @import 'pages/agent-hub/main';

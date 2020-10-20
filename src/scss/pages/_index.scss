@@ -1,9 +1,15 @@
+// Index banner
 .homeBanner {
 	.swiper-slide {
 		img {
 			animation: zoomInOut infinite forwards 10s linear;
 			min-height: 350px;
 		}
+	}
+	.swiper__pagination--banner {
+		position: absolute;
+		top: 0;
+		z-index: 10;
 	}
 	.swiper-pagination-bullets {
 		.swiper-pagination-bullet {
@@ -17,14 +23,13 @@
 		}
 	}
 	@media (min-width: 1025px) {
-		.swiper-pagination {
+		.swiper__pagination--banner {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			bottom: 0;
-			left: initial;
 			right: 80px;
-			top: 0;
+			left: initial;
 			width: initial;
 		}
 		.swiper-pagination-bullets {
@@ -35,65 +40,60 @@
 	}
 }
 
-.homePopularDestination {
+// Index 2
+.homePopularDestination__slideWrapper {
+	position: relative;
+	padding: 0 10px;
 	.swiper-navigations {
 		position: absolute;
 		bottom: 100%;
 		right: 80px;
 		display: flex;
 		margin-bottom: 5rem;
+		display: none;
 	}
-	.homePopularDestination__slideWrapper {
-		position: relative;
-		padding: 0 10px;
-		@media (min-width: 768px) {
-			padding: 0 15px;
-		}
-		@media (min-width: 1200px) {
-			padding: 0 0 0 50px;
-		}
-		@media (min-width: 1440px) {
-			padding: 0 0 0 70px;
-		}
-	}
-	.swiper-btn {
+	.swiper__btn--1 {
 		width: 42px;
 		height: 42px;
 		font-size: 2rem;
 		border: 1px solid map-get($color, main);
+		position: static;
+		transform: translateY(0);
 	}
-	.swiper-prev {
+	.swiper__btn--prev {
 		margin-right: 40px;
 	}
-	.index__swiper-pagination {
-		display: none;
+	.swiper__pagination {
+		display: block;
+	}
+	@media (min-width: 768px) {
+		padding: 0 15px;
 	}
 	@media (min-width: 1200px) {
+		padding: 0 0 0 50px;
+		.swiper__pagination {
+			display: none;
+		}
 		.swiper-navigations {
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
+			display: flex;
 		}
 		.swiper-container {
 			border-top-left-radius: 26px;
 			border-bottom-left-radius: 26px;
 		}
 	}
-	@media (max-width: 1199.98px) {
-		.index__swiper-pagination {
-			display: block;
-		}
-		.swiper-navigations {
-			display: none;
-		}
+	@media (min-width: 1440px) {
+		padding: 0 0 0 70px;
 	}
 }
-
+// Index 3
 .charmingDestination {
 	.tourNewsItem__img {
 		@include imgscale(1);
 	}
 }
-
 .charmingDestination__slideWrapper {
 	padding: 0 60px;
 	position: relative;
@@ -123,6 +123,7 @@
 		}
 	}
 }
+// Index 4
 .testimonials {
 	.mainWrapper {
 		border-top: 1px solid #d6d6d6;
@@ -147,22 +148,6 @@
 		padding: 15px;
 		margin: -15px;
 	}
-	.swiper-btn {
-		position: absolute;
-		width: 60px;
-		height: 60px;
-		top: 50%;
-		transform: translateY(-50%);
-		border-radius: 50%;
-		font-size: 2.6rem;
-		z-index: 10;
-	}
-	.swiper-prev {
-		left: 0;
-	}
-	.swiper-next {
-		right: 0;
-	}
 	.tourNewsItem__img {
 		@include imgscale(240/410);
 	}
@@ -175,7 +160,7 @@
 		}
 	}
 }
-
+// Index 5
 .indexNews {
 	.mainWrapper {
 		border-top: 1px solid #d6d6d6;
@@ -193,16 +178,7 @@
 .indexNews__slideWrapper {
 	@extend .testimonials__slideWrapper;
 }
-
-.tourNewsItem__socials {
-	margin-top: 10px;
-	display: flex;
-	flex-wrap: wrap;
-	a {
-		margin-right: 10px;
-	}
-}
-
+// Index 6
 .indexContact__content {
 	max-width: 800px;
 	width: 100%;

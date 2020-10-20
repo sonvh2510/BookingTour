@@ -1,0 +1,43 @@
+section.de-2.pt-80
+    .container-fluid
+        .mainWrapper.line
+            p.de__title Best tours
+            p.de__country Oh! VietNam
+            h2.main-title More Awesome Vietnam Tours for you!
+            .slide-image.pt-80
+                .swiper-container
+                    .swiper-wrapper
+                        - for(i=1;i<6;i++)
+                            .swiper-slide
+                                .product-item
+                                    figure
+                                        a(href="#").item__image
+                                            img(src="./assets/destination/i1.png", alt="")
+                                        figcaption
+                                            p.item__hashtab #Day Trip Excursion
+                                            a(href="#").item__title 7 Days Vietnam at Glance 
+                                            .item__rating
+                                                ul
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                            .item__price
+                                                p Form
+                                                    span $300
+                                                a.d-block.item__button(href="#") See more
+                                    .item__seeall
+                                        a(href="#") See All
+                    .pagination
+                        .swiper-pagination
+                .swiper-button-child
+                    .swiper-prev
+                        em.mdi.mdi-chevron-left
+                    .swiper-next
+                        em.mdi.mdi-chevron-right

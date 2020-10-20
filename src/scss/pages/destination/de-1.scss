@@ -1,0 +1,48 @@
+.destination__content {
+    padding: 0 16.67%;
+    text-align: center;
+    font-size: 2rem;
+    color: map-get($color, text-2);
+    p {
+        padding-bottom: 45px;
+        &:nth-child(2) {
+            display: inline;
+            padding-bottom: 0;
+        }
+    }
+    a {
+        font-size: 1.8rem;
+        color: map-get($color, main);
+        text-decoration: underline;
+        margin-left: 10px;
+    }
+}
+.map__link {
+    padding: 0 16.67%;
+}
+.slide-image {
+    position: relative;
+}
+.map {
+    .swiper-slide {
+        position: relative;
+    }
+    .place-name {
+        position: absolute;
+        left: 10%;
+        bottom: 10%;
+        font-size: 3.2rem;
+        color: map-get($color, trang);
+        font-weight: 700;
+    }
+    .swiper-button-child {
+        .swiper-prev {
+            left: -1.5%;
+            z-index: 9;
+        }
+        .swiper-next {
+            right: -1.5%;
+            z-index: 9;
+        }
+    }
+}

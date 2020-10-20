@@ -1,0 +1,18 @@
+extends components/layouts/_layout.pug
+
+block var
+	- let title = 'Page | About';
+	- let bodyClass = 'About';
+
+block loading
+	include components/layouts/_loading
+block banner,breadcrumb
+block main
+	include components/destination/nav
+	include components/destination/de-1
+	include components/destination/de-2
+	include components/destination/de-3
+	include components/destination/de-4
+	include components/destination/de-5
+	include components/destination/de-6
+block scripts

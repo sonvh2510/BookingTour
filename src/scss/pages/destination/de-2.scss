@@ -1,0 +1,125 @@
+.product-item {
+    border-radius: 24px;
+    box-shadow: 0 0 10px rgba(#000,.1);
+    position: relative;
+    &:hover {
+        .item__seeall {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+    figcaption {
+        padding: 20px;
+    }
+}
+.de__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #717A85;
+    text-align: center;
+    padding-top: 15px;
+}
+.de__country {
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: map-get($color, main);
+    text-align: center;
+    padding: 25px 0;
+}
+.item__hashtab {
+    color: #B0B0B0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.item__title {
+    font-size: 2.1rem;
+    color: map-get($color, text);
+    font-weight: 700;
+}
+.item__rating {
+    padding-top: 15px;
+    ul {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        li {
+            list-style: none;
+            margin-right: 5px;
+            color: #FFCC00;
+            font-size: 1.2rem;
+        }
+    }
+}
+.item__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    p {
+        font-size: 1.5rem;
+        color: #707070;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        span {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: map-get($color, main);
+            margin-left: 5px;
+        }
+    }
+    a {
+        padding: 0 30px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid map-get($color, main);
+        color: map-get($color, main);
+        font-size: 1.9rem;
+        border-radius: 8px;
+    }
+}
+.item__image {
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+.slide-image {
+    .swiper-button-child{
+        .swiper-prev {
+            left: -1.5%;
+            z-index: 9;
+        }
+        .swiper-next {
+            right: -1.5%;
+            z-index: 9;
+        }
+    }
+}
+.item__seeall {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000, .5);
+    border-radius: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .3s;
+    a {
+        font-size: 3.6rem;
+        color: map-get($color, trang);
+        font-weight: 700;
+        text-decoration: underline;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    @media (max-width: 767.98px) {
+        display: none;
+    }
+}

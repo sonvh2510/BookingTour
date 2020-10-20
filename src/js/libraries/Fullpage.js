@@ -47,13 +47,10 @@ export default class Fullpage {
 			this.navigationsWrapper.classList.add('fp-navigation');
 			let navigationItemsString = '';
 			for (let i = 0; i < this.slidesLength; i++) {
-				navigationItemsString += `<div class="fp-nav-item" fp-target=${i}><span class="fp-number">${
-					i + 1
-				}</span><span class="fp-title">${this.titles[i]}</span></div>`;
+				navigationItemsString += `<div class="fp-nav-item" fp-target=${i}><span class="fp-number">${i + 1}</span><span class="fp-title">${this.titles[i]}</span></div>`;
 			}
 			this.navigationsWrapper.innerHTML = navigationItemsString;
 			this.container.append(this.navigationsWrapper);
-
 			this.navigationsOnClick();
 		}
 	}

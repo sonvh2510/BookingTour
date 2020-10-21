@@ -13,3 +13,10 @@
         }
     }
 }
+.slide-image {
+	@media (max-width: 575.98px) {
+		.image {
+			text-align: center;
+		}
+	}
+}

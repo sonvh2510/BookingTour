@@ -163,6 +163,7 @@ function swiperSlider() {
 	});
 	let galleryTop = new Swiper('.gallery-top', {
 		spaceBetween: 10,
+		slidesPerView: 1,
 		loop: true,
 		loopedSlides: 5, //looped slides should be the same
 		navigation: {

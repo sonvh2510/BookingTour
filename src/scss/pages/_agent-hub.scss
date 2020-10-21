@@ -1,6 +1,7 @@
 .agent-hub {
 	.agent-content {
-		padding: 0 calc(25% - 80px);
+		max-width: 940px;
+		margin: 0 auto;
 		text-align: center;
 		@media (max-width: 575.98px) {
 			padding: 0 8.33%;

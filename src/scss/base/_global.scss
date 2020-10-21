@@ -20,6 +20,18 @@ input {
 	border: 0;
 }
 
+main {
+	padding-top: 64px;
+	@media (min-width: 1025px) {
+		padding-top: 149px;
+	}
+	@media (min-width: 1200px) {
+		padding-top: 153px;
+	}
+	@media (min-width: 1440px) {
+		padding-top: 163px;
+	}
+}
 .backdrop {
 	background: rgba(map-get($color, den), 0.85);
 	z-index: 2000;
@@ -42,7 +54,8 @@ input {
 }
 
 .pushedRight {
-	margin-left: 120px;
+	transform: translateX(120px);
+	
 }
 
 .mainWrapper {

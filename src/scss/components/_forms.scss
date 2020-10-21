@@ -71,7 +71,8 @@
 .form__checkbox--custom-1 {
 	user-select: none;
 	min-height: 24px;
-	input[type='checkbox'] {
+	input[type='checkbox'],
+	input[type='radio'] {
 		display: none;
 	}
 	span {
@@ -98,7 +99,8 @@
 			content: '';
 		}
 	}
-	input[type='checkbox']:checked ~ span:before {
+	input[type='checkbox']:checked ~ span:before,
+	input[type='radio']:checked ~ span:before {
 		content: '\f00c';
 		font-family: 'Font Awesome 5 Pro';
 		font-weight: 100;

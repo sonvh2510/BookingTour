@@ -1,5 +1,10 @@
 .mainHeader {
 	background-color: map-get($color, main);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2000;
 }
 .header__top {
 	padding-top: 10px;

@@ -85,6 +85,7 @@
 		"lazysizes": "^5.2.2",
 		"linearicons": "^1.0.2",
 		"litepicker": "^1.5.7",
+		"nouislider": "^14.6.2",
 		"pixi.js": "^5.3.2",
 		"rxjs": "^6.6.3",
 		"smooth-scrollbar": "^8.5.2",

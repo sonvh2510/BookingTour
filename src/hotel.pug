@@ -3,10 +3,15 @@ extends components/layouts/_layout.pug
 block var
 	- let title = 'Page | Hotel';
 	- let bodyClass = 'Hotel';
+	- let image__SubpageBanner = "./assets/banner/banner_hotel.jpg";
+	- let title__SubpageBanner = "Hotels";
+	- let subtitle__SubpageBanner = "Whatever your needs, our excellent selection of hotels";
 
 block loading
 	include components/layouts/_loading
 block banner,breadcrumb
+	include components/layouts/_subpage-banner
+	include components/layouts/_search-hotels
 block main
 	include components/hotel/h-1
 block scripts

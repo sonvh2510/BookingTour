@@ -1,142 +1,110 @@
-section.booking.pd-80
+section.productWrapper.pd-80
 	.container-fluid
 		.mainWrapper
 			.row
 				.col-lg-4.col-xl-3
-					.category
-						h3.category__title Destinations
-						.category__item
-							.form-group
-								input(type="checkbox", name="", id="1")
-								label(for="1") Vietnam
-							.form-group
-								input(type="checkbox", name="", id="2")
-								label(for="2") Vietnam
-							.form-group
-								input(type="checkbox", name="", id="3")
-								label(for="3") Vietnam
-							.form-group
-								input(type="checkbox", name="", id="4")
-								label(for="4") Vietnam
-							.category__button See all
-					.category
-						h3.category__title Deals
-						.category__item
-							.form-group
-								input(type="checkbox", name="", id="1")
-								label(for="1") Vietnam
-							.form-group
-								input(type="checkbox", name="", id="2")
-								label(for="2") Vietnam
-							.form-group
-								input(type="checkbox", name="", id="3")
-								label(for="3") Vietnam
-							.form-group
-								input(type="checkbox", name="", id="4")
-								label(for="4") Vietnam
-							.category__button See all
-					.category
-						h3.category__title Tour Category
-						.category__item
-							.form-group
-								input(type="checkbox", name="", id="1")
-								label(for="1") Vietnam
-							.form-group
-								input(type="checkbox", name="", id="2")
-								label(for="2") Vietnam
-							.form-group
-								input(type="checkbox", name="", id="3")
-								label(for="3") Vietnam
-							.form-group
-								input(type="checkbox", name="", id="4")
-								label(for="4") Vietnam
-							.category__button See all
-					.category
-						h3.category__title Traveler rating
-						.category__rating
-							.form-group
-								input(type="checkbox", name="", id="r1")
-								label(for="r1")
-							.tourNewsItem__rating.rating__bar
-								.star
-								.star__color(data-rating="1")
-						.category__rating
-							.form-group
-								input(type="checkbox", name="", id="r2")
-								label(for="r2")
-							.tourNewsItem__rating.rating__bar
-								.star
-								.star__color(data-rating="0.8")
-						.category__rating
-							.form-group
-								input(type="checkbox", name="", id="r3")
-								label(for="r3")
-							.tourNewsItem__rating.rating__bar
-								.star
-								.star__color(data-rating="0.6")
-						.category__rating
-							.form-group
-								input(type="checkbox", name="", id="r4")
-								label(for="r4")
-							.tourNewsItem__rating.rating__bar
-								.star
-								.star__color(data-rating="0.4")
-					.category
-						h3.category__title Best Tour for you!
-						.row
-							- for(i=1;i<4;i++)
-								.col-md-4.col-lg-6.col-xl-12.item__child
-									figure
-										.image
-											img(src="./assets/booking/1.png", alt="")
-										figcaption
-											p.item__hashtab #Day Trip Excursion
-											a(href="#").item__title Saigon City Tour
-											.item__rating
-												ul
-													li
-														em.fas.fa-star
-													li
-														em.fas.fa-star
-													li
-														em.fas.fa-star
-													li
-														em.fas.fa-star
-													li
-														em.fas.fa-star
-											.item__price
-												p Form
-													span $300 
-													|  per person
+					.tourNewsNavigation
+						.tourNewsNavigation__title
+							p Destination
+						.tourNewsNavigation__list
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Vietnam
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Laos
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Cambodia
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Myanma
+							.tourNewsNavigation__item
+								a.tourNewsNavigation__link.tourNewsNavigation--seeAll(href="#") See All 
+					.tourNewsNavigation
+						.tourNewsNavigation__title
+							p Deals
+						.tourNewsNavigation__list
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Free cancellation
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Reserve now, pay at stay
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Properties with special offers
+					.tourNewsNavigation
+						.tourNewsNavigation__title
+							p Property types
+						.tourNewsNavigation__list
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Hotels
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span B&B &Inns
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Apartment
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Villas
+							.tourNewsNavigation__item
+								a.tourNewsNavigation__link.tourNewsNavigation--seeAll(href="#") See All 
+					.tourNewsNavigation
+						.tourNewsNavigation__title
+							p Amenities
+						.tourNewsNavigation__list
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Free wifi
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Breakfast included
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Swimming pool
+							.tourNewsNavigation__item
+								label.form__checkbox--custom-1
+									input(type="checkbox")
+									span Parking
+							.tourNewsNavigation__item
+								a.tourNewsNavigation__link.tourNewsNavigation--seeAll(href="#") See All 
 				.col-lg-8.col-xl-9
 					p.information 234 properties
 						span  in Hotels
-					.row
+					.row.hotel__list
 						- for(i=1;i<10;i++)
-							.col-md-6.col-lg-4
-								.product-item
-									figure
-										a(href="#").item__image
-											img(src="./assets/destination/i1.png", alt="")
-										figcaption
-											p.item__hashtab #Day Trip Excursion
-											a(href="#").item__title 7 Days Vietnam at Glance 
-											.item__rating
-												ul
-													li
-														em.fas.fa-star
-													li
-														em.fas.fa-star
-													li
-														em.fas.fa-star
-													li
-														em.fas.fa-star
-													li
-														em.fas.fa-star
-											.item__price
-												p Form
-													span $300
-												a.item__button(href="#") See more
-						.item__loading
-							a(href="#") Load more
-								em.far.fa-redo-alt
+							.col-sm-6.col-2xl-4.tourNewsItem__col
+								a.tourNewsItem(href="#")
+									.tourNewsItem__img.overflow-hidden
+										img.fullsize.object-cover(src="./assets/destinations/5.jpg")
+									.tourNewsItem__content
+										h4.tourNewsItem__title Ha Long Bay, Vietnam
+										.tourNewsItem__rating.rating__bar
+											.star
+											.star__color(data-rating="0.7")
+										.tourNewsItem__bottom
+											.tourNewsItem__price
+												span From 
+												b $500
+											span.btn.btn__submit See more
+					.row
+						.col-12.formTourSearch__loadmore.text-center
+							a.text-uppercase Load more 
+							span.fas.fa-redo-alt

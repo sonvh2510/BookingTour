@@ -5,12 +5,12 @@
 	}
 }
 .blogWrapper__list {
-	.tourNewsItem__col {
-		margin-bottom: 30px;
-	}
 	.tourNewsItem__img {
 		@include imgscale(230/410);
 	}
+}
+.tourNewsItem__col {
+	margin-bottom: 30px;
 }
 
 .blogDetail__content {

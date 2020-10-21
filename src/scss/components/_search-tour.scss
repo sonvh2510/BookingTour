@@ -1,5 +1,5 @@
 .tourSearch {
-	@media (min-width: 1025px) {
+	@media (min-width: 1200px) {
 		max-width: 1200px;
 		padding: 0 20px;
 		width: 100%;
@@ -16,6 +16,9 @@
 	background-color: map-get($color, trang);
 	border-radius: 6px;
 	box-shadow: 0 3px 10px #d6d6d6;
+	@media (max-width: 1199.98px) {
+		display: none;
+	}
 }
 
 .tourSearch__form {
@@ -69,31 +72,6 @@
 		width: 250px;
 	}
 }
-// .tourSearch__dateLabel {
-// 	height: 60px;
-// 	width: 100%;
-// 	height: 100%;
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	pointer-events: none;
-// 	padding: 0 30px;
-// 	border-left: 1px solid #707070;
-// 	border-right: 1px solid #707070;
-// 	img,
-// 	svg {
-// 		margin: 0 15px;
-// 	}
-// }
-// .tourSearch__dateLabelIcon {
-// 	color: map-get($color, main);
-// 	font-size: 2.6rem;
-// 	margin-right: 25px;
-// }
-// .tourSearch__dateLabelText {
-// 	font-size: 1.8rem;
-// 	color: map-get($color, text);
-// }
 .tourSearch__select {
 	display: inline-block;
 	width: 160px;
@@ -107,7 +85,7 @@
 }
 .tourSearch__iconToggle {
 	position: fixed;
-	top: 150px;
+	top: 200px;
 	right: 10px;
 	background-color: map-get($color, trang);
 	border-radius: 5px;
@@ -117,8 +95,15 @@
 	height: 35px;
 	color: map-get($color, main);
 	font-size: 2.4rem;
+	cursor: pointer;
+	@media (min-width: 1200px) {
+		display: none;
+	}
+	@media (max-width: 1024.98px) {
+		top: 150px;
+	}
 }
-@media (max-width: 1024.98px) {
+@media (max-width: 1199.98px) {
 	.tourSearch {
 		margin-top: -0;
 	}
@@ -136,7 +121,8 @@
 	.tourSearch__form {
 		display: block;
 		max-width: 500px;
-		height: 388px;
+		min-height: 388px;
+		max-height: 100%;
 		.input-control {
 			padding: 0 15px;
 		}
@@ -147,6 +133,9 @@
 		flex-wrap: wrap;
 		border-radius: 0;
 		margin-right: 0;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
 	}
 	.tourSearch__keyword,
 	.tourSearch__date,

@@ -117,16 +117,16 @@
 		.col-lg-8.col-xl-9 {
 			order: 1;
 		}
-		.blogNavigation:not(.blogNavigation--popular) {
+		.tourNewsNavigation:not(.tourNewsNavigation--popular) {
 			display: none;
 		}
-		.blogNavigation--popular {
+		.tourNewsNavigation--popular {
 			padding-bottom: 50px;
 			margin-top: 0;
 		}
 	}
 	@media (max-width: 767.98px) {
-		.blogNavigation--popular {
+		.tourNewsNavigation--popular {
 			padding-bottom: 30px;
 		}
 	}

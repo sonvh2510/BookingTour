@@ -1,10 +1,10 @@
-.blogNavigation__list--popular {
+.tourNewsNavigation__list--popular {
 	padding-top: 20px;
 }
-.blogNavigationItem {
+.tourNewsNavigationItem {
 	display: flex;
 	align-items: center;
-	+ .blogNavigationItem {
+	+ .tourNewsNavigationItem {
 		margin-top: 30px;
 		@media (max-width: 1199.98px) {
 			margin-top: 20px;
@@ -14,7 +14,7 @@
 		}
 	}
 }
-.blogNavigationItem__img {
+.tourNewsNavigationItem__img {
 	-ms-flex: 0 0 150px;
 	flex: 0 0 150px;
 	max-width: 150px;
@@ -34,7 +34,7 @@
 		height: 90px;
 	}
 }
-.blogNavigationItem__content {
+.tourNewsNavigationItem__content {
 	-ms-flex-preferred-size: 0;
 	flex-basis: 0;
 	-ms-flex-positive: 1;

@@ -1,36 +1,142 @@
-section.booking.pd-85
-    .mainWrapper
-        .row
-            .col-lg-3
-            .col-lg-9
-                p.information 234 properties
-                    span  in Hotels
-                .row
-                    - for(i=1;i<10;i++)
-                        .col-lg-4
-                            .product-item
-                                figure
-                                    a(href="#").item__image
-                                        img(src="./assets/destination/i1.png", alt="")
-                                    figcaption
-                                        p.item__hashtab #Day Trip Excursion
-                                        a(href="#").item__title 7 Days Vietnam at Glance 
-                                        .item__rating
-                                            ul
-                                                li
-                                                    em.fas.fa-star
-                                                li
-                                                    em.fas.fa-star
-                                                li
-                                                    em.fas.fa-star
-                                                li
-                                                    em.fas.fa-star
-                                                li
-                                                    em.fas.fa-star
-                                        .item__price
-                                            p Form
-                                                span $300
-                                            a.d-block.item__button(href="#") See more
-                    .item__loading
-                        a(href="#") Load more
-                            em.far.fa-redo-alt
+section.booking.pt-80.pb-80
+    .container-fluid
+        .mainWrapper
+            .row
+                .col-xl-3
+                    .category
+                        h3.category__title Destinations
+                        .category__item
+                            .form-group
+                                input(type="checkbox", name="", id="1")
+                                label(for="1") Vietnam
+                            .form-group
+                                input(type="checkbox", name="", id="2")
+                                label(for="2") Vietnam
+                            .form-group
+                                input(type="checkbox", name="", id="3")
+                                label(for="3") Vietnam
+                            .form-group
+                                input(type="checkbox", name="", id="4")
+                                label(for="4") Vietnam
+                            .category__button See all
+                    .category
+                        h3.category__title Deals
+                        .category__item
+                            .form-group
+                                input(type="checkbox", name="", id="1")
+                                label(for="1") Vietnam
+                            .form-group
+                                input(type="checkbox", name="", id="2")
+                                label(for="2") Vietnam
+                            .form-group
+                                input(type="checkbox", name="", id="3")
+                                label(for="3") Vietnam
+                            .form-group
+                                input(type="checkbox", name="", id="4")
+                                label(for="4") Vietnam
+                            .category__button See all
+                    .category
+                        h3.category__title Tour Category
+                        .category__item
+                            .form-group
+                                input(type="checkbox", name="", id="1")
+                                label(for="1") Vietnam
+                            .form-group
+                                input(type="checkbox", name="", id="2")
+                                label(for="2") Vietnam
+                            .form-group
+                                input(type="checkbox", name="", id="3")
+                                label(for="3") Vietnam
+                            .form-group
+                                input(type="checkbox", name="", id="4")
+                                label(for="4") Vietnam
+                            .category__button See all
+                    .category
+                        h3.category__title Traveler rating
+                        .category__rating
+                            .form-group
+                                input(type="checkbox", name="", id="r1")
+                                label(for="r1")
+                            .tourNewsItem__rating.rating__bar
+                                .star
+                                .star__color(data-rating="1")
+                        .category__rating
+                            .form-group
+                                input(type="checkbox", name="", id="r2")
+                                label(for="r2")
+                            .tourNewsItem__rating.rating__bar
+                                .star
+                                .star__color(data-rating="0.8")
+                        .category__rating
+                            .form-group
+                                input(type="checkbox", name="", id="r3")
+                                label(for="r3")
+                            .tourNewsItem__rating.rating__bar
+                                .star
+                                .star__color(data-rating="0.6")
+                        .category__rating
+                            .form-group
+                                input(type="checkbox", name="", id="r4")
+                                label(for="r4")
+                            .tourNewsItem__rating.rating__bar
+                                .star
+                                .star__color(data-rating="0.4")
+                    .category
+                        h3.category__title Best Tour for you!
+                        .row
+                            - for(i=1;i<4;i++)
+                                .col-md-4.col-lg-6.col-xl-12.item__child
+                                    figure
+                                        .image
+                                            img(src="./assets/booking/1.png", alt="")
+                                        figcaption
+                                            p.item__hashtab #Day Trip Excursion
+                                            a(href="#").item__title Saigon City Tour
+                                            .item__rating
+                                                ul
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                            .item__price
+                                                p Form
+                                                    span $300 
+                                                    |  per person
+                .col-xl-9
+                    p.information 234 properties
+                        span  in Hotels
+                    .row
+                        - for(i=1;i<10;i++)
+                            .col-md-6.col-lg-4
+                                .product-item
+                                    figure
+                                        a(href="#").item__image
+                                            img(src="./assets/destination/i1.png", alt="")
+                                        figcaption
+                                            p.item__hashtab #Day Trip Excursion
+                                            a(href="#").item__title 7 Days Vietnam at Glance 
+                                            .item__rating
+                                                ul
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                                    li
+                                                        em.fas.fa-star
+                                            .item__price
+                                                p Form
+                                                    span $300
+                                                a.item__button(href="#") See more
+                        .item__loading
+                            a(href="#") Load more
+                                em.far.fa-redo-alt

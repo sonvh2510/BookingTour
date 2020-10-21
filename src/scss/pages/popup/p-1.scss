@@ -9,6 +9,9 @@
 		.main-title {
 			text-align: left;
 			padding-bottom: 30px;
+			@media (max-width: 575.98px) {
+				margin: 0;
+			}
 		}
 		p {
 			font-size: 2.4rem;
@@ -26,6 +29,12 @@
 				color: map-get($color, main);
 				text-decoration: underline;
 			}
+			@media (max-width: 575.98px) {
+				flex-direction: column;
+				label {
+					width: max-content;
+				}
+			}
 		}
 		.form-group {
 			label {
@@ -39,6 +48,9 @@
 				font-size: 3rem;
 				margin-top: 50px;
 			}
+		}
+		@media (max-width: 575.98px) {
+			margin-top: 30px;
 		}
 	}
 	.login-social {
@@ -55,6 +67,15 @@
 				list-style: none;
 				flex: 0 0 50%;
 				max-width: 50%;
+				@media (max-width: 575.98px) {
+					flex: 0 0 100%;
+					max-width: 100%;
+					.facebook,
+					.google {
+						margin: 0;
+						margin-top: 10px;
+					}
+				}
 			}
 			a {
 				padding: 0 25px;
@@ -85,7 +106,7 @@
 			align-items: center;
 			position: relative;
 			a {
-				font-size: 24px;
+				font-size: 2.4rem;
 				font-weight: 700;
 				text-decoration: underline;
 				color: map-get($color, main);
@@ -99,6 +120,21 @@
 					font-family: 'Font Awesome 5 Pro';
 					font-size: 24px;
 					color: map-get($color, main);
+				}
+			}
+			@media (max-width: 575.98px) {
+				flex-direction: column;
+				p {
+					padding: 20px 0;
+				}
+				a {
+					font-size: 1.6rem;
+					position: relative;
+					margin: 0;
+					&::after {
+						right: -10%;
+						font-size: 1.6rem;
+					}
 				}
 			}
 		}

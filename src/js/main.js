@@ -51,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	makeMyTripSlider();
 	formTourItemToggle();
 	swiperSlider();
+	//scroll
+	menuSroll();
+	//toggle class
+	buttonToggle();
 });
 
 //swiper
@@ -114,18 +118,18 @@ function swiperSlider() {
 			},
 		},
 	});
-	let raiting = new Swiper('.slide-raiting .swiper-container', {
+	let rating = new Swiper('.slide-rating .swiper-container', {
 		autoplay: {
 			delay: 4500,
 		},
 		spaceBetween: 20,
 		speed: 500,
 		navigation: {
-			nextEl: '.slide-raiting .swiper-next',
-			prevEl: '.slide-raiting .swiper-prev',
+			nextEl: '.slide-rating .swiper-next',
+			prevEl: '.slide-rating .swiper-prev',
 		},
 		pagination: {
-			el: '.slide-raiting .swiper-pagination',
+			el: '.slide-rating .swiper-pagination',
 			type: 'bullets',
 			clickable: true,
 		},
@@ -570,6 +574,32 @@ const formTourItemToggle = () => {
 	);
 };
 
+//scroll menu
+function menuSroll(){
+	function functionScroll() {
+		var section = document.querySelectorAll(".scroll"),
+			sections = {}, i = 0;
+	
+	  Array.prototype.forEach.call(section, function(e) {
+		sections[e.id] = e.offsetTop;
+	  });
+		for (i in sections) {
+		  if (sections[i] <= window.pageYOffset +100) {
+			document.querySelector('.active').classList.remove('active');
+			document.querySelector('li a[href*=' + i + ']').classList.add('active');
+		  }
+		}
+	  }
+	
+	  window.addEventListener('scroll', functionScroll);
+	  window.addEventListener('resize', functionScroll);
+}
+function buttonToggle(){
+	function classToggle (){
+		this.classList.toggle("active")
+	}
+	document.querySelector('.category__button').addEventListener('click', classToggle);
+}
 const cartSummaryToggle = () => {
 	const aside = document.querySelector('.cartAside');
 	const btn = document.querySelector('.cartAside__mobileToggle');

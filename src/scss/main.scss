@@ -11,6 +11,7 @@
 @import 'components/forms';
 @import 'components/buttons';
 @import 'components/tour-news-item';
+@import 'components/subpage-tab-navigation';
 
 @import 'layout/header';
 @import 'layout/footer';
@@ -18,6 +19,7 @@
 @import 'layout/search-tour';
 @import 'layout/step-breadcrumb';
 @import 'layout/cart-aside';
+@import 'layout/subpage-banner';
 
 @import 'pages/index';
 @import 'pages/make-my-trip';
@@ -27,5 +29,6 @@
 @import 'pages/popup/main';
 @import 'pages/destination/main';
 @import 'pages/hotel/main';
+@import 'pages/visa';
 
 @import 'base/utilities';

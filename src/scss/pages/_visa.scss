@@ -1,0 +1,41 @@
+.visa-content {
+	margin-top: 50px;
+	p {
+		color: #333333;
+		font-size: 2rem;
+		margin: 10px 0;
+		&.has-checked {
+			position: relative;
+			padding-left: 38px;
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 10px;
+				background-image: url(../assets/icons/checked-green.svg);
+				width: 20px;
+				height: 14px;
+				background-size: 100% 100%;
+			}
+		}
+	}
+	h4 {
+		color: #20284f;
+		font-size: 3rem;
+		font-weight: 700;
+		margin-top: 30px;
+	}
+	table {
+		border-collapse: collapse;
+		border: 1px solid #707070;
+		margin-bottom: 40px;
+		th,
+		td {
+			border: 1px solid #b0b0b0;
+			padding: 10px 20px;
+		}
+		.center {
+			margin: 0 auto;
+		}
+	}
+}

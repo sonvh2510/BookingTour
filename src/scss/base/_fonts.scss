@@ -218,11 +218,20 @@
 	content: '\f005';
 }
 .fa-thumbs-up::before {
-	content: '\f164'
+	content: '\f164';
 }
 .fa-plus-square:before {
-	content: '\f0fe'
+	content: '\f0fe';
 }
-.fa-redo-alt::before {
+.fa-redo-alt:before {
 	content: '\f2f9';
+}
+.fa-edit:before {
+	content: '\f044';
+}
+.fa-gift:before {
+	content: '\f06b';
+}
+.fa-comments-alt:before {
+	content: '\f4b6';
 }

@@ -35,7 +35,7 @@
         align-items: center;
         em {
             color: map-get($color, trang);
-            font-size: 48px;
+            font-size: 36px;
         }
         &.swiper-button-disabled {
             background: map-get($color, trang);

@@ -1,12 +1,12 @@
 .ab-6 {
-    .slide-raiting {
+    .slide-rating {
         padding: 0 8.33%;
         position: relative;
         .box-wrapper {
             border-radius: 24px;
             padding: 35px 30px;
             border: 1px solid rgba(#000, .1);
-            .raiting-wrapper {
+            .rating-wrapper {
                 display: flex;
                 align-items: center;
                 .profile {
@@ -28,7 +28,7 @@
                             list-style: none;
                             margin: 0 5px;
                             em {
-                                font-size: 2.6rem;
+                                font-size: 2.4rem;
                                 color: #ffcc00;
                             }
                             &:first-child {
@@ -66,7 +66,7 @@
         .swiper-slide-active {
             .box-wrapper {
                 border: 5px solid map-get($color, main);
-                .raiting-wrapper {
+                .rating-wrapper {
                     .image-avatar {
                         border-radius: 50%;
                         border: 3px solid map-get($color, main);

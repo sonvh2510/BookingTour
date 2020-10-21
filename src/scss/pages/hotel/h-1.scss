@@ -115,11 +115,35 @@
 }
 .booking {
     .product-item {
-        border: 3px solid rgba(#000, 0);
+		border: 3px solid rgba(#000, 0);
+		@media (max-width: 1199.98px) {
+			&:first-child {
+				margin-top: 30px;
+			}
+		}
         @media (min-width: 1024.98px) {
             &:hover {
                 border-color: map-get($color, main);
             }
         }
     }
+}
+.category__nav {
+	ul {
+		padding: 0;
+		li {
+			list-style: none;
+			margin-top: 25px;
+			a {
+				font-size: 1.8rem;
+				color: map-get($color, text);
+				font-weight: 700;
+			}
+		}
+	}
+}
+.b-1 {
+	.item__seemore {
+		margin-top: 40px;
+	}
 }

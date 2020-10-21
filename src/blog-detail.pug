@@ -1,0 +1,12 @@
+extends components/layouts/_layout.pug
+
+block var
+	- let title = 'Page | Blog - Detail';
+	- let bodyClass = 'blog-page';
+
+block loading
+	include components/layouts/_loading
+block banner,breadcrumb
+block main
+	include components/blog/b-2
+block scripts

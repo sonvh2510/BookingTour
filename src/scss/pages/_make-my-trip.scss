@@ -323,8 +323,8 @@
 	color: map-get($color, main);
 	font-size: 1.8rem;
 	margin-top: 30px;
+	cursor: pointer;
 	a {
-		cursor: pointer;
 		text-decoration: underline;
 		font-weight: 700;
 	}

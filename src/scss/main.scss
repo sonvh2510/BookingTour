@@ -12,13 +12,14 @@
 @import 'components/buttons';
 @import 'components/tour-news-item';
 @import 'components/subpage-tab-navigation';
+@import 'components/breadcrumb';
+@import 'components/cart-aside';
+@import 'components/search-tour';
+@import 'components/step-breadcrumb';
 
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/loading';
-@import 'layout/search-tour';
-@import 'layout/step-breadcrumb';
-@import 'layout/cart-aside';
 @import 'layout/subpage-banner';
 
 @import 'pages/index';
@@ -30,5 +31,6 @@
 @import 'pages/destination/main';
 @import 'pages/hotel/main';
 @import 'pages/visa';
+@import 'pages/blog';
 
 @import 'base/utilities';

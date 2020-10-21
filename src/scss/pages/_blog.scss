@@ -1,0 +1,14 @@
+.blogWrapper {
+	padding-top: 50px;
+	@media (max-width: 767.98px) {
+		padding-top: 30px;
+	}
+}
+.blogWrapper__list {
+	.tourNewsItem__col {
+		margin-bottom: 30px;
+	}
+	.tourNewsItem__img {
+		@include imgscale(230/410);
+	}
+}

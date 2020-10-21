@@ -6,8 +6,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "gulp",
-		"update": "ncu -u && npm install && npm audit fix",
-		"lint": "./node_modules/.bin/eslint"
+		"update": "ncu -u && npm install && npm audit fix"
 	},
 	"repository": {
 		"type": "git",
@@ -20,8 +19,7 @@
 	},
 	"homepage": "https://github.com/sonvh2510/01.ToolBuildHTML#readme",
 	"browserslist": [
-		"last 4 version",
-		"IE 9",
+		"last 2 version",
 		"> .5%",
 		"maintained node versions"
 	],

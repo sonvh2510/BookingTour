@@ -33,8 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	// init calendar
 	initCalendar();
 	formTourDateChoose();
-	// Raing
+	// Rating
 	rating();
+	// toggle cart summary
+	cartSummaryToggle();
+	cartOptionsItemToggle();
 	// Header
 	HeaderResponse();
 	HeaderToggle();
@@ -565,4 +568,31 @@ const formTourItemToggle = () => {
 			});
 		},
 	);
+};
+
+const cartSummaryToggle = () => {
+	const aside = document.querySelector('.cartAside');
+	const btn = document.querySelector('.cartAside__mobileToggle');
+	if (btn) {
+		btn.addEventListener('click', () => {
+			aside.classList.toggle('show');
+			if (aside.classList.contains('show')) {
+				backdropObserver.next(true);
+			} else {
+				backdropObserver.next(false);
+			}
+		});
+	}
+};
+
+const cartOptionsItemToggle = () => {
+	const items = Array.from(
+		document.querySelectorAll('.cartAsideOption'),
+	).forEach((item) => {
+		const title = item.querySelector('.cartAsideOption__iconToggle');
+		const content = item.querySelector('.cartAsideOption__list');
+		title.addEventListener('click', () => {
+			content.classList.toggle('d-block');
+		});
+	});
 };

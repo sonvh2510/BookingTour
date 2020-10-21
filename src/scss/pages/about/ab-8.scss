@@ -1,6 +1,7 @@
 .ab-8 {
     .question {
-        padding: 0 16.67%;
+		max-width: 1160px;
+		margin: 0 auto;
         li {
             list-style: none;
             padding: 20px 0;
@@ -12,8 +13,8 @@
                 color: map-get($color, text);
             }
             &::before {
-                content: '\F0140';
-                font: normal normal normal 24px/1 "Material Design Icons";
+                content: '\f078';
+                font-family: 'Font Awesome 5 Pro';
                 position: absolute;
                 top: 40px;
                 right: 0;

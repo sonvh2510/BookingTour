@@ -138,13 +138,13 @@
 			}
 			position: relative;
 			&:after {
-				content: '\F0140';
+				content: '\f078';
 				position: absolute;
 				top: 50%;
 				right: 20px;
 				transform: translateY(-50%);
 				pointer-events: none;
-				font: normal normal normal 24px/1 'Material Design Icons';
+				font-family: 'Font Awesome 5 Pro';
 				font-size: 32px;
 				@media (max-width: 575.98px) {
 					font-size: 24px;
@@ -166,6 +166,16 @@
 			border-radius: 8px;
 			text-transform: uppercase;
 		}
+		.button {
+			@media (max-width: 1024.98px) {
+				text-align: center;
+			}
+			@media (max-width: 575.98px) {
+				button {
+					max-width: 100%;
+				}
+			}
+		}
 		@media (max-width: 575.98px) {
 			input[type='text'],
 			input[type='email'],
@@ -184,57 +194,6 @@
 			}
 			button {
 				height: 50px;
-			}
-		}
-	}
-	.captcha {
-		width: 100%;
-		max-width: 390px;
-		padding: 0 20px;
-		margin-bottom: 20px;
-		border-radius: 12px;
-		border: 1px solid #d6d6d6;
-		box-shadow: 0 0 10px 0 rgba(#000, 0.1);
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		.form-group {
-			display: flex;
-			align-items: center;
-			padding: 0;
-			input[type='checkbox'] {
-				width: 24px;
-				height: 24px;
-			}
-			label {
-				font-size: 2.4rem;
-				font-weight: 600;
-				color: #b0b0b0;
-				margin-left: 15px;
-			}
-		}
-		a {
-			img {
-				width: 65px;
-				height: 65px;
-			}
-		}
-		@media (max-width: 575.98px) {
-			height: 49px;
-			.form-group {
-				input[type='checkbox'] {
-					width: 16px;
-					height: 16px;
-				}
-				label {
-					font-size: 1.6rem;
-				}
-			}
-			a {
-				img {
-					width: 45px;
-					height: 45px;
-				}
 			}
 		}
 	}
@@ -266,16 +225,18 @@
 			display: flex;
 			align-items: center;
 			&::before {
-				content: '\F0131';
-				font: normal normal normal 24px/1 'Material Design Icons';
+				content: '\f04d';
+				font-family: 'Font Awesome 5 Pro';
 				font-size: 24px;
 				margin-right: 10px;
+				font-weight: 500;
 			}
 		}
 		input:checked ~ label {
 			&::before {
-				content: '\F0132';
+				content: '\f14a';
 				color: map-get($color, main);
+				font-weight: 700;
 			}
 		}
 	}

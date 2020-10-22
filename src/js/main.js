@@ -63,30 +63,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //swiper
 function swiperSlider() {
-	let aboutTeam = new Swiper('.ab-2 .swiper-container', {
+	let ourTeam = new Swiper('.ourTeam__slideWrapper .swiper-container', {
 		autoplay: {
 			delay: 4500,
 		},
 		spaceBetween: 20,
 		speed: 500,
-		// loop: true,
+		loop: true,
 		navigation: {
-			nextEl: '.ab-2 .swiper-next',
-			prevEl: '.ab-2 .swiper-prev',
+			nextEl: '.ourTeam__slideWrapper .swiper__btn--prev',
+			prevEl: '.ourTeam__slideWrapper .swiper__btn--next',
 		},
 		pagination: {
-			el: '.ab-2 .swiper-pagination',
+			el: '.ourTeam__slideWrapper .swiper__pagination',
 			type: 'bullets',
 			clickable: true,
 		},
+		slidesPerView: 1,
 		breakpoints: {
-			320: {
-				slidesPerView: 1,
-			},
 			576: {
 				slidesPerView: 2,
 			},
-			1025: {
+			768: {
+				slidesPerView: 3,
+			},
+			1200: {
 				slidesPerView: 4,
 			},
 		},
@@ -683,8 +684,10 @@ const toggleFilter = () => {
 			backdropObserver.next(true);
 		});
 	}
-	filterClose.addEventListener('click', () => {
-		filterWrapper.classList.remove('show');
-		backdropObserver.next(false);
-	})
+	if (filterClose && filterWrapper) {
+		filterClose.addEventListener('click', () => {
+			filterWrapper.classList.remove('show');
+			backdropObserver.next(false);
+		});
+	}
 };

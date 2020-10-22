@@ -1,88 +1,29 @@
-.ab-2 {
-    .slide-wrapper {
-        position: relative;
-        padding: 0 16.67%;
-        figure {
-            .image {
-                text-align: center;
-                width: 100%;
-            }
-            figcaption {
-                text-align: center;
-                .name {
-                    font-size: 2.4rem;
-                    font-weight: 700;
-                    color: map-get($color, text);
-                }
-                .regency {
-                    font-size: 1.6rem;
-                    color: #707070;
-                }
-            }
-        }
-    }
+.ourTeam__slideWrapper {
+	position: relative;
+	max-width: 1460px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 150px;
+	@media (max-width: 1024.98px) {
+		padding: 0 0;
+	}
 }
-.swiper-button, .swiper-button-child {
-    .swiper-prev, .swiper-next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        background: map-get($color, main);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        em {
-            color: map-get($color, trang);
-            font-size: 36px;
-        }
-        &.swiper-button-disabled {
-            background: map-get($color, trang);
-            box-shadow: 0 0 10px 0 rgba(#000, .1);
-            em {
-                color: map-get($color, main);
-            }
-        }
-        @media (max-width: 1023.98px){
-            display: none;
-        }
-    }
-    .swiper-prev {
-        left: 10%;
-    }
-    .swiper-next {
-        right: 10%;
-    }
+
+.ourTeam__item {
+	.image {
+		text-align: center;
+		width: 100%;
+	}
 }
-.swiper-button {
-    .swiper-prev, .swiper-next{
-        width: 78px;
-        height: 78px;
-    }
-}
-.swiper-button-child {
-    .swiper-prev, .swiper-next{
-        width: 64px;
-        height: 64px;
-    }
-}
-.pagination {
-    width: 100%;
-    height: 30px;
-    margin-top: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .swiper-pagination-bullet {
-        width: 14px;
-        height: 14px;
-        background: none;
-        border: 1px solid #707070;
-        margin: 7.5px;
-    }
-    .swiper-pagination-bullet-active {
-        border-color: map-get($color, main);
-        background: map-get($color, main);
-    }
+.ourTeam__description {
+	text-align: center;
+	.name {
+		font-size: 2.4rem;
+		font-weight: 700;
+		color: map-get($color, text);
+	}
+	.regency {
+		font-size: 1.6rem;
+		color: #707070;
+	}
 }

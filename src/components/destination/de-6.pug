@@ -1,44 +1,146 @@
 section.de-6.pt-80
-    .container-fluid
-        .mainWrapper.line
-            p.de__title Blog
-            h2.main-title Vietnam travel articles
-            .slide-image
-                .swiper-container
-                    .swiper-wrapper
-                        - for(i=1;i<6;i++)
-                            .swiper-slide
-                                .product-item
-                                    figure
-                                        a(href="#").item__image
-                                            img(src="./assets/destination/i1.png", alt="")
-                                        figcaption
-                                            a(href="#").item__title Vietnam records 11 more Covid-19 community transmissions
-                                            p.item__name By Le Nga
-                                                time July 27, 2020
-                                            .item__social
-                                                ul
-                                                    li
-                                                        a.d-block(href="#")
-                                                            em.fal.fa-thumbs-up
-                                                            span Like
-                                                    li
-                                                        a.d-block(href="#")
-                                                            em.fab.fa-twitter
-                                                            span Twitter
-                                                    li
-                                                        a.d-block(href="#")
-                                                            em.fad.fa-plus-square
-                                                            span Share
-                                            .item__content
-                                                p Eleven new cases, including seven patients and four medical staff of Da Nang Hospital, have raised Vietnam’s Covid-19 community transmissions to 15 in the last three days.
-                                            a(href="#").item__seemore See more
-                                    //- .item__seeall
-                                        a(href="#") See All
-                    .pagination
-                        .swiper-pagination
-                .swiper-button-child
-                    .swiper-prev
-                        em.fas.fa-chevron-left
-                    .swiper-next
-                        em.fas.fa-chevron-right
+	.container-fluid
+		.mainWrapper.line
+			p.de__title Blog
+			h2.main-title Vietnam travel articles
+			.indexNews__slideWrapper
+				.index__swiper-navigations.desktop
+					.swiper__btn.swiper__btn--1.swiper__btn--prev.shadow--1
+						.fal.fa-chevron-left
+					.swiper__btn.swiper__btn--1.swiper__btn--next.shadow--1
+						.fal.fa-chevron-right
+				.swiper-container
+					.swiper-wrapper
+						.swiper-slide
+							.tourNewsItem
+								.tourNewsItem__img.overflow-hidden
+									a(href="#")
+										img.fullsize.object-cover(src="./assets/destinations/5.jpg")
+								.tourNewsItem__content
+									h4.tourNewsItem__title Ha Long Bay, Vietnam
+									.tourNewsItem__rating.rating__bar
+										.star
+										.star__color(data-rating="0.7")
+									.tourNewsItem__review.d-flex.align-center
+										.tourNewsItem__reviewContent
+											p By Xu Kien - July 26, 2020
+										//- .tourNewsItem__reviewFlag
+										//- 	img(src="./assets/flag.svg", alt="")
+									.tourNewsItem__socials
+										a(href="#")
+											img(src="./assets/icons/news_facebook.svg")
+										a(href="#")
+											img(src="./assets/icons/news_twitter.svg")
+										a(href="#")
+											img(src="./assets/icons/news_other.svg")
+									.tourNewsItem__description
+										p Well done route, captain - SUPER! It is very welcoming and friendly, which lifts the mood and the series
+									.tourNewsItem__button
+										a.fs-18.fw-700(href="#") See more
+						.swiper-slide
+							.tourNewsItem
+								.tourNewsItem__img.overflow-hidden
+									a(href="#")
+										img.fullsize.object-cover(src="./assets/destinations/6.jpg")
+								.tourNewsItem__content
+									h4.tourNewsItem__title Ha Long Bay, Vietnam
+									.tourNewsItem__rating.rating__bar
+										.star
+										.star__color(data-rating="0.7")
+									.tourNewsItem__review.d-flex.align-center
+										.tourNewsItem__reviewContent
+											p By Xu Kien - July 26, 2020
+										//- .tourNewsItem__reviewFlag
+										//- 	img(src="./assets/flag.svg", alt="")
+									.tourNewsItem__socials
+										a(href="#")
+											img(src="./assets/icons/news_facebook.svg")
+										a(href="#")
+											img(src="./assets/icons/news_twitter.svg")
+										a(href="#")
+											img(src="./assets/icons/news_other.svg")
+									.tourNewsItem__description
+										p Well done route, captain - SUPER! It is very welcoming and friendly, which lifts the mood and the series of houses of wonderful architecture seems even more beautiful and leaves just a fabulous impression of Amsterdam. Ron and Nel in the form of a cheerful dialogue told interesting stories about Amsterdam and its inhabitants. Loved the tour and attractive price…
+									.tourNewsItem__button
+										a.fs-18.fw-700(href="#") See more
+						.swiper-slide
+							.tourNewsItem
+								.tourNewsItem__img.overflow-hidden
+									a(href="#")
+										img.fullsize.object-cover(src="./assets/destinations/7.jpg")
+								.tourNewsItem__content
+									h4.tourNewsItem__title Ha Long Bay, Vietnam
+									.tourNewsItem__rating.rating__bar
+										.star
+										.star__color(data-rating="0.7")
+									.tourNewsItem__review.d-flex.align-center
+										.tourNewsItem__reviewContent
+											p By Xu Kien - July 26, 2020
+										//- .tourNewsItem__reviewFlag
+										//- 	img(src="./assets/flag.svg", alt="")
+									.tourNewsItem__socials
+										a(href="#")
+											img(src="./assets/icons/news_facebook.svg")
+										a(href="#")
+											img(src="./assets/icons/news_twitter.svg")
+										a(href="#")
+											img(src="./assets/icons/news_other.svg")
+									.tourNewsItem__description
+										p Well done route, captain - SUPER! It is very welcoming and friendly, which lifts the mood and the series of houses of wonderful architecture seems even more beautiful and leaves just a fabulous impression of Amsterdam. Ron and Nel in the form of a cheerful dialogue told interesting stories about Amsterdam and its inhabitants. Loved the tour and attractive price…
+									.tourNewsItem__button
+										a.fs-18.fw-700(href="#") See more
+						
+						.swiper-slide
+							.tourNewsItem
+								.tourNewsItem__img.overflow-hidden
+									a(href="#")
+										img.fullsize.object-cover(src="./assets/destinations/7.jpg")
+								.tourNewsItem__content
+									h4.tourNewsItem__title Ha Long Bay, Vietnam
+									.tourNewsItem__rating.rating__bar
+										.star
+										.star__color(data-rating="0.7")
+									.tourNewsItem__review.d-flex.align-center
+										.tourNewsItem__reviewContent
+											p By Xu Kien - July 26, 2020
+										//- .tourNewsItem__reviewFlag
+										//- 	img(src="./assets/flag.svg", alt="")
+									.tourNewsItem__socials
+										a(href="#")
+											img(src="./assets/icons/news_facebook.svg")
+										a(href="#")
+											img(src="./assets/icons/news_twitter.svg")
+										a(href="#")
+											img(src="./assets/icons/news_other.svg")
+									.tourNewsItem__description
+										p Well done route, captain - SUPER! It is very welcoming and friendly, which lifts the mood and the series of houses of wonderful architecture seems even more beautiful and leaves just a fabulous impression of Amsterdam. Ron and Nel in the form of a cheerful dialogue told interesting stories about Amsterdam and its inhabitants. Loved the tour and attractive price…
+									.tourNewsItem__button
+										a.fs-18.fw-700(href="#") See more
+						
+						.swiper-slide
+							.tourNewsItem
+								.tourNewsItem__img.overflow-hidden
+									a(href="#")
+										img.fullsize.object-cover(src="./assets/destinations/7.jpg")
+								.tourNewsItem__content
+									h4.tourNewsItem__title Ha Long Bay, Vietnam
+									.tourNewsItem__rating.rating__bar
+										.star
+										.star__color(data-rating="0.7")
+									.tourNewsItem__review.d-flex.align-center
+										.tourNewsItem__reviewContent
+											p By Xu Kien - July 26, 2020
+										//- .tourNewsItem__reviewFlag
+										//- 	img(src="./assets/flag.svg", alt="")
+									.tourNewsItem__socials
+										a(href="#")
+											img(src="./assets/icons/news_facebook.svg")
+										a(href="#")
+											img(src="./assets/icons/news_twitter.svg")
+										a(href="#")
+											img(src="./assets/icons/news_other.svg")
+									.tourNewsItem__description
+										p Well done route, captain - SUPER! It is very welcoming and friendly, which lifts the mood and the series of houses of wonderful architecture seems even more beautiful and leaves just a fabulous impression of Amsterdam. Ron and Nel in the form of a cheerful dialogue told interesting stories about Amsterdam and its inhabitants. Loved the tour and attractive price…
+									.tourNewsItem__button
+										a.fs-18.fw-700(href="#") See more
+					.swiper__pagination.index__swiper__pagination

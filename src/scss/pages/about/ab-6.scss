@@ -1,87 +1,88 @@
 .ab-6 {
-    .slide-rating {
-        padding: 0 8.33%;
-        position: relative;
-        .box-wrapper {
-            border-radius: 24px;
-            padding: 35px 30px;
-            border: 1px solid rgba(#000, .1);
-            .rating-wrapper {
-                display: flex;
-                align-items: center;
-                .profile {
-                    margin-left: 10px;
-                    .name {
-                        font-size: 2rem;
-                        color: map-get($color, text);
-                        font-weight: 700;
-                    }
-                    .nationality {
-                        font-size: 1.6rem;
-                        color: #707070;
-                        font-weight: 700;
-                    }
-                    ul {
-                        padding: 0;
-                        display: flex;
-                        li {
-                            list-style: none;
-                            margin: 0 5px;
-                            em {
-                                font-size: 2.4rem;
-                                color: #ffcc00;
-                            }
-                            &:first-child {
-                                margin-left: 0;
-                            }
-                        }
-                    }
-                }
-            }
-            .description {
-                padding-top: 25px;
-                .title {
-                    font-size: 2rem;
-                    color: map-get($color, text);
-                    padding-bottom: 10px;
-                }
-                .content {    
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 4;
-                    p {
-                        font-size: 1.6rem;
-                        color: map-get($color, text);
-                    }
-                }
-                time {
-                    font-size: 1.4rem;
-                    color: #707070;
-                    padding-top: 10px;
-                }
-            }
-        }
-        .swiper-slide-active {
-            .box-wrapper {
-                border: 5px solid map-get($color, main);
-                .rating-wrapper {
-                    .image-avatar {
-                        border-radius: 50%;
-                        border: 3px solid map-get($color, main);
-                    }
-                }
-                
-            }
-        }
-        .swiper-button-child {
-            .swiper-prev {
-                left: 3%;
-            }
-            .swiper-next {
-                right: 3%;
-            }
-        }
-    }
+	.slide-rating {
+		padding: 0 8.33%;
+		position: relative;
+		.box-wrapper {
+			border-radius: 24px;
+			padding: 35px 30px;
+			border: 1px solid rgba(#000, 0.1);
+			transition: all .3s ease;
+			.rating-wrapper {
+				display: flex;
+				align-items: center;
+				.profile {
+					margin-left: 10px;
+					.name {
+						font-size: 2rem;
+						color: map-get($color, text);
+						font-weight: 700;
+					}
+					.nationality {
+						font-size: 1.6rem;
+						color: #707070;
+						font-weight: 700;
+					}
+					ul {
+						padding: 0;
+						display: flex;
+						li {
+							list-style: none;
+							margin: 0 5px;
+							em {
+								font-size: 2.4rem;
+								color: #ffcc00;
+							}
+							&:first-child {
+								margin-left: 0;
+							}
+						}
+					}
+				}
+			}
+			.description {
+				padding-top: 25px;
+				.title {
+					font-size: 2rem;
+					color: map-get($color, text);
+					padding-bottom: 10px;
+				}
+				.content {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 4;
+					p {
+						font-size: 1.6rem;
+						color: map-get($color, text);
+					}
+				}
+				time {
+					font-size: 1.4rem;
+					color: #707070;
+					padding-top: 10px;
+				}
+			}
+		}
+		.swiper-slide-active {
+			.box-wrapper {
+				box-shadow: inset 0px 0px 0px 5px map-get($color, main);
+				// border: 5px solid map-get($color, main);
+				.rating-wrapper {
+					.image-avatar {
+						border-radius: 50%;
+						border: 3px solid map-get($color, main);
+					}
+				}
+			}
+		}
+		.swiper-button-child {
+			.swiper-prev {
+				left: 3%;
+			}
+			.swiper-next {
+				right: 3%;
+			}
+		}
+	}
 }

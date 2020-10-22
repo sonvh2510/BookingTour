@@ -1,4 +1,4 @@
-@import 'ab-1';
+// @import 'ab-1';
 @import 'ab-2';
 @import 'ab-3';
 @import 'ab-4';
@@ -7,3 +7,18 @@
 @import 'ab-7';
 @import 'ab-8';
 @import 'nav';
+
+.aboutUs__content {
+	max-width: 1240px;
+	width: 100%;
+	margin: 0 auto;
+	p {
+		font-size: 2rem;
+		text-align-last: center;
+	}
+	@media (max-width: 767.98px) {
+		p {
+			text-align: justify;
+		}
+	}
+}

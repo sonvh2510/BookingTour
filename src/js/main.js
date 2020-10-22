@@ -33,8 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	// init calendar
 	initCalendar();
 	formTourDateChoose();
-	// Raing
+	// Rating
 	rating();
+	// price slider
+	priceSlider();
+	// toggle cart summary
+	cartSummaryToggle();
+	cartOptionsItemToggle();
 	// Header
 	HeaderResponse();
 	HeaderToggle();
@@ -48,34 +53,41 @@ document.addEventListener('DOMContentLoaded', () => {
 	makeMyTripSlider();
 	formTourItemToggle();
 	swiperSlider();
+	//scroll
+	// menuSroll();
+	//toggle class
+	buttonToggle();
+	// toggle filter on tour list page
+	toggleFilter();
 });
 
 //swiper
 function swiperSlider() {
-	let aboutTeam = new Swiper('.ab-2 .swiper-container', {
+	let ourTeam = new Swiper('.ourTeam__slideWrapper .swiper-container', {
 		autoplay: {
 			delay: 4500,
 		},
 		spaceBetween: 20,
 		speed: 500,
-		// loop: true,
+		loop: true,
 		navigation: {
-			nextEl: '.ab-2 .swiper-next',
-			prevEl: '.ab-2 .swiper-prev',
+			nextEl: '.ourTeam__slideWrapper .swiper__btn--prev',
+			prevEl: '.ourTeam__slideWrapper .swiper__btn--next',
 		},
 		pagination: {
-			el: '.ab-2 .swiper-pagination',
+			el: '.ourTeam__slideWrapper .swiper__pagination',
 			type: 'bullets',
 			clickable: true,
 		},
+		slidesPerView: 1,
 		breakpoints: {
-			320: {
-				slidesPerView: 1,
-			},
 			576: {
 				slidesPerView: 2,
 			},
-			1025: {
+			768: {
+				slidesPerView: 3,
+			},
+			1200: {
 				slidesPerView: 4,
 			},
 		},
@@ -111,18 +123,18 @@ function swiperSlider() {
 			},
 		},
 	});
-	let raiting = new Swiper('.slide-raiting .swiper-container', {
+	let rating = new Swiper('.slide-rating .swiper-container', {
 		autoplay: {
 			delay: 4500,
 		},
 		spaceBetween: 20,
 		speed: 500,
 		navigation: {
-			nextEl: '.slide-raiting .swiper-next',
-			prevEl: '.slide-raiting .swiper-prev',
+			nextEl: '.slide-rating .swiper-next',
+			prevEl: '.slide-rating .swiper-prev',
 		},
 		pagination: {
-			el: '.slide-raiting .swiper-pagination',
+			el: '.slide-rating .swiper-pagination',
 			type: 'bullets',
 			clickable: true,
 		},
@@ -152,6 +164,7 @@ function swiperSlider() {
 	});
 	let galleryTop = new Swiper('.gallery-top', {
 		spaceBetween: 10,
+		slidesPerView: 1,
 		loop: true,
 		loopedSlides: 5, //looped slides should be the same
 		navigation: {
@@ -162,6 +175,38 @@ function swiperSlider() {
 			swiper: galleryThumbs,
 		},
 	});
+}
+//scroll menu
+// function menuSroll() {
+// 	function functionScroll() {
+// 		var section = document.querySelectorAll('.scroll'),
+// 			sections = {},
+// 			i = 0;
+
+// 		Array.prototype.forEach.call(section, function (e) {
+// 			sections[e.id] = e.offsetTop;
+// 		});
+// 		for (i in sections) {
+// 			if (sections[i] <= window.pageYOffset + 100) {
+// 				document.querySelector('.active').classList.remove('active');
+// 				document
+// 					.querySelector('li a[href*=' + i + ']')
+// 					.classList.add('active');
+// 			}
+// 		}
+// 		console.log(123);
+// 	}
+
+// 	window.addEventListener('scroll', functionScroll);
+// 	window.addEventListener('resize', functionScroll);
+// }
+function buttonToggle() {
+	const btn = document.querySelector('.category__button');
+	if (btn) {
+		btn.addEventListener('click', () => {
+			btn.classList.toggle('active');
+		});
+	}
 }
 
 const initCalendar = () => {
@@ -211,14 +256,12 @@ const initCalendar = () => {
 		});
 	});
 };
-
 const rating = () => {
 	Array.from(document.querySelectorAll('[data-rating]')).forEach((item) => {
 		const percent = Number(item.getAttribute('data-rating'));
 		item.setAttribute('style', `width:${percent * 100}%`);
 	});
 };
-
 const HeaderResponse = () => {
 	const moveMakeMyTrip = new MoveElement('.header__makeMyTrip', {
 		desktopNode: '.header__search',
@@ -245,7 +288,6 @@ const HeaderResponse = () => {
 		mobileMethod: 'appendTo',
 	});
 };
-
 const HeaderToggle = () => {
 	headerToggleMobile.addEventListener('click', () => {
 		menuWrapper.classList.add('active');
@@ -273,7 +315,6 @@ const HeaderToggle = () => {
 		},
 	);
 };
-
 const backdropHandler = () => {
 	backdrop.addEventListener('click', () => {
 		Array.from(document.querySelectorAll('.header__navSub')).forEach(
@@ -287,7 +328,6 @@ const backdropHandler = () => {
 		footer.classList.remove('pushedRight');
 	});
 };
-
 const openFormSearch = () => {
 	const clickHandler = () => {
 		$.fancybox.open({
@@ -313,11 +353,10 @@ const openFormSearch = () => {
 		}
 	};
 	const btn = document.querySelector('.tourSearch__iconToggle');
-	const matchMedia = window.matchMedia('(max-width: 1024.98px)');
+	const matchMedia = window.matchMedia('(max-width: 1199.98px)');
 	openSearchTourFormOnClick(matchMedia);
 	matchMedia.addEventListener('change', openSearchTourFormOnClick);
 };
-
 const homeSliders = () => {
 	let homeBanner = new Swiper('.homeBanner__slider .swiper-container', {
 		slidesPerView: 1,
@@ -476,7 +515,6 @@ const homeSliders = () => {
 		},
 	);
 };
-
 const makeMyTripSlider = () => {
 	let makeMyTripSlider = new Swiper('.destinationSelect .swiper-container', {
 		slidesPerView: 2,
@@ -501,7 +539,6 @@ const makeMyTripSlider = () => {
 		},
 	});
 };
-
 const quantityGroup = () => {
 	Array.from(document.querySelectorAll('.quantityGroup')).forEach((item) => {
 		const btnMinus = item.querySelector('.quantity__minus');
@@ -528,7 +565,6 @@ const quantityGroup = () => {
 		});
 	});
 };
-
 const formTourDateChoose = () => {
 	Array.from(document.querySelectorAll('.checkInOut')).forEach((item) => {
 		const input = item.querySelector('.dateChoose__input');
@@ -548,7 +584,6 @@ const formTourDateChoose = () => {
 		});
 	});
 };
-
 const formTourItemToggle = () => {
 	Array.from(document.querySelectorAll('.formTourSearchItem')).forEach(
 		(item) => {
@@ -565,4 +600,94 @@ const formTourItemToggle = () => {
 			});
 		},
 	);
+};
+const cartSummaryToggle = () => {
+	const aside = document.querySelector('.cartAside');
+	const btn = document.querySelector('.cartAside__mobileToggle');
+	if (btn) {
+		btn.addEventListener('click', () => {
+			aside.classList.toggle('show');
+			if (aside.classList.contains('show')) {
+				backdropObserver.next(true);
+			} else {
+				backdropObserver.next(false);
+			}
+		});
+	}
+};
+const cartOptionsItemToggle = () => {
+	const items = Array.from(
+		document.querySelectorAll('.cartAsideOption'),
+	).forEach((item) => {
+		const title = item.querySelector('.cartAsideOption__iconToggle');
+		const content = item.querySelector('.cartAsideOption__list');
+		title.addEventListener('click', () => {
+			content.classList.toggle('d-block');
+		});
+	});
+};
+const priceSlider = () => {
+	let slider = document.getElementById('priceSlider__bar');
+	if (slider) {
+		let inputMin = document.getElementById('priceSlider__result--min');
+		let inputMax = document.getElementById('priceSlider__result--max');
+		let defaultMin = slider.getAttribute('data-min');
+		let defaultMax = slider.getAttribute('data-max');
+		let currentMin = slider.getAttribute('data-current-min');
+		let currentMax = slider.getAttribute('data-current-max');
+		let step = slider.getAttribute('data-step');
+		let inputPrices = Array.from(
+			document.querySelectorAll('.priceSlider__group input'),
+		);
+		noUiSlider.create(slider, {
+			start: [currentMin, currentMax],
+			connect: true,
+			step: parseFloat(step),
+			range: {
+				min: parseFloat(defaultMin),
+				max: parseFloat(defaultMax),
+			},
+		});
+		slider.noUiSlider.on('slide', function (e) {
+			inputMin.value = e[0];
+			inputMax.value = e[1];
+		});
+		slider.noUiSlider.on('set', function (e) {
+			inputMin.value = e[0];
+			inputMax.value = e[1];
+		});
+		inputPrices.forEach((input) => {
+			input.addEventListener('change', () => {
+				let value = [];
+				inputPrices.forEach((t) => {
+					value.push(t.value);
+				});
+				slider.noUiSlider.set(value);
+			});
+		});
+	}
+};
+
+const toggleFilter = () => {
+	const filterBtn = document.querySelector(
+		'.filterContainer .filter__mobileToggle',
+	);
+	const filterWrapper = document.querySelector(
+		'.filterContainer .filter__wrapper',
+	);
+	const filterClose = document.querySelector(
+		'.filterContainer .filter__close',
+	);
+	if (filterBtn && filterWrapper) {
+		filterBtn.addEventListener('click', () => {
+			filterWrapper.classList.add('show');
+			backdropObserver.next(true);
+		});
+	}
+	if (filterClose && filterWrapper) {
+		filterClose.addEventListener('click', () => {
+			filterWrapper.classList.remove('show');
+			backdropObserver.next(false);
+		});
+	}
 };

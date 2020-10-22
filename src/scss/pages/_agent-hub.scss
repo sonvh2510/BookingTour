@@ -1,0 +1,56 @@
+.agent-hub {
+	.agent-content {
+		max-width: 940px;
+		margin: 0 auto;
+		text-align: center;
+		@media (max-width: 575.98px) {
+			padding: 0 8.33%;
+		}
+		.main-title {
+			padding-bottom: 40px;
+			@media (max-width: 575.98px) {
+				padding-bottom: 20px;
+			}
+		}
+		p {
+			font-size: 2.4rem;
+			color: #333;
+			padding-bottom: 80px;
+			@media (max-width: 575.98px) {
+				font-size: 1.4rem;
+				padding-bottom: 20px;
+			}
+		}
+	}
+	p.sub {
+		font-size: 2.4rem;
+		margin-bottom: 20px;
+		@media (max-width: 575.98px) {
+			font-size: 1.4rem;
+		}
+	}
+	.form-checked {
+		justify-content: initial;
+		.form-group {
+			&:last-child {
+				margin-left: 85px;
+			}
+		}
+		@media (max-width: 575.98px) {
+			justify-content: space-between;
+			.form-group {
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+	}
+	.form-group {
+		.button {
+			text-align: center;
+			button {
+				max-width: 260px;
+			}
+		}
+	}
+}

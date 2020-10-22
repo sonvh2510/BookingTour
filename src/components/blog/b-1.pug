@@ -1,0 +1,40 @@
+.blogWrapper
+	.container-fluid
+		.mainWrapper
+			.row
+				.col-lg-4.col-xl-3
+					include ../layouts/_blog-navigation
+					include ../layouts/_blog-popular
+				.col-lg-8.col-xl-9.pb-80
+					.row.blogWrapper__list
+						- for(i = 0;i<9;i++)
+							.col-sm-6.col-2xl-4.tourNewsItem__col
+								.tourNewsItem
+									.tourNewsItem__img.overflow-hidden
+										a(href="#")
+											img.fullsize.object-cover(src="./assets/destinations/5.jpg")
+									.tourNewsItem__content
+										h4.tourNewsItem__title Ha Long Bay, Vietnam
+										.tourNewsItem__rating.rating__bar
+											.star
+											.star__color(data-rating="0.7")
+										.tourNewsItem__review.d-flex.align-center
+											.tourNewsItem__reviewContent
+												p By Xu Kien - July 26, 2020
+											//- .tourNewsItem__reviewFlag
+											//- 	img(src="./assets/flag.svg", alt="")
+										.tourNewsItem__socials
+											a(href="#")
+												img(src="./assets/icons/news_facebook.svg")
+											a(href="#")
+												img(src="./assets/icons/news_twitter.svg")
+											a(href="#")
+												img(src="./assets/icons/news_other.svg")
+										.tourNewsItem__description
+											p Well done route, captain - SUPER! It is very welcoming and friendly, which lifts the mood and the series
+										.tourNewsItem__button
+											a.fs-18.fw-700(href="#") See more
+					.row
+						.col-12.formTourSearch__loadmore.text-center
+							a.text-uppercase Load more 
+							span.fas.fa-redo-alt

@@ -1,0 +1,207 @@
+.agent-login,
+.popup-2 {
+	max-width: 728px;
+	width: 100%;
+	overflow: hidden;
+	.title {
+		padding-bottom: 15px;
+		border-bottom: 1px solid #d6d6d6;
+		.main-title {
+			text-align: left;
+			padding-bottom: 30px;
+			@media (max-width: 575.98px) {
+				margin: 0;
+			}
+		}
+		p {
+			font-size: 2.4rem;
+		}
+	}
+	form {
+		margin-top: 55px;
+		.form-password {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-top: 25px;
+			a {
+				font-size: 2.4rem;
+				color: map-get($color, main);
+				text-decoration: underline;
+			}
+			@media (max-width: 575.98px) {
+				flex-direction: column;
+				label {
+					width: max-content;
+				}
+			}
+		}
+		.form-group {
+			label {
+				font-size: 2.4rem;
+				color: #333;
+				padding: 0;
+			}
+			button {
+				max-width: initial;
+				height: 63px;
+				font-size: 3rem;
+				margin-top: 50px;
+			}
+		}
+		@media (max-width: 575.98px) {
+			margin-top: 30px;
+		}
+	}
+	.login-social {
+		p {
+			padding: 40px 0;
+			font-size: 2.4rem;
+			@media (max-width: 575.98px) {
+				padding: 20px 0;
+				font-size: 1.8rem;
+			}
+		}
+		ul {
+			padding: 0;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			li {
+				list-style: none;
+				flex: 0 0 50%;
+				max-width: 50%;
+				@media (max-width: 575.98px) {
+					flex: 0 0 100%;
+					max-width: 100%;
+					.facebook,
+					.google {
+						margin: 0;
+						margin-top: 10px;
+					}
+				}
+			}
+			a {
+				padding: 0 25px;
+				font-size: 2.4rem;
+				font-weight: 700;
+				color: map-get($color, trang);
+				height: 60px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 8px;
+				em {
+					font-size: 31px;
+					margin-right: 20px;
+				}
+			}
+			.facebook {
+				background: #4267b2;
+				margin-right: 10px;
+			}
+			.google {
+				background: #ee3f37;
+				margin-left: 10px;
+			}
+		}
+		.follow {
+			display: flex;
+			align-items: center;
+			position: relative;
+			a {
+				font-size: 2.4rem;
+				font-weight: 700;
+				text-decoration: underline;
+				color: map-get($color, main);
+				margin-left: 20px;
+				&::after {
+					content: '\f078';
+					position: absolute;
+					top: 50%;
+					right: 0;
+					transform: translateY(-50%);
+					font-family: 'Font Awesome 5 Pro';
+					font-size: 24px;
+					color: map-get($color, main);
+				}
+			}
+			@media (max-width: 575.98px) {
+				flex-direction: column;
+				p {
+					padding: 20px 0;
+				}
+				a {
+					font-size: 1.6rem;
+					position: relative;
+					margin: 0;
+					&::after {
+						right: -10%;
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.popup-2 {
+	.icon-checked {
+		text-align: center;
+	}
+	.main-title {
+		padding: 75px 0 65px 0;
+		@media (max-width: 575.98px) {
+			padding: 0;
+		}
+	}
+	h3 {
+		font-size: 3.6rem;
+		color: map-get($color, text);
+		text-align: center;
+		font-weight: 700;
+		padding-bottom: 30px;
+		border-bottom: 1px solid #d6d6d6;
+		span {
+			color: map-get($color, main);
+		}
+		@media (max-width: 575.98px) {
+			font-size: 2.4rem;
+		}
+	}
+	p {
+		padding-top: 20px;
+		font-size: 2.4rem;
+		text-align: center;
+		@media (max-width: 575.98px) {
+			font-size: 1.6rem;
+		}
+	}
+	a {
+		height: 60px;
+		width: 100%;
+		margin: 85px 0 60px 0;
+		background: map-get($color, main);
+		color: map-get($color, trang);
+		text-align: center;
+		font-size: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 8px;
+		@media (max-width: 575.98px) {
+			margin: 45px auto;
+		}
+	}
+}
+.fancybox-content {
+	@media (max-width: 575.98px) {
+		height: 500px;
+		overflow-y: scroll;
+		padding: 20px;
+		.main-title {
+			font-size: 2.6rem;
+			padding: 0;
+		}
+	}
+}

@@ -306,7 +306,6 @@
 		max-width: 100%;
 	}
 }
-
 @media (min-width: 1025px) {
 	.col-lg {
 		-ms-flex-preferred-size: 0;
@@ -395,12 +394,7 @@
 		max-width: 100%;
 	}
 }
-
-@media (min-width: 1500px) {
-	/* .container {
-		max-width: 1140px;
-	} */
-
+@media (min-width: 1200px) {
 	.col-xl {
 		-ms-flex-preferred-size: 0;
 		flex-basis: 0;
@@ -488,7 +482,6 @@
 		max-width: 100%;
 	}
 }
-
 @media (min-width: 1360px) {
 	.container-fluid,
 	.container {

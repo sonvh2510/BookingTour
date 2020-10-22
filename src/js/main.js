@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	toggleFilter();
 	// scrollspy
 	scrollSpy();
+	// tour detail slider
+	tourDetailSlider();
 });
 
 //swiper
@@ -783,4 +785,33 @@ const toggleFilter = () => {
 			backdropObserver.next(false);
 		});
 	}
+};
+const tourDetailSlider = () => {
+	let smallSlider = new Swiper('.tourDetail__smallSlider .swiper-container', {
+		slidesPerView: 3,
+		spaceBetween: 10,
+		breakpoints: {
+			576: {
+				slidesPerView: 4,
+			},
+			768: {
+				spaceBetween: 20,
+				slidesPerView: 4,
+			},
+			1200: {
+				spaceBetween: 30,
+				slidesPerView: 4,
+			},
+		},
+	});
+	let bigSlider = new Swiper('.tourDetail__bigSlider .swiper-container', {
+		slidesPerView: 1,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		thumbs: {
+			swiper: smallSlider,
+		},
+	});
 };

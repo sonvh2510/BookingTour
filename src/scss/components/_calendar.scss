@@ -1,6 +1,12 @@
 .tourDetailCalendar {
 	padding: 30px;
 	border-radius: 4px;
+	@media (max-width: 1199.98px) {
+		padding: 20px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 10px;
+	}
 }
 .tourDetailCalendar__form {
 	.form__group--type1 {
@@ -17,7 +23,7 @@
 			padding: 0;
 			width: 100%;
 			max-width: 300px;
-			display: block!important;
+			display: block !important;
 			margin: 0 auto;
 			.container__months,
 			.month-item {
@@ -93,7 +99,7 @@
 	}
 	.form__button {
 		text-align: center;
-		margin-top: 40px;
+		margin-top: 20px;
 		.btn__submit--reverse {
 			padding: 0 20px;
 			font-size: 1.6rem;

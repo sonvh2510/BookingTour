@@ -562,3 +562,57 @@
 		}
 	}
 }
+.tourDetailDiscount {
+	margin-bottom: 50px;
+}
+.tourDetailDiscount__link {
+	padding: 20px 30px;
+	text-align: center;
+	a {
+		color: map-get($color, main);
+		font-size: 1.8rem;
+		.fa-gift {
+			font-size: 2rem;
+			margin-right: 10px;
+		}
+	}
+	@media (max-width: 1199.98px) {
+		padding: 15px 20px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 10px 10px 20px 10px;
+	}
+}
+.tourDetailDiscount__content {
+	@extend .shadow--1;
+	padding: 30px;
+	border-radius: 24px;
+	background-color: #f7f7f7;
+	font-size: 1.8rem;
+	.fa-pig,
+	h4 {
+		color: map-get($color, main);
+		padding-left: 30px;
+		position: relative;
+		&:before {
+			content: '\f706';
+			font-family: 'Font Awesome 5 Pro';
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 2rem;
+			color: map-get($color, main);
+		}
+	}
+	p {
+		color: map-get($color, text);
+		padding-left: 30px;
+		font-weight: 300;
+	}
+	@media (max-width: 1199.98px) {
+		padding: 20px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 15px;
+	}
+}

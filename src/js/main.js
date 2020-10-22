@@ -209,7 +209,9 @@ function swiperSlider() {
 			swiper: years,
 		},
 	});
-	years.init();
+	if (document.querySelector('.story__itemsPerYear .swiper-container')) {
+		years.init();
+	}
 }
 //scroll menu
 // function menuSroll() {
@@ -271,7 +273,34 @@ const scrollSpy = () => {
 		});
 	}
 
-	const sections = Array.from(document.querySelectorAll('[data-id]'));
+	const observer = new IntersectionObserver(
+		(entries, observer) => {
+			entries.forEach((entry) => {
+				console.log(entry);
+				if (entry.isIntersecting) {
+					entry.target.classList.add('section-in-viewport');
+					const btn = document.querySelector(
+						`[data-target=${entry.target.getAttribute('data-id')}]`,
+					);
+					btn.parentNode.classList.add('active');
+				} else {
+					entry.target.classList.remove('section-in-viewport');
+					const btn = document.querySelector(
+						`[data-target=${entry.target.getAttribute('data-id')}]`,
+					);
+					btn.parentNode.classList.remove('active');
+				}
+			});
+		},
+		{
+			threshold: 0.8,
+		},
+	);
+
+	const elements = document.querySelectorAll('[data-id]');
+	elements.forEach((element) => {
+		observer.observe(element);
+	});
 };
 
 const initCalendar = () => {

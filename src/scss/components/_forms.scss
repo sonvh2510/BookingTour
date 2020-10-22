@@ -1,4 +1,9 @@
 .form__group--type1 {
+	&:not(.form__group--date) {
+		label {
+			overflow: hidden;
+		}
+	}
 	label {
 		position: relative;
 		height: 80px;

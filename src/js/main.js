@@ -307,6 +307,8 @@ const scrollSpy = () => {
 
 const initCalendar = () => {
 	Array.from(document.querySelectorAll('[data-date]')).forEach((input) => {
+		const inlineMode = Boolean(input.getAttribute('inline-mode'));
+		console.log(inlineMode);
 		return new Litepicker({
 			element: input,
 			format: 'DD/MM/YYYY',
@@ -315,42 +317,44 @@ const initCalendar = () => {
 			showTooltip: true,
 			allowRepick: true,
 			singleMode: true,
-			inlineMode: false,
+			inlineMode: inlineMode,
 		});
 	});
 
-	Array.from(document.querySelectorAll('[date-picker]')).forEach((picker) => {
-		const input = picker.querySelector('.datePicker__input');
-		const label = picker.querySelector('.datePicker__label');
-		const pickerObject = new Litepicker({
-			element: input,
-			format: 'DD/MM/YYYY',
-			mobileFriendly: true,
-			autoApply: true,
-			showTooltip: true,
-			allowRepick: true,
-			singleMode: false,
-			inlineMode: false,
-			onSelect: function (date1, date2) {
-				const value = input.value;
-				if (value) {
-					picker.classList.add('dirtied');
-				} else {
-					picker.classList.remove('dirtied');
-					pickerObject.clearSelection();
-				}
-			},
-		});
-		input.addEventListener('change', () => {
-			const value = input.value;
-			if (value) {
-				picker.classList.add('dirtied');
-			} else {
-				pickerObject.clearSelection();
-				picker.classList.remove('dirtied');
-			}
-		});
-	});
+	Array.from(document.querySelectorAll('[data-date-inline]')).forEach(
+		(picker) => {
+			const target = picker.getAttribute('data-date-target');
+			const targetDom = document.querySelector(target);
+			const pickerObject = new Litepicker({
+				element: picker,
+				format: 'DD/MM/YYYY',
+				mobileFriendly: true,
+				autoApply: true,
+				showTooltip: true,
+				allowRepick: true,
+				singleMode: true,
+				inlineMode: true,
+				onSelect: function (date1, date2) {
+					targetDom.value = picker.value;
+					if (targetDom) {
+						picker.classList.add('dirtied');
+					} else {
+						picker.classList.remove('dirtied');
+						pickerObject.clearSelection();
+					}
+				},
+			});
+			// input.addEventListener('change', () => {
+			// 	const value = input.value;
+			// 	if (value) {
+			// 		picker.classList.add('dirtied');
+			// 	} else {
+			// 		pickerObject.clearSelection();
+			// 		picker.classList.remove('dirtied');
+			// 	}
+			// });
+		},
+	);
 };
 const rating = () => {
 	Array.from(document.querySelectorAll('[data-rating]')).forEach((item) => {

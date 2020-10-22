@@ -35,6 +35,29 @@ const imageRemoveTask = (path, stats) => {
 	return del(destPathname);
 };
 
+const renderHTML = (filePathnameGlob) => {
+	let glob;
+	if (filePathnameGlob.indexOf('.pug') >= 0) {
+		glob = `src/${filePathnameGlob}`;
+	} else {
+		glob = `src/${filePathnameGlob}.pug`;
+	}
+	console.log(`Rendering: ${glob}`);
+	return src(glob)
+		.pipe(
+			plumber(function (err) {
+				console.log(err);
+				this.emit('end');
+			}),
+		)
+		.pipe(
+			pug({
+				pretty: '\t',
+			}),
+		)
+		.pipe(dest('_dist'));
+};
+
 const server = () => {
 	bSync.init({
 		notify: true,
@@ -43,59 +66,30 @@ const server = () => {
 		},
 		port: 8000,
 	});
-	watch(['src/components/layouts/**.pug'], series(htmlTask));
+	watch('src/components/layouts/**/**.pug', series(htmlTask));
 
-	watch(['src/**.pug']).on('change', (path, stats) => {
-		console.log(path);
+	watch('src/*.pug').on('change', (path, stats) => {
+		console.log(`Files changed: ${path}`);
 		let pageName;
 		if (path.indexOf('/') >= 0) {
 			pageName = path.split('/')[1];
 		} else {
 			pageName = path.split('\\')[1];
 		}
-		const filePathnameGlob = path.replace(/[\\\/]/g, '/');
-		console.log(`Render file ${pageName}`);
-
-		return src(filePathnameGlob)
-			.pipe(
-				plumber(function (err) {
-					console.log(err);
-					this.emit('end');
-				}),
-			)
-			.pipe(
-				pug({
-					pretty: '\t',
-				}),
-			)
-			.pipe(dest('_dist'));
+		return renderHTML(pageName);
 	});
 
-	watch(['src/components/**/**.pug', '!src/components/layouts/**.pug']).on(
+	watch(['src/components/**/**.pug', '!src/components/layouts/**/**.pug']).on(
 		'change',
 		(path, stats) => {
-			console.log(`Render file ${path}`);
+			console.log(`Files changed: ${path}`);
 			let pageName;
 			if (path.indexOf('/') >= 0) {
 				pageName = path.split('/')[2];
 			} else {
 				pageName = path.split('\\')[2];
 			}
-			const filePathnameGlob = `src/${pageName}.pug`;
-
-			return src(filePathnameGlob)
-				.pipe(
-					plumber(function (err) {
-						console.log(err);
-						this.emit('end');
-					}),
-				)
-				.pipe(
-					pug({
-						pretty: '\t',
-					}),
-				)
-				.pipe(dest('_dist'));
+			return renderHTML(pageName);
 		},
 	);
 

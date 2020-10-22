@@ -3,6 +3,7 @@ import pug from 'gulp-pug';
 import plumber from 'gulp-plumber';
 
 const htmlTask = () => {
+	console.log('Rendering: All templates');
 	return src('src/**.pug')
 		.pipe(
 			plumber(function (err) {

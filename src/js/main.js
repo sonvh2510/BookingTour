@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	buttonToggle();
 	// toggle filter on tour list page
 	toggleFilter();
+	// scrollspy
+	scrollSpy();
 });
 
 //swiper
@@ -153,28 +155,61 @@ function swiperSlider() {
 		},
 	});
 	//about-slide-year
-	let galleryThumbs = new Swiper('.slide-year .gallery-thumbs', {
+	var years = new Swiper('.story__years .swiper-container', {
 		spaceBetween: 10,
 		slidesPerView: 9,
-		// loop: true,
 		freeMode: true,
-		loopedSlides: 5, //looped slides should be the same
+		// loop: true,
+		// loopedSlides: 5, //looped slides should be the same
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
+		init: false,
+		on: {
+			init: function () {
+				itemPerYears.init();
+				years.slides[0]
+					.querySelector('.yearItem')
+					.classList.add('slide-active');
+				itemPerYears.slides[0].classList.add('slide-active');
+			},
+			click: function (e) {
+				itemPerYears.slides.forEach((item, index) => {
+					if (index == e.clickedIndex) {
+						item.classList.add('slide-active');
+					} else {
+						item.classList.remove('slide-active');
+					}
+				});
+				years.slides.forEach((item, index) => {
+					if (index == e.clickedIndex) {
+						item.querySelector('.yearItem').classList.add(
+							'slide-active',
+						);
+					} else {
+						item.querySelector('.yearItem').classList.remove(
+							'slide-active',
+						);
+					}
+				});
+			},
+		},
 	});
-	let galleryTop = new Swiper('.gallery-top', {
+	var itemPerYears = new Swiper('.story__itemsPerYear .swiper-container', {
 		spaceBetween: 10,
-		slidesPerView: 1,
-		loop: true,
-		loopedSlides: 5, //looped slides should be the same
+		slidesPerView: 4,
+		init: false,
+		// loop: true,
+		freeMode: true,
+		// loopedSlides: 5, //looped slides should be the same
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
 		thumbs: {
-			swiper: galleryThumbs,
+			swiper: years,
 		},
 	});
+	years.init();
 }
 //scroll menu
 // function menuSroll() {
@@ -208,6 +243,36 @@ function buttonToggle() {
 		});
 	}
 }
+
+const scrollSpy = () => {
+	const wrapper = document.querySelector('.scrollspyWrapper');
+	if (wrapper) {
+		const scrollButtons = Array.from(
+			wrapper.querySelectorAll('[data-target]'),
+		);
+		scrollButtons.forEach((btn, btnIndex) => {
+			btn.addEventListener('click', (e) => {
+				e.preventDefault();
+				scrollButtons.forEach((i, iIndex) => {
+					if (iIndex == btnIndex) {
+						i.parentNode.classList.add('active');
+					} else {
+						i.parentNode.classList.remove('active');
+					}
+				});
+				const target = btn.getAttribute('data-target');
+				const targetDom = document.querySelector(`[data-id=${target}]`);
+				window.scrollTo({
+					top: targetDom.offsetTop - header.clientHeight,
+					left: 0,
+					behavior: 'smooth',
+				});
+			});
+		});
+	}
+
+	const sections = Array.from(document.querySelectorAll('[data-id]'));
+};
 
 const initCalendar = () => {
 	Array.from(document.querySelectorAll('[data-date]')).forEach((input) => {

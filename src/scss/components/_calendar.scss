@@ -1,0 +1,147 @@
+.tourDetailCalendar {
+	padding: 30px;
+	border-radius: 4px;
+	@media (max-width: 1199.98px) {
+		padding: 20px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 10px;
+	}
+}
+.tourDetailCalendar__form {
+	.form__group--type1 {
+		+ .form__group--type1 {
+			margin-top: 20px;
+		}
+	}
+	.form__group--date {
+		label {
+			padding: 30px;
+			height: auto;
+		}
+		.litepicker {
+			padding: 0;
+			width: 100%;
+			max-width: 300px;
+			display: block !important;
+			margin: 0 auto;
+			.container__months,
+			.month-item {
+				box-shadow: none;
+				padding: 0;
+				width: 100%;
+				.month-item-header {
+					padding-top: 0;
+					.button-next-month,
+					.button-previous-month {
+						width: 40px;
+						height: 40px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						border: 1px solid #c6c8d0;
+						cursor: pointer;
+						&:hover,
+						&:active {
+							background-color: #00aa71;
+							&:before {
+								color: map-get($color, trang);
+							}
+						}
+						svg {
+							display: none;
+						}
+					}
+					.button-next-month {
+						&:before {
+							content: '\f054';
+							font-weight: 100;
+							font-family: 'Font Awesome 5 Pro';
+						}
+					}
+					.button-previous-month {
+						&:before {
+							content: '\f053';
+							font-weight: 100;
+							font-family: 'Font Awesome 5 Pro';
+						}
+					}
+				}
+			}
+			.container__days {
+				border: 1px solid #c6c8d0;
+				> div {
+					width: (100% / 7);
+					// border-top: 0.5px solid #c6c8d0;
+				}
+				.day-item {
+					border-radius: 0px;
+					border: 1px solid #c6c8d0;
+					width: (100% / 7);
+					&.is-end-date,
+					&.is-start-date {
+						background-color: #00aa71;
+						border-radius: 0;
+					}
+					// &:nth-child(7n) {
+					// 	border-right: 0;
+					// }
+					// &:last-child() {
+					// 	border-right: 1px solid #c6c8d0;
+					// }
+				}
+				.day-item {
+					cursor: pointer;
+					background-color: #eff9e9;
+				}
+			}
+		}
+	}
+	.form__button {
+		text-align: center;
+		margin-top: 20px;
+		.btn__submit--reverse {
+			padding: 0 20px;
+			font-size: 1.6rem;
+			height: 50px;
+			border-radius: 5px;
+		}
+	}
+}
+.tourDetailCalendar__title {
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+	h2 {
+		font-size: 3.2rem;
+	}
+}
+.tourDetailCalendar__price {
+	margin-left: auto;
+	text-align: right;
+	h4 {
+		font-size: 4rem;
+		color: map-get($color, main);
+		span {
+			color: #b0b0b0;
+		}
+		@media (max-width: 1199.98px) {
+			font-size: 3.5rem;
+		}
+		@media (max-width: 767.98px) {
+			font-size: 3rem;
+		}
+	}
+	span,
+	del {
+		font-size: 1.8rem;
+		color: #b0b0b0;
+		font-weight: 400;
+	}
+	.price__decrease {
+		span,
+		del {
+			color: map-get($color, text);
+		}
+	}
+}

@@ -198,7 +198,28 @@
 	@extend .pt-80;
 	@extend .pb-80;
 }
-
+.pb-50 {
+	padding-bottom: 50px;
+	@media (max-width: 1199.98px) {
+		padding-bottom: 40px;
+	}
+	@media (max-width: 767.98px) {
+		padding-bottom: 30px;
+	}
+}
+.pt-50 {
+	padding-top: 50px;
+	@media (max-width: 1199.98px) {
+		padding-top: 40px;
+	}
+	@media (max-width: 767.98px) {
+		padding-top: 30px;
+	}
+}
+.pd-50 {
+	@extend .pt-50;
+	@extend .pb-50;
+}
 .fs-18 {
 	font-size: 1.8rem;
 }

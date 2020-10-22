@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	toggleFilter();
 	// scrollspy
 	scrollSpy();
+	// tour detail slider
+	tourDetailSlider();
 });
 
 //swiper
@@ -209,7 +211,9 @@ function swiperSlider() {
 			swiper: years,
 		},
 	});
-	years.init();
+	if (document.querySelector('.story__itemsPerYear .swiper-container')) {
+		years.init();
+	}
 }
 //scroll menu
 // function menuSroll() {
@@ -271,11 +275,40 @@ const scrollSpy = () => {
 		});
 	}
 
-	const sections = Array.from(document.querySelectorAll('[data-id]'));
+	const observer = new IntersectionObserver(
+		(entries, observer) => {
+			entries.forEach((entry) => {
+				console.log(entry);
+				if (entry.isIntersecting) {
+					entry.target.classList.add('section-in-viewport');
+					const btn = document.querySelector(
+						`[data-target=${entry.target.getAttribute('data-id')}]`,
+					);
+					btn.parentNode.classList.add('active');
+				} else {
+					entry.target.classList.remove('section-in-viewport');
+					const btn = document.querySelector(
+						`[data-target=${entry.target.getAttribute('data-id')}]`,
+					);
+					btn.parentNode.classList.remove('active');
+				}
+			});
+		},
+		{
+			threshold: 0.8,
+		},
+	);
+
+	const elements = document.querySelectorAll('[data-id]');
+	elements.forEach((element) => {
+		observer.observe(element);
+	});
 };
 
 const initCalendar = () => {
 	Array.from(document.querySelectorAll('[data-date]')).forEach((input) => {
+		const inlineMode = Boolean(input.getAttribute('inline-mode'));
+		console.log(inlineMode);
 		return new Litepicker({
 			element: input,
 			format: 'DD/MM/YYYY',
@@ -284,47 +317,58 @@ const initCalendar = () => {
 			showTooltip: true,
 			allowRepick: true,
 			singleMode: true,
-			inlineMode: false,
+			inlineMode: inlineMode,
 		});
 	});
 
-	Array.from(document.querySelectorAll('[date-picker]')).forEach((picker) => {
-		const input = picker.querySelector('.datePicker__input');
-		const label = picker.querySelector('.datePicker__label');
-		const pickerObject = new Litepicker({
-			element: input,
-			format: 'DD/MM/YYYY',
-			mobileFriendly: true,
-			autoApply: true,
-			showTooltip: true,
-			allowRepick: true,
-			singleMode: false,
-			inlineMode: false,
-			onSelect: function (date1, date2) {
-				const value = input.value;
-				if (value) {
-					picker.classList.add('dirtied');
-				} else {
-					picker.classList.remove('dirtied');
-					pickerObject.clearSelection();
-				}
-			},
-		});
-		input.addEventListener('change', () => {
-			const value = input.value;
-			if (value) {
-				picker.classList.add('dirtied');
-			} else {
-				pickerObject.clearSelection();
-				picker.classList.remove('dirtied');
-			}
-		});
-	});
+	Array.from(document.querySelectorAll('[data-date-inline]')).forEach(
+		(picker) => {
+			const target = picker.getAttribute('data-date-target');
+			const targetDom = document.querySelector(target);
+			const pickerObject = new Litepicker({
+				element: picker,
+				format: 'DD/MM/YYYY',
+				mobileFriendly: true,
+				autoApply: true,
+				showTooltip: true,
+				allowRepick: true,
+				singleMode: true,
+				inlineMode: true,
+				onSelect: function (date1, date2) {
+					targetDom.value = picker.value;
+					if (targetDom) {
+						picker.classList.add('dirtied');
+					} else {
+						picker.classList.remove('dirtied');
+						pickerObject.clearSelection();
+					}
+				},
+			});
+			// input.addEventListener('change', () => {
+			// 	const value = input.value;
+			// 	if (value) {
+			// 		picker.classList.add('dirtied');
+			// 	} else {
+			// 		pickerObject.clearSelection();
+			// 		picker.classList.remove('dirtied');
+			// 	}
+			// });
+		},
+	);
 };
 const rating = () => {
 	Array.from(document.querySelectorAll('[data-rating]')).forEach((item) => {
 		const percent = Number(item.getAttribute('data-rating'));
 		item.setAttribute('style', `width:${percent * 100}%`);
+		console.log(item);
+		const editable = Boolean(item.getAttribute('editable'));
+		if (editable) {
+			item.addEventListener('mousemove', (e) => {
+				console.log(e.layerX);
+				const percent = e.layerX / item.clientWidth;
+				item.setAttribute('style', `width:${percent * 100}%`);
+			});
+		}
 	});
 };
 const HeaderResponse = () => {
@@ -732,7 +776,6 @@ const priceSlider = () => {
 		});
 	}
 };
-
 const toggleFilter = () => {
 	const filterBtn = document.querySelector(
 		'.filterContainer .filter__mobileToggle',
@@ -755,4 +798,33 @@ const toggleFilter = () => {
 			backdropObserver.next(false);
 		});
 	}
+};
+const tourDetailSlider = () => {
+	let smallSlider = new Swiper('.tourDetail__smallSlider .swiper-container', {
+		slidesPerView: 3,
+		spaceBetween: 10,
+		breakpoints: {
+			576: {
+				slidesPerView: 4,
+			},
+			768: {
+				spaceBetween: 20,
+				slidesPerView: 4,
+			},
+			1200: {
+				spaceBetween: 30,
+				slidesPerView: 4,
+			},
+		},
+	});
+	let bigSlider = new Swiper('.tourDetail__bigSlider .swiper-container', {
+		slidesPerView: 1,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		thumbs: {
+			swiper: smallSlider,
+		},
+	});
 };

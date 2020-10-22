@@ -290,7 +290,12 @@
 		@include imgscale(245/365);
 	}
 }
-
+.tourDetail__information--initerary {
+	padding-bottom: 0;
+}
+.tourDetail__information--review {
+	padding-top: 0;
+}
 .reviewStarItem {
 	display: flex;
 	align-items: center;
@@ -424,5 +429,46 @@
 		font-size: 1.6rem;
 		color: #707070;
 		font-weight: 700;
+	}
+}
+.tourDetail__information--social {
+	padding-top: 20px;
+	padding-bottom: 0;
+	margin-top: 0;
+	@media (max-width: 767.98px) {
+		justify-content: center !important;
+		span {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+			padding: 0;
+			text-align: center;
+			margin-bottom: 15px;
+		}
+	}
+}
+.tourDetail__information--writeReview {
+	.form__button {
+		text-align: right;
+		@media (max-width: 1024.98px) {
+			text-align: center;
+		}
+	}
+	.tourDetail__rating {
+		display: flex;
+		align-items: flex-end;
+		span {
+			font-size: 2.6rem;
+			margin-right: 40px;
+			color: map-get($color, text);
+		}
+	}
+	.rating__bar {
+		width: 150px;
+		height: 30px;
+		.star,
+		.star__color {
+			background-size: 30px;
+		}
 	}
 }

@@ -60,6 +60,9 @@
 .justify-end {
 	justify-content: flex-end;
 }
+.justify-start {
+	justify-content: flex-start;
+}
 
 .justify-space-between {
 	justify-content: space-between;
@@ -208,6 +211,9 @@
 }
 .mt-30 {
 	margin-top: 3rem;
+}
+.mt-100 {
+	margin-top: 100px;
 }
 .t-left {
 	text-align: left;

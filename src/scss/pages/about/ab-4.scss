@@ -1,26 +1,20 @@
 .ourCommitment__content {
 	width: 100%;
 	max-width: 1240px;
-	.section-title {
+	margin: 0 auto;
+}
+.ourCommitment__subTitle {
+	width: 100%;
+	max-width: 875px;
+	margin: 0 auto;
+	h3 {
 		padding-top: 85px;
 		margin: 0 -8.33%;
 		font-size: 3.6rem;
 		font-weight: 700;
 		color: map-get($color, text);
 	}
-	@media (max-width: 1023.98px) {
-		.section-title {
-			font-size: 2rem;
-		}
-	}
-	@media (max-width: 575.98px) {
-		padding: 0 8.33%;
-		.section-title {
-			padding-top: 30px;
-		}
-	}
 }
-
 .aboutSubBanner {
 	.image {
 		img {

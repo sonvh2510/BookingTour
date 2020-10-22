@@ -55,7 +55,6 @@ main {
 
 .pushedRight {
 	transform: translateX(120px);
-	
 }
 
 .mainWrapper {
@@ -95,13 +94,12 @@ main {
 	font-weight: 700;
 	color: #20284f;
 	text-align: center;
-	padding-bottom: 55px;
+	margin-bottom: 55px;
 	@media (max-width: 1199.98px) {
-		padding-bottom: 40px;
+		margin-bottom: 40px;
 	}
 	@media (max-width: 767.98px) {
-		padding: 20px;
-		// margin-bottom: 25px;
+		margin-bottom: 25px;
 	}
 }
 

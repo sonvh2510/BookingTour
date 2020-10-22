@@ -330,6 +330,34 @@ main {
 		color: map-get($color, text);
 	}
 }
+
+.share-socials {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 44px;
+	span {
+		color: #707070;
+		font-size: 2rem;
+		display: inline-block;
+		padding-right: 33px;
+	}
+}
+
+.item-share-social {
+	-ms-flex: 0 0 44px;
+	flex: 0 0 44px;
+	max-width: 44px;
+	display: block;
+	height: 44px;
+	border-radius: 50%;
+	color: map-get($color, trang);
+	background: var(--color);
+	+ .item-share-social {
+		margin-left: 10px;
+	}
+}
+
 .needHelp {
 	max-width: 410px;
 	margin: 0 auto;

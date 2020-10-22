@@ -667,7 +667,6 @@ const priceSlider = () => {
 		});
 	}
 };
-
 const toggleFilter = () => {
 	const filterBtn = document.querySelector(
 		'.filterContainer .filter__mobileToggle',

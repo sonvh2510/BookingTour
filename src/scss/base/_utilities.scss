@@ -170,10 +170,6 @@
 	font-weight: 700;
 }
 
-.pt-50 {
-	padding-top: 50px;
-}
-
 .pt-80 {
 	padding-top: 70px;
 	@media (max-width: 1199.98px) {
@@ -238,4 +234,16 @@
 }
 .t-left {
 	text-align: left;
+}
+
+.row--custom {
+	margin-left: -10px;
+	margin-right: -10px;
+	display: flex;
+	flex-wrap: wrap;
+	.col,
+	[class*='col-'] {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }

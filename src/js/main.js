@@ -278,7 +278,7 @@ const scrollSpy = () => {
 	const observer = new IntersectionObserver(
 		(entries, observer) => {
 			entries.forEach((entry) => {
-				console.log(entry);
+				// console.log(entry);
 				if (entry.isIntersecting) {
 					entry.target.classList.add('section-in-viewport');
 					const btn = document.querySelector(
@@ -308,7 +308,7 @@ const scrollSpy = () => {
 const initCalendar = () => {
 	Array.from(document.querySelectorAll('[data-date]')).forEach((input) => {
 		const inlineMode = Boolean(input.getAttribute('inline-mode'));
-		console.log(inlineMode);
+		// console.log(inlineMode);
 		return new Litepicker({
 			element: input,
 			format: 'DD/MM/YYYY',
@@ -696,15 +696,17 @@ const formTourItemToggle = () => {
 		(item) => {
 			const actionBtn = item.querySelector('.formTourSearchItem__action');
 			const detail = item.querySelector('.formTourSearchItem__detail');
-			actionBtn.addEventListener('click', () => {
-				actionBtn
-					.querySelector('span')
-					.classList.toggle('fa-chevron-down');
-				actionBtn
-					.querySelector('span')
-					.classList.toggle('fa-ellipsis-h');
-				detail.classList.toggle('d-flex');
-			});
+			if (actionBtn) {
+				actionBtn.addEventListener('click', () => {
+					actionBtn
+						.querySelector('span')
+						.classList.toggle('fa-chevron-down');
+					actionBtn
+						.querySelector('span')
+						.classList.toggle('fa-ellipsis-h');
+					detail.classList.toggle('d-flex');
+				});
+			}
 		},
 	);
 };

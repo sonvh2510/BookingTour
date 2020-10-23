@@ -55,6 +55,11 @@
 	border: 1px solid #d6d6d6;
 	margin: 15px 0;
 	display: none;
+	max-height: 350px;
+	overflow-y: scroll;
+	@media (max-width: 575.98px) {
+		max-height: 300px;
+	}
 	p {
 		font-size: 2rem;
 		font-weight: normal;

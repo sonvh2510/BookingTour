@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	scrollSpy();
 	// tour detail slider
 	tourDetailSlider();
+	questionToggle();
 });
 
 //swiper
@@ -826,5 +827,13 @@ const tourDetailSlider = () => {
 		thumbs: {
 			swiper: smallSlider,
 		},
+	});
+};
+
+const questionToggle = () => {
+	Array.from(document.querySelectorAll('.questionItem')).forEach((item) => {
+		item.addEventListener('click', () => {
+			item.classList.toggle('active');
+		});
 	});
 };

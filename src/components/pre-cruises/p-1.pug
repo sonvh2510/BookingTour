@@ -1,3 +1,28 @@
+.premadeTour.tourDetail--top
+	.container-fluid
+		.mainWrapper
+			include ../layouts/tour-detail/_general
+			.tourDetail__tabSections
+				ul
+					li
+						a(href="") Overview
+					li
+						a(href="") facilities
+					li
+						a(href="") Room Types
+					li
+						a(href="") Area info
+					li
+						a(href="") REVIEWS
+				.list-button
+					.button__item.btn.btn-icon
+						.icon
+							img(src='./assets/icons/share.svg' alt='')
+						span SHARE
+					.button__item.btn.btn-icon
+						.icon
+							img(src='./assets/icons/printer.svg' alt='')
+						span PRINT
 .premadeTour
 	.container-fluid
 		.mainWrapper
@@ -8,4 +33,7 @@
 					include ../layouts/tour-detail/_also-like
 					include ../layouts/tour-detail/_review
 				.col-xl-4.col-lg-5
-					include ../layouts/tour-detail/_calendar-book
+					include ../layouts/tour-detail/_calendar
+					include ../layouts/tour-detail/_type
+					include ../layouts/tour-detail/_discount
+					include ../layouts/_cart-aside

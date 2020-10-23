@@ -121,6 +121,44 @@
 	}
 }
 
+.form__radio--custom-1 {
+	user-select: none;
+	min-height: 24px;
+	input[type='radio'] {
+		display: none;
+	}
+	> span,
+	.tourDetailType__content {
+		padding-left: 35px;
+		position: relative;
+		display: block;
+		cursor: pointer;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+		font-size: 1.8rem;
+		line-height: 24px;
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			border: 1px solid #b0b0b0;
+			content: '';
+		}
+	}
+	input[type='radio']:checked ~ span:before,
+	input[type='radio']:checked ~ .tourDetailType__content:before {
+		color: map-get($color, trang);
+		border: 8px solid map-get($color, main);
+		background-color: map-get($color, trang);
+	}
+}
+
 //form
 .form-wrapper {
 	p {
@@ -267,6 +305,48 @@
 				color: map-get($color, main);
 				font-weight: 700;
 			}
+		}
+	}
+}
+.form__group--type-2 {
+	width: 100%;
+	span {
+		font-size: 2.4rem;
+		color: map-get($color, text);
+		margin-bottom: 5px;
+		display: block;
+	}
+	.input__group {
+		border: 1px solid #dddddd;
+		border-radius: 6px;
+		position: relative;
+		overflow: hidden;
+		input,
+		select {
+			height: 80px;
+			width: 100%;
+			font-size: 2.4rem;
+			padding: 15px 20px;
+			@media (max-width: 1199.98px) {
+				height: 65px;
+				padding: 10px 15px;
+			}
+			@media (max-width: 767.98px) {
+				height: 50px;
+				padding: 7px 10px;
+			}
+		}
+	}
+	.input__hasSelect {
+		select {
+			position: absolute;
+			width: 140px;
+			top: 0;
+			left: 0;
+			border-right: 1px solid #dddddd;
+		}
+		input {
+			padding-left: 155px;
 		}
 	}
 }

@@ -53,7 +53,7 @@
 		padding-right: 15px;
 		a {
 			margin-left: 20px;
-			color: map-get($color, text);
+			color: #b0b0b0;
 			text-decoration: none;
 		}
 	}
@@ -74,7 +74,8 @@
 	}
 	@media (max-width: 767.98px) {
 		padding: 10px;
-		h4,.cartAsideOption__price{
+		h4,
+		.cartAsideOption__price {
 			-ms-flex: 0 0 100%;
 			flex: 0 0 100%;
 			max-width: 100%;
@@ -90,7 +91,6 @@
 }
 .cartAsideOption__list {
 	border-top: 1px solid #d6d6d6;
-	padding: 10px;
 	display: none;
 	label {
 		+ label {

@@ -13,6 +13,10 @@
 	display: none !important;
 }
 
+.float-left {
+	float: left;
+}
+
 .desktop {
 	@media (max-width: 1024px) {
 		display: none !important;
@@ -238,4 +242,8 @@
 }
 .t-left {
 	text-align: left;
+}
+
+.cl-main {
+	color: map-get($color, main);
 }

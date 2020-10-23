@@ -1,7 +1,4 @@
 .payment {
-	.cartAside__wrapper {
-		padding-top: 0;
-	}
 	.cartAsideOption__title {
 		padding: 25px 40px;
 		h4,
@@ -89,9 +86,6 @@
 	.formTourSearchItem__price {
 		margin: 0;
 	}
-	.formTourSearchItem {
-		// opacity: .4;
-	}
 	.cartAside__title {
 		&.bg-none {
 			background: map-get($color, trang);
@@ -104,9 +98,6 @@
 				}
 			}
 		}
-	}
-	.cartAside__voucher {
-		padding: 0 0 25px 0;
 	}
 	.input__control {
 		width: 414px;

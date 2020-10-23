@@ -85,7 +85,6 @@
 	}
 	.btn__submit--reverse {
 		width: 100%;
-		margin-top: 55px;
 	}
 	.voucher {
 		font-size: 1.8rem;
@@ -165,52 +164,3 @@
 		text-align: center;
 	}
 }
-// .payment-2 {
-// 	&.billing {
-// 		.formTourSearchItem {
-// 			margin-bottom: 0;
-// 		}
-// 		.formTourSearchItem__content {
-// 			h4 {
-// 				margin-bottom: 30px;
-// 			}
-// 		}
-// 		.formTourSearchItem__title {
-// 			font-size: 2.4rem;
-// 			font-weight: 500;
-// 			color: #1b1c1d;
-// 			text-transform: initial;
-// 			margin-bottom: 30px;
-// 		}
-// 		.form-checked {
-// 			flex-direction: column;
-// 			align-items: initial;
-// 			&.bill__payment {
-// 				.form-group {
-// 					-ms-flex: 0 0 100%;
-// 					flex: 0 0 100%;
-// 					max-width: 100%;
-// 					label {
-// 						padding: 0;
-// 						font-size: 2.4rem;
-// 						font-weight: 500;
-// 						text-transform: initial;
-// 						&::before {
-// 							content: '\f111';
-// 						}
-// 					}
-// 					input:checked ~ label {
-// 						&::before {
-// 							content: '\f2f8';
-// 							// font-weight: 600;
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 		.btn__submit--reverse {
-// 			width: 175px;
-// 			margin: 0;
-// 		}
-// 	}
-// }

@@ -335,7 +335,8 @@
 .formTourSearch__result {
 	margin-top: 30px;
 }
-.formTourSearchItem {
+.formTourSearchItem,
+.formChild {
 	display: flex;
 	align-items: center;
 	padding: 10px 25px;
@@ -349,6 +350,21 @@
 	}
 	@media (max-width: 767.98px) {
 		padding: 10px 0px;
+	}
+}
+.formTourSearchItem__title {
+	font-size: 2.8rem;
+	color: map-get($color, text);
+	font-weight: 700;
+	text-transform: uppercase;
+	h4 {
+		display: flex;
+		align-items: center;
+	}
+	a {
+		font-size: 2.4rem;
+		color: #B0B0B0;
+		margin-left: 80px;
 	}
 }
 .formTourSearchItem__wrapper {

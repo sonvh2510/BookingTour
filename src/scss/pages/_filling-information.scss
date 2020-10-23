@@ -1,0 +1,164 @@
+.payment-2 {
+	.form-profile {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: 30px;
+		label {
+			flex: 0 0 25%;
+			max-width: 25%;
+			@media (max-width: 767.98px) {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+		.form-checked {
+			justify-content: initial;
+			.form-group {
+				flex: 0 0 150px;
+				max-width: 150px;
+			}
+			label {
+				padding: 0;
+				&::before {
+					content: '\f111';
+				}
+			}
+			input:checked ~ label {
+				&::before {
+					content: '\f2f8';
+					// font-weight: 600;
+				}
+			}
+		}
+		.form-group {
+			padding: 0;
+			margin: 0;
+			flex: 0 0 75%;
+			max-width: 75%;
+			input[type="date"] {
+				width: 250px;
+			}
+			input [type=date]{
+				position: relative;
+			}
+			input {
+				font-size: 2.4rem;
+				color: #707070;
+				background: none;
+			}
+			.select {
+				width: 145px;
+				position: absolute;
+				select {
+					width: 145px;
+					border-radius: 12px 0 0 12px;
+					box-shadow: none;
+					background: none;
+				}
+			}
+			@media (max-width: 767.98px) {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	.formTourSearchItem {
+		padding: 25px;
+		margin-bottom: 65px;
+		.formTourSearchItem__content {
+			font-size: 2.8rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			h4 {
+				margin-bottom: 50px;
+			}
+		}
+	}
+	.btn__submit {
+		width: 342px;
+	}
+	.btn__submit--reverse {
+		width: 100%;
+		margin-top: 55px;
+	}
+	.voucher {
+		font-size: 1.8rem;
+		color: map-get($color, main);
+		span {
+			font-size: 2.4rem;
+			margin-right: 10px;
+		}
+	}
+}
+.form-profile {
+	label {
+		font-size: 24px;
+		span {
+			color: map-get($color, main);
+		}
+	}
+}
+
+.payment-2 {
+	&.billing {
+		.formTourSearchItem {
+			margin-bottom: 0;
+		}
+		.formTourSearchItem__content {
+			h4 {
+				margin-bottom: 30px;
+			}
+		}
+		.formTourSearchItem__title {
+			font-size: 2.4rem;
+			font-weight: 500;
+			color: #1B1C1D;
+			text-transform: initial;
+			margin-bottom: 30px;
+		}
+		.form-checked {
+			flex-direction: column;
+			align-items: initial;
+			&.bill__payment {
+				.form-group {
+					label {
+						padding: 0;
+						font-size: 2.4rem;
+						font-weight: 500;
+						text-transform: initial;
+						&::before {
+							content: '\f111';
+						}
+					}
+					input:checked ~ label {
+						&::before {
+							content: '\f2f8';
+							// font-weight: 600;
+						}
+					}
+				}
+			}
+		}
+		.formTourSearchItem__termsOfPayment {
+			border: 1px solid #b0b0b0;
+			margin-right: 20%;
+			padding: 10px;
+			max-height: 300px;
+			overflow: scroll;
+			p {
+				text-transform: initial;
+				font-weight: normal;
+				font-size: 2.4rem;
+				margin-bottom: 15px;
+			}
+			@media (max-width: 767.98px) {
+				margin: 0;
+			}
+		}
+		.btn__submit--reverse {
+			width: 175px;
+			margin: 35px 0;
+		}
+	}
+}

@@ -1,33 +1,39 @@
-section.payment-2.billing.pd-80
+section.billingPayment.pd-80
 	.container-fluid
 		.mainWrapper
 			.row
 				.col-lg-8
-					.formTourSearchItem.shadow--1
-						.formTourSearchItem__content
-							h4 Billing Information
-							p.formTourSearchItem__title Please select forms of payments
-							.form-wrapper
-								.form-checked.bill__payment
-									.form-group
-										input(type="radio", name="payment", id="1")
-										label(for="1") Direct Bank Transfer
-									.form-group
-										input(type="radio", name="payment", id="2")
-										label(for="2") Payment by VISA, Master, JCB Card
-							h4.mt-100 Terms of Payment
-							.formTourSearchItem__termsOfPayment
+					form.billingPayment__wrapper.shadow--1.pd-50
+						h4.tourDetail__title.text-uppercase Billing Information
+						.billingPayment__method
+							p Please select forms of payments
+							.billingPayment__checkbox
+								.form__group
+									label.form__checkbox--custom-1.d-block
+										input(type="checkbox")
+										span Direct Bank Transfer
+								.form__group
+									label.form__checkbox--custom-1.d-block
+										input(type="checkbox")
+										span Payment by VISA, Master, JCB Card
+						.pt-50
+							h4.tourDetail__title.text-uppercase Terms of Payment
+							.billingPayment__content
 								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius iste dignissimos impedit repellendus explicabo laboriosam odit quae, quis molestiae excepturi dolor qui blanditiis accusamus repellat voluptatum harum optio rerum?
 								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius iste dignissimos impedit repellendus explicabo laboriosam odit quae, quis molestiae excepturi dolor qui blanditiis accusamus repellat voluptatum harum optio rerum?
 								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius iste dignissimos impedit repellendus explicabo laboriosam odit quae, quis molestiae excepturi dolor qui blanditiis accusamus repellat voluptatum harum optio rerum?
-							.form-wrapper.mt-30
-								.form-checked
-									.form-group
-										input(type="checkbox", name="3", id="3")
-										label(for="3") I agree with your payment terms of services
-							.cartAside__buttons
-								.cartAside__buttonsWrapper.justify-start
-									a.btn.btn__submit--reverse(href="javascript:void(0)") PURCHASE
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius iste dignissimos impedit repellendus explicabo laboriosam odit quae, quis molestiae excepturi dolor qui blanditiis accusamus repellat voluptatum harum optio rerum?
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius iste dignissimos impedit repellendus explicabo laboriosam odit quae, quis molestiae excepturi dolor qui blanditiis accusamus repellat voluptatum harum optio rerum?
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius iste dignissimos impedit repellendus explicabo laboriosam odit quae, quis molestiae excepturi dolor qui blanditiis accusamus repellat voluptatum harum optio rerum?
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius iste dignissimos impedit repellendus explicabo laboriosam odit quae, quis molestiae excepturi dolor qui blanditiis accusamus repellat voluptatum harum optio rerum?
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius iste dignissimos impedit repellendus explicabo laboriosam odit quae, quis molestiae excepturi dolor qui blanditiis accusamus repellat voluptatum harum optio rerum?
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eius iste dignissimos impedit repellendus explicabo laboriosam odit quae, quis molestiae excepturi dolor qui blanditiis accusamus repellat voluptatum harum optio rerum?
+						.billingPayment__agree
+							label.form__checkbox--custom-1
+								input(type="checkbox")
+								span I agree with your payment terms of services
+						.billingPayment__buttons
+							a.btn.btn__submit--reverse(href="javascript:void(0)") PURCHASE
 				.col-lg-4
 					.cartAside__mobileToggle
 						.cartAside__title

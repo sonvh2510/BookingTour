@@ -84,24 +84,24 @@
 	a {
 		font-size: 4.2rem;
 		color: #333;
-    }
-    @media (max-width: 575.98px) {
-        margin-top: 25px;
-        margin-bottom: 25px;
-        a {
-            font-size: 4rem;
-        }
-    }
+	}
+	@media (max-width: 575.98px) {
+		margin-top: 25px;
+		margin-bottom: 25px;
+		a {
+			font-size: 4rem;
+		}
+	}
 }
 
 //form
 .form-wrapper {
 	p {
 		font-size: 2.4rem;
-        color: #333;
-        @media (max-width: 575.98px) {
-            font-size: 1.8rem;
-        }
+		color: #333;
+		@media (max-width: 575.98px) {
+			font-size: 1.8rem;
+		}
 	}
 	.form-group {
 		padding-bottom: 20px;
@@ -209,8 +209,6 @@
 		text-transform: uppercase;
 	}
 	@media (max-width: 575.98px) {
-		margin-top: 25px;
-		margin-bottom: 25px;
 		a {
 			font-size: 4rem;
 		}

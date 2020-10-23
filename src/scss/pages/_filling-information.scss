@@ -5,8 +5,10 @@
 		align-items: center;
 		margin-bottom: 30px;
 		label {
-			flex: 0 0 25%;
-			max-width: 25%;
+			-ms-flex: 0 0 230px;
+			flex: 0 0 230px;
+			max-width: 230px;
+			font-weight: 300;
 			@media (max-width: 767.98px) {
 				flex: 0 0 100%;
 				max-width: 100%;
@@ -17,6 +19,7 @@
 			.form-group {
 				flex: 0 0 150px;
 				max-width: 150px;
+				display: flex;
 			}
 			label {
 				padding: 0;
@@ -34,12 +37,15 @@
 		.form-group {
 			padding: 0;
 			margin: 0;
-			flex: 0 0 75%;
-			max-width: 75%;
-			input[type="date"] {
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
+			input[type='date'] {
 				width: 250px;
 			}
-			input [type=date]{
+			input [type='date'] {
 				position: relative;
 			}
 			input {
@@ -64,7 +70,6 @@
 		}
 	}
 	.formTourSearchItem {
-		padding: 25px;
 		margin-bottom: 65px;
 		.formTourSearchItem__content {
 			font-size: 2.8rem;
@@ -99,66 +104,113 @@
 		}
 	}
 }
+.billingPayment__wrapper {
+	padding: 30px;
+	@media (max-width: 1199.98px) {
+		padding: 20px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 10px;
+	}
+}
 
-.payment-2 {
-	&.billing {
-		.formTourSearchItem {
-			margin-bottom: 0;
-		}
-		.formTourSearchItem__content {
-			h4 {
-				margin-bottom: 30px;
-			}
-		}
-		.formTourSearchItem__title {
-			font-size: 2.4rem;
-			font-weight: 500;
-			color: #1B1C1D;
-			text-transform: initial;
-			margin-bottom: 30px;
-		}
-		.form-checked {
-			flex-direction: column;
-			align-items: initial;
-			&.bill__payment {
-				.form-group {
-					label {
-						padding: 0;
-						font-size: 2.4rem;
-						font-weight: 500;
-						text-transform: initial;
-						&::before {
-							content: '\f111';
-						}
-					}
-					input:checked ~ label {
-						&::before {
-							content: '\f2f8';
-							// font-weight: 600;
-						}
-					}
-				}
-			}
-		}
-		.formTourSearchItem__termsOfPayment {
-			border: 1px solid #b0b0b0;
-			margin-right: 20%;
-			padding: 10px;
-			max-height: 300px;
-			overflow: scroll;
-			p {
-				text-transform: initial;
-				font-weight: normal;
-				font-size: 2.4rem;
-				margin-bottom: 15px;
-			}
-			@media (max-width: 767.98px) {
-				margin: 0;
-			}
-		}
-		.btn__submit--reverse {
-			width: 175px;
-			margin: 35px 0;
+.billingPayment__content {
+	border: 1px solid #b0b0b0;
+	width: 100%;
+	max-width: 810px;
+	padding: 10px;
+	max-height: 300px;
+	overflow-y: auto;
+	p {
+		text-transform: initial;
+		font-weight: normal;
+		font-size: 1.6rem;
+		margin-bottom: 15px;
+	}
+	@media (max-width: 767.98px) {
+		margin: 0;
+	}
+}
+.billingPayment__checkbox {
+	margin-top: 20px;
+	.form__group {
+		+ .form__group {
+			margin-top: 20px;
 		}
 	}
 }
+.billingPayment__method {
+	p {
+		font-size: 2.4rem;
+		color: map-get($color, text);
+	}
+}
+.billingPayment__agree {
+	margin-top: 20px;
+	.form__checkbox--custom-1 {
+		span{
+			-webkit-box-orient: unset;
+			-webkit-line-clamp: unset;
+			display: flex;
+		}
+	}
+}
+.billingPayment__buttons {
+	margin-top: 20px;
+	.btn__submit--reverse {
+		padding: 0 25px;
+		height: 55px;
+	}
+	@media (max-width: 767.98px) {
+		text-align: center;
+	}
+}
+// .payment-2 {
+// 	&.billing {
+// 		.formTourSearchItem {
+// 			margin-bottom: 0;
+// 		}
+// 		.formTourSearchItem__content {
+// 			h4 {
+// 				margin-bottom: 30px;
+// 			}
+// 		}
+// 		.formTourSearchItem__title {
+// 			font-size: 2.4rem;
+// 			font-weight: 500;
+// 			color: #1b1c1d;
+// 			text-transform: initial;
+// 			margin-bottom: 30px;
+// 		}
+// 		.form-checked {
+// 			flex-direction: column;
+// 			align-items: initial;
+// 			&.bill__payment {
+// 				.form-group {
+// 					-ms-flex: 0 0 100%;
+// 					flex: 0 0 100%;
+// 					max-width: 100%;
+// 					label {
+// 						padding: 0;
+// 						font-size: 2.4rem;
+// 						font-weight: 500;
+// 						text-transform: initial;
+// 						&::before {
+// 							content: '\f111';
+// 						}
+// 					}
+// 					input:checked ~ label {
+// 						&::before {
+// 							content: '\f2f8';
+// 							// font-weight: 600;
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 		.btn__submit--reverse {
+// 			width: 175px;
+// 			margin: 0;
+// 		}
+// 	}
+// }

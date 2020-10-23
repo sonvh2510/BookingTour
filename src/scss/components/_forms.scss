@@ -1,4 +1,9 @@
 .form__group--type1 {
+	&:not(.form__group--date) {
+		label {
+			overflow: hidden;
+		}
+	}
 	label {
 		position: relative;
 		height: 80px;
@@ -75,7 +80,8 @@
 	input[type='radio'] {
 		display: none;
 	}
-	span {
+	> span,
+	.tourDetailType__content {
 		padding-left: 35px;
 		position: relative;
 		display: block;
@@ -100,7 +106,9 @@
 		}
 	}
 	input[type='checkbox']:checked ~ span:before,
-	input[type='radio']:checked ~ span:before {
+	input[type='checkbox']:checked ~ .tourDetailType__content:before,
+	input[type='radio']:checked ~ span:before,
+	input[type='radio']:checked ~ .tourDetailType__content:before {
 		content: '\f00c';
 		font-family: 'Font Awesome 5 Pro';
 		font-weight: 100;

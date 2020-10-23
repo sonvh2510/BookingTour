@@ -1,3 +1,6 @@
+.tourDetail--top {
+	border-bottom: 1px solid #d6d6d6;
+}
 .tourDetail__title {
 	font-size: 3rem;
 	color: map-get($color, text);
@@ -72,7 +75,9 @@
 }
 .tourDetail__contentToggle {
 	margin-top: 20px;
+	display: flex;
 	span {
+		margin-left: 30px;
 		cursor: pointer;
 		color: map-get($color, main);
 		text-decoration: underline;
@@ -375,6 +380,13 @@
 }
 .tourDetail__information--review {
 	padding-top: 0;
+	.tourDetail__contentToggle {
+		@media (max-width: 575.98px) {
+			transform: translateY(0);
+			margin-bottom: 10px;
+			position: static;
+		}
+	}
 }
 .reviewStarItem {
 	display: flex;
@@ -653,5 +665,214 @@
 		@media (max-width: 767.98px) {
 			padding: 10px;
 		}
+	}
+}
+.tourDetail__general {
+	h1 {
+		font-size: 4rem;
+		margin-bottom: 10px;
+		@media (max-width: 1199.98px) {
+			font-size: 3.5rem;
+		}
+		@media (max-width: 767.98px) {
+			font-size: 3rem;
+		}
+	}
+}
+.tourDetail__generalDetail {
+	display: flex;
+	@media (max-width: 1024.98px) {
+		flex-wrap: wrap;
+	}
+}
+.tourDetail__generalRating {
+	padding-right: 20px;
+	.fa-star {
+		color: #ffcc40;
+		font-size: 2rem;
+	}
+	span:not(.fa-star) {
+		font-size: 1.7rem;
+	}
+	@media (max-width: 1024.98px) {
+		padding-right: 0;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+.tourDetail__generalAddress {
+	padding-left: 20px;
+	border-left: 1px solid #707070;
+	span {
+		color: #b0b0b0;
+		font-size: 1.6rem;
+		text-decoration: underline;
+	}
+	@media (max-width: 1024.98px) {
+		border-left: 0;
+		padding-left: 0;
+		margin-top: 10px;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+.tourDetail__tabSections {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	position: relative;
+	&:before {
+		content: '';
+	}
+	ul {
+		display: flex;
+		align-items: center;
+		list-style-type: none;
+		padding-left: 0;
+		a {
+			font-size: 1.5rem;
+			color: #707070;
+			text-transform: uppercase;
+		}
+		li {
+			+ li {
+				margin-left: 70px;
+			}
+		}
+		@media (max-width: 1024.98px) {
+			display: none;
+		}
+	}
+	.list-button {
+		margin-left: auto;
+		@media (max-width: 1024.98px) {
+			margin-right: auto;
+		}
+	}
+}
+.tourDetailDiscount {
+	margin-bottom: 50px;
+}
+.tourDetailDiscount__link {
+	padding: 20px 30px;
+	text-align: center;
+	a {
+		color: map-get($color, main);
+		font-size: 1.8rem;
+		.fa-gift {
+			font-size: 2rem;
+			margin-right: 10px;
+		}
+	}
+	@media (max-width: 1199.98px) {
+		padding: 15px 20px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 10px 10px 20px 10px;
+	}
+}
+.tourDetailDiscount__content {
+	@extend .shadow--1;
+	padding: 30px;
+	border-radius: 24px;
+	background-color: #f7f7f7;
+	font-size: 1.8rem;
+	.fa-pig,
+	h4 {
+		color: map-get($color, main);
+		padding-left: 30px;
+		position: relative;
+		&:before {
+			content: '\f706';
+			font-family: 'Font Awesome 5 Pro';
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 2rem;
+			color: map-get($color, main);
+		}
+	}
+	p {
+		color: map-get($color, text);
+		padding-left: 30px;
+		font-weight: 300;
+	}
+	@media (max-width: 1199.98px) {
+		padding: 20px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 15px;
+	}
+}
+
+.tourDetailType {
+	@extend .shadow--1;
+	padding: 30px;
+	border-radius: 24px;
+	margin-bottom: 50px;
+	@media (max-width: 1199.98px) {
+		padding: 20px;
+		margin-bottom: 40px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 10px;
+		margin-bottom: 30px;
+	}
+}
+.tourDetailType__checkbox {
+	display: block;
+	padding: 20px;
+	border: 1px solid #dddddd;
+	border-radius: 6px;
+	+ .tourDetailType__checkbox {
+		margin-top: 15px;
+	}
+	.tourDetailType__content {
+		overflow: visible;
+		-webkit-line-clamp: unset;
+		-webkit-box-orient: unset;
+		display: flex;
+		align-items: center;
+		&:before {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		p,
+		h4 {
+			b {
+				display: block;
+			}
+			span {
+				display: block;
+				font-size: 1.4rem;
+				font-weight: 300;
+				color: #b0b0b0;
+			}
+		}
+		h4 {
+			b {
+				color: map-get($color, text);
+			}
+		}
+		p {
+			margin-left: auto;
+			b {
+				color: map-get($color, main);
+			}
+			b,
+			span {
+				text-align: right;
+			}
+		}
+	}
+	@media (max-width: 1199.98px) {
+		padding: 15px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 10px;
 	}
 }

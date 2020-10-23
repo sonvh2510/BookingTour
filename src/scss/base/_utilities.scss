@@ -13,6 +13,10 @@
 	display: none !important;
 }
 
+.float-left {
+	float: left;
+}
+
 .desktop {
 	@media (max-width: 1024px) {
 		display: none !important;
@@ -246,4 +250,7 @@
 		padding-left: 10px;
 		padding-right: 10px;
 	}
+}
+.cl-main {
+	color: map-get($color, main);
 }

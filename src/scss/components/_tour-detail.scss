@@ -75,7 +75,9 @@
 }
 .tourDetail__contentToggle {
 	margin-top: 20px;
+	display: flex;
 	span {
+		margin-left: 30px;
 		cursor: pointer;
 		color: map-get($color, main);
 		text-decoration: underline;
@@ -298,6 +300,13 @@
 }
 .tourDetail__information--review {
 	padding-top: 0;
+	.tourDetail__contentToggle {
+		@media (max-width: 575.98px) {
+			transform: translateY(0);
+			margin-bottom: 10px;
+			position: static;
+		}
+	}
 }
 .reviewStarItem {
 	display: flex;
@@ -614,5 +623,73 @@
 	}
 	@media (max-width: 767.98px) {
 		padding: 15px;
+	}
+}
+
+.tourDetailType {
+	@extend .shadow--1;
+	padding: 30px;
+	border-radius: 24px;
+	margin-bottom: 50px;
+	@media (max-width: 1199.98px) {
+		padding: 20px;
+		margin-bottom: 40px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 10px;
+		margin-bottom: 30px;
+	}
+}
+.tourDetailType__checkbox {
+	display: block;
+	padding: 20px;
+	border: 1px solid #dddddd;
+	border-radius: 6px;
+	+ .tourDetailType__checkbox {
+		margin-top: 15px;
+	}
+	.tourDetailType__content {
+		overflow: visible;
+		-webkit-line-clamp: unset;
+		-webkit-box-orient: unset;
+		display: flex;
+		align-items: center;
+		&:before {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		p,
+		h4 {
+			b {
+				display: block;
+			}
+			span {
+				display: block;
+				font-size: 1.4rem;
+				font-weight: 300;
+				color: #b0b0b0;
+			}
+		}
+		h4 {
+			b {
+				color: map-get($color, text);
+			}
+		}
+		p {
+			margin-left: auto;
+			b {
+				color: map-get($color, main);
+			}
+			b,
+			span {
+				text-align: right;
+			}
+		}
+	}
+	@media (max-width: 1199.98px) {
+		padding: 15px;
+	}
+	@media (max-width: 767.98px) {
+		padding: 10px;
 	}
 }

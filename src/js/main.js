@@ -360,11 +360,9 @@ const rating = () => {
 	Array.from(document.querySelectorAll('[data-rating]')).forEach((item) => {
 		const percent = Number(item.getAttribute('data-rating'));
 		item.setAttribute('style', `width:${percent * 100}%`);
-		console.log(item);
 		const editable = Boolean(item.getAttribute('editable'));
 		if (editable) {
 			item.addEventListener('mousemove', (e) => {
-				console.log(e.layerX);
 				const percent = e.layerX / item.clientWidth;
 				item.setAttribute('style', `width:${percent * 100}%`);
 			});

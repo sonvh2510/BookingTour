@@ -1,11 +1,11 @@
-.mobile.tourSearch__iconToggle.d-flex.flex-center
+.tourSearch__iconToggle.flex-center
 	span.fal.fa-calendar-alt
 .tourSearch
 	.tourSearch__container.desktop
 		form.tourSearch__form.d-flex.flex-wrap#tourSearch__form(action="")
 			.tourSearch__formGroup.d-flex
 				.tourSearch__keyword
-					input.input-control.fs-18(type="text" placeholder="Where are you going?")
+					input.input-control.fs-18(type="text" placeholder="Where are you searching for?")
 				.tourSearch__date.datePicker(date-picker='')
 					input.datePicker__input(type='text' autocomplete='off' data-date-range='')
 					label.datePicker__label
@@ -21,8 +21,8 @@
 					//- 	span.label.tourSearch__dateLabelText End
 				.tourSearch__select
 					select.input-control.fs-18
-						option 4 seats
-						option 7 seats
-						option n seats
+						option Tour Private
+						option Tour Private
+						option Tour Private
 			.tourSearch__button
 				button.btn.btn__submit--reverse Find now

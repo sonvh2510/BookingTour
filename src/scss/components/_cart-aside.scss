@@ -92,10 +92,14 @@
 .cartAsideOption__list {
 	border-top: 1px solid #d6d6d6;
 	display: none;
+	padding: 10px;
 	label {
 		+ label {
 			margin-top: 25px;
 		}
+	}
+	@media (min-width: 1025px) {
+		padding: 20px;
 	}
 }
 .cartAside__voucher {

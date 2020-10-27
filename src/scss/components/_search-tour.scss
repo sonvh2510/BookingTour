@@ -29,6 +29,7 @@
 		width: 100%;
 		background-color: white;
 		cursor: pointer;
+		font-size: 1.6rem;
 	}
 }
 
@@ -99,6 +100,7 @@
 	color: map-get($color, main);
 	font-size: 2.4rem;
 	cursor: pointer;
+	display: flex;
 	@media (min-width: 1200px) {
 		display: none;
 	}

@@ -1,3 +1,11 @@
+.story {
+	.mainWrapper {
+		@media (max-width: 767.98px) {
+			padding-bottom: 30px;
+		}
+	}
+}
+
 .story__years {
 	position: relative;
 	&:before {
@@ -48,9 +56,37 @@
 	}
 }
 .story__itemsPerYear {
+	.perYear__item {
+		.image {
+			a {
+				display: block;
+			}
+			img {
+				@media (max-width: 575.98px) {
+					display: block;
+					margin: 0 auto;
+				}
+			}
+		}
+		.season {
+			font-size: 1.5rem;
+			color: map-get($color, text);
+			@media (max-width: 575.98px) {
+				text-align: center;
+			}
+		}
+		.name-event {
+			font-size: 2rem;
+			color: map-get($color, main);
+			@media (max-width: 575.98px) {
+				text-align: center;
+				display: block;
+			}
+		}
+	}
 	.swiper-slide {
 		opacity: 0.3;
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 		&.slide-active {
 			opacity: 1;
 		}

@@ -17,27 +17,27 @@
 		color: map-get($color, text);
 		font-weight: 700;
 		text-transform: uppercase;
-		padding-bottom: 85px;
+		padding-bottom: 30px;
+		margin-bottom: 50px;
 		&.line {
 			position: relative;
 			&:before {
 				content: '';
 				position: absolute;
-				bottom: 50px;
+				bottom: 0;
 				left: 0;
 				width: 100px;
 				height: 6px;
 				background: map-get($color, main);
 			}
 		}
-		@media (max-width: 575.98px) {
-			font-size: 3.6rem;
-			padding-bottom: 45px;
-			&.line {
-				&::before {
-					bottom: 20px;
-				}
-			}
+		@media (max-width: 1024.98px) {
+			font-size: 3.2rem;
+			padding-bottom: 22px;
+		}
+		@media (max-width: 767.98px) {
+			font-size: 2.4rem;
+			margin-bottom: 24px;
 		}
 	}
 	.content {
@@ -56,6 +56,15 @@
 				font-weight: 700;
 				color: map-get($color, main);
 			}
+			@media (max-width: 1024.98px) {
+				font-size: 1.8rem;
+				span {
+					font-size: 2rem;
+				}
+				a {
+					font-size: 2rem;
+				}
+			}
 			@media (max-width: 575.98px) {
 				font-size: 1.6rem;
 				span {
@@ -69,6 +78,9 @@
 		.contact,
 		.social {
 			padding-top: 80px;
+			@media (max-width: 1024.98px) {
+				padding-top: 10px;
+			}
 			@media (max-width: 575.98px) {
 				padding-top: 20px;
 			}

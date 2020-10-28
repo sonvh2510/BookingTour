@@ -18,19 +18,23 @@
 		}
 	}
 	form {
-		margin-top: 55px;
+		margin-top: 24px;
 		.form-password {
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 			justify-content: space-between;
-			padding-top: 25px;
 			a {
 				font-size: 2.4rem;
 				color: map-get($color, main);
 				text-decoration: underline;
+				@media (max-width: 575.98px) {
+					font-size: 1.6rem;
+					margin-top: 10px;
+				}
 			}
 			@media (max-width: 575.98px) {
 				flex-direction: column;
+				margin-bottom: 24px;
 				label {
 					width: max-content;
 				}
@@ -46,7 +50,6 @@
 				max-width: initial;
 				height: 63px;
 				font-size: 3rem;
-				margin-top: 50px;
 			}
 		}
 		@media (max-width: 575.98px) {
@@ -55,7 +58,7 @@
 	}
 	.login-social {
 		p {
-			padding: 40px 0;
+			padding-bottom: 24px;
 			font-size: 2.4rem;
 			@media (max-width: 575.98px) {
 				padding: 20px 0;
@@ -109,6 +112,10 @@
 			display: flex;
 			align-items: center;
 			position: relative;
+			margin-top: 37px;
+			p {
+				padding-bottom: 0;
+			}
 			a {
 				font-size: 2.4rem;
 				font-weight: 700;
@@ -142,6 +149,33 @@
 				}
 			}
 		}
+	}
+}
+.fancybox-close-small {
+	top: 10px !important;
+	right: 10px !important;
+}
+.agent-login {
+	min-width: 728px;
+	.title {
+		.main-title {
+			margin-bottom: 10px;
+			padding-bottom: 0;
+		}
+	}
+	.form-password {
+		@media (max-width: 575.98px) {
+			.form-group {
+				margin-bottom: 0;
+				label {
+					font-size: 1.6rem;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	@media (max-width: 1024.98px) {
+		min-width: unset;
 	}
 }
 

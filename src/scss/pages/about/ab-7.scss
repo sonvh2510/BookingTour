@@ -1,22 +1,27 @@
 .ab-7 {
-    .slide-image {
-        position: relative;
-        .swiper-button-child {
-            .swiper-prev {
-                left: -15px;
-                z-index: 9;
-            }
-            .swiper-next {
-                right: -15px;
-                z-index: 9;
-            }
-        }
-    }
-}
-.slide-image {
-	@media (max-width: 575.98px) {
-		.image {
-			text-align: center;
+	.slide-image {
+		position: relative;
+		.swiper-button-child {
+			.swiper-prev {
+				left: -15px;
+				z-index: 9;
+			}
+			.swiper-next {
+				right: -15px;
+				z-index: 9;
+			}
+		}
+	}
+	@media (max-width: 767.98px) {
+		.mainWrapper {
+			padding-bottom: 30px;
+		}
+	}
+	.slide-image {
+		@media (max-width: 575.98px) {
+			.image {
+				text-align: center;
+			}
 		}
 	}
 }

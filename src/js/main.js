@@ -84,6 +84,7 @@ function swiperSlider() {
 			type: 'bullets',
 			clickable: true,
 		},
+		simulateTouch: false,
 		slidesPerView: 1,
 		breakpoints: {
 			576: {
@@ -104,12 +105,13 @@ function swiperSlider() {
 		autoplay: {
 			delay: 4500,
 		},
-		spaceBetween: 20,
+		spaceBetween: 10,
+		slidesPerView: 2,
 		speed: 500,
 		// loop: true,
 		navigation: {
-			nextEl: '.slide-image .swiper-next',
-			prevEl: '.slide-image .swiper-prev',
+			nextEl: '.slide-image .swiper__btn--next',
+			prevEl: '.slide-image .swiper__btn--prev',
 		},
 		pagination: {
 			el: '.slide-image .swiper-pagination',
@@ -117,14 +119,9 @@ function swiperSlider() {
 			clickable: true,
 		},
 		breakpoints: {
-			320: {
-				slidesPerView: 1,
-			},
-			576: {
-				slidesPerView: 2,
-			},
 			768: {
 				slidesPerView: 3,
+				spaceBetween: 20,
 			},
 			1025: {
 				slidesPerView: 4,
@@ -138,8 +135,8 @@ function swiperSlider() {
 		spaceBetween: 20,
 		speed: 500,
 		navigation: {
-			nextEl: '.slide-rating .swiper-next',
-			prevEl: '.slide-rating .swiper-prev',
+			nextEl: '.slide-rating .swiper__btn--next',
+			prevEl: '.slide-rating .swiper__btn--prev',
 		},
 		pagination: {
 			el: '.slide-rating .swiper-pagination',
@@ -209,9 +206,6 @@ function swiperSlider() {
 		spaceBetween: 10,
 		slidesPerView: 1,
 		init: false,
-		// loop: true,
-		freeMode: true,
-		// loopedSlides: 5, //looped slides should be the same
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
@@ -220,6 +214,12 @@ function swiperSlider() {
 			swiper: years,
 		},
 		breakpoints: {
+			576: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 3,
+			},
 			1200: {
 				slidesPerView: 4,
 			},

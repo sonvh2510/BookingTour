@@ -28,8 +28,9 @@
 	margin-top: 10px;
 	.btn__submit {
 		padding: 0 20px;
-		font-size: 1.6rem;
+		font-size: 1.9rem;
 		height: 50px;
+		font-weight: 400;
 		border: 1px solid map-get($color, main);
 		box-shadow: none;
 		margin-left: auto;
@@ -38,13 +39,18 @@
 .tourNewsItem__price {
 	span {
 		color: #707070;
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 	}
 	b {
 		font-size: 2.4rem;
 		color: map-get($color, main);
 		margin-left: 5px;
 	}
+}
+.tourNewsItem__note {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #b0b0b0;
 }
 .tourNewsItem__review {
 	margin-top: 10px;

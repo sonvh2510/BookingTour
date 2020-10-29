@@ -151,10 +151,6 @@
 		}
 	}
 }
-.fancybox-close-small {
-	top: 10px !important;
-	right: 10px !important;
-}
 .agent-login {
 	.title {
 		.main-title {
@@ -222,13 +218,19 @@
 	}
 }
 .fancybox-content {
-	@media (max-width: 575.98px) {
-		height: 500px;
-		overflow-y: scroll;
-		padding: 20px;
-		.main-title {
-			font-size: 2.6rem;
-			padding: 0;
+	&:not(#tourSearch__form) {
+		.fancybox-close-small {
+			top: 10px !important;
+			right: 10px !important;
+		}
+		@media (max-width: 575.98px) {
+			height: 500px;
+			overflow-y: scroll;
+			padding: 20px;
+			.main-title {
+				font-size: 2.6rem;
+				padding: 0;
+			}
 		}
 	}
 }

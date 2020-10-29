@@ -3,13 +3,8 @@
 	.swiper-slide {
 		img {
 			animation: zoomInOut infinite forwards 10s linear;
-			min-height: 350px;
+			min-height: 230px;
 		}
-	}
-	.swiper__pagination--banner {
-		position: absolute;
-		top: 0;
-		z-index: 10;
 	}
 	.swiper-pagination-bullets {
 		.swiper-pagination-bullet {
@@ -22,13 +17,27 @@
 			background-color: map-get($color, main);
 		}
 	}
+	@media (max-width: 1024.98px) {
+		.swiper__pagination--banner {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			z-index: 10;
+			justify-content: center;
+		}
+	}
 	@media (min-width: 1025px) {
 		.swiper__pagination--banner {
 			display: flex;
-			flex-direction: column;
 			justify-content: center;
+			flex-direction: column;
 			bottom: 0;
 			right: 80px;
+			z-index: 10;
+			top: 0;
+			position: absolute;
 			left: initial;
 			width: initial;
 		}

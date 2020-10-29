@@ -101,45 +101,81 @@ function swiperSlider() {
 			},
 		},
 	});
-	let imgGallery = new Swiper('.slide-image .swiper-container', {
-		autoplay: {
-			delay: 4500,
-		},
-		spaceBetween: 10,
-		slidesPerView: 2,
-		speed: 500,
-		// loop: true,
-		navigation: {
-			nextEl: '.slide-image .swiper__btn--next',
-			prevEl: '.slide-image .swiper__btn--prev',
-		},
-		pagination: {
-			el: '.slide-image .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-		},
-		breakpoints: {
-			768: {
-				slidesPerView: 3,
-				spaceBetween: 20,
+	let destinationPopularSlider = new Swiper(
+		'.popularDestination__slider .swiper-container',
+		{
+			slidesPerView: 2,
+			spaceBetween: 10,
+			loop: true,
+			pagination: {
+				el: '.popularDestination__slider .swiper__pagination',
+				type: 'bullets',
+				clickable: true,
 			},
-			1025: {
-				slidesPerView: 4,
+			navigation: {
+				prevEl: '.popularDestination__slider .swiper__btn--prev',
+				nextEl: '.popularDestination__slider .swiper__btn--next',
+			},
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 15,
+				},
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				},
+				1360: {
+					spaceBetween: 40,
+					slidesPerView: 4,
+				},
 			},
 		},
-	});
-	let rating = new Swiper('.slide-rating .swiper-container', {
+	);
+
+	let bestToursSlider = new Swiper(
+		'.bestTour__slideWrapper .swiper-container',
+		{
+			slidesPerView: 1,
+			spaceBetween: 10,
+			loop: true,
+			pagination: {
+				el: '.bestTour__slideWrapper .swiper__pagination',
+				type: 'bullets',
+				clickable: true,
+			},
+			navigation: {
+				prevEl: '.bestTour__slideWrapper .swiper__btn--prev',
+				nextEl: '.bestTour__slideWrapper .swiper__btn--next',
+			},
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 15,
+				},
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				},
+				1360: {
+					spaceBetween: 40,
+					slidesPerView: 4,
+				},
+			},
+		},
+	);
+	let rating = new Swiper('.review__slideWrapper .swiper-container', {
 		autoplay: {
 			delay: 4500,
 		},
 		spaceBetween: 20,
 		speed: 500,
 		navigation: {
-			nextEl: '.slide-rating .swiper__btn--next',
-			prevEl: '.slide-rating .swiper__btn--prev',
+			nextEl: '.review__slideWrapper .swiper__btn--next',
+			prevEl: '.review__slideWrapper .swiper__btn--prev',
 		},
 		pagination: {
-			el: '.slide-rating .swiper-pagination',
+			el: '.review__slideWrapper .swiper__pagination',
 			type: 'bullets',
 			clickable: true,
 		},
@@ -506,13 +542,13 @@ const homeSliders = () => {
 	});
 
 	let homePopularDestination = new Swiper(
-		'.homePopularDestination__slideWrapper .swiper-container',
+		'.popularDestination__js .swiper-container',
 		{
 			slidesPerView: 2,
 			spaceBetween: 10,
 			loop: true,
 			pagination: {
-				el: '.homePopularDestination__slideWrapper .swiper__pagination',
+				el: '.popularDestination__js .swiper__pagination',
 				type: 'bullets',
 				clickable: true,
 			},

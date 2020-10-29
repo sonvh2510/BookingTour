@@ -1,6 +1,13 @@
 .tourDetail--top {
 	border-bottom: 1px solid #d6d6d6;
 }
+.tourDetail__asideCol {
+	width: 560px;
+}
+.tourDetail__articleCol {
+	width: 100%;
+	max-width: 1160px;
+}
 .tourDetail__title {
 	font-size: 3rem;
 	color: map-get($color, text);
@@ -77,7 +84,7 @@
 	margin-top: 20px;
 	display: flex;
 	span {
-		margin-left: 30px;
+		// margin-left: 30px;
 		cursor: pointer;
 		color: map-get($color, main);
 		text-decoration: underline;

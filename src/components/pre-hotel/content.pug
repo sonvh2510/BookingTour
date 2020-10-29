@@ -2,13 +2,17 @@
 	.tourDetail__informationTitleBlock
 		h2.tourDetail__title Facilities
 	.tourDetail__content
-		ul.tourDetail__list
-			li Free WiFi
-			li Airport shuttle
-			li Family rooms
-			li Non-smoking rooms
-			li 24-hour front desk
-			li Terrace
+		.row
+			.col-sm-6
+				ul.tourDetail__list
+					li Free WiFi
+					li Airport shuttle
+					li Family rooms
+			.col-sm-6
+				ul.tourDetail__list
+					li Non-smoking rooms
+					li 24-hour front desk
+					li Terrace
 .tourDetail__information.tourDetail__section
 	.tourDetail__informationTitleBlock
 		h2.tourDetail__title Room Types
@@ -27,16 +31,14 @@
 						span.label.datePicker__text End
 				.select
 					select
-						option 5 stars
-						option 5 stars
-						option 5 stars
-						option 5 stars
+						option Children - Adults - Infant
+						option Children - Adults - Infant
+						option Children - Adults - Infant
+						option Children - Adults - Infant
 				.select
 					select
-						option Children - Adults - Infant
-						option Children - Adults - Infant
-						option Children - Adults - Infant
-						option Children - Adults - Infant
+						option 1 room
+						option 2 room
 			.button
 				button.btn.btn__submit--reverse Search
 		table.table-room-type
@@ -164,3 +166,58 @@
 		.note
 			span * 
 			| All distances are measured in straight lines. Actual travel distances may vary.
+.tourDetail__information.tourDetail__section.tourDetail__information--alsoLike
+	.tourDetail__informationTitleBlock
+		h2.tourDetail__title You may also like
+		.tourDetail__contentToggle
+			span.fs-18.fw-700 See more
+	.tourDetail__content
+		.row
+			.col-sm-6.col-2xl-4
+				a.tourNewsItem(href="#")
+					.tourNewsItem__img.overflow-hidden
+						img.fullsize.object-cover(src="./assets/destinations/5.jpg")
+					.tourNewsItem__content
+						.tourNewsItem__note
+							span #Hotels
+						h4.tourNewsItem__title Ha Long Bay, Vietnam
+						.tourNewsItem__rating.rating__bar
+							.star
+							.star__color(data-rating="0.7")
+						.tourNewsItem__bottom
+							.tourNewsItem__price
+								span From 
+								b $500
+							span.btn.btn__submit See more
+			.col-sm-6.col-2xl-4
+				a.tourNewsItem(href="#")
+					.tourNewsItem__img.overflow-hidden
+						img.fullsize.object-cover(src="./assets/destinations/5.jpg")
+					.tourNewsItem__content
+						.tourNewsItem__note
+							span #Hotels
+						h4.tourNewsItem__title Ha Long Bay, Vietnam
+						.tourNewsItem__rating.rating__bar
+							.star
+							.star__color(data-rating="0.7")
+						.tourNewsItem__bottom
+							.tourNewsItem__price
+								span From 
+								b $500
+							span.btn.btn__submit See more
+			.col-sm-6.col-2xl-4
+				a.tourNewsItem(href="#")
+					.tourNewsItem__img.overflow-hidden
+						img.fullsize.object-cover(src="./assets/destinations/5.jpg")
+					.tourNewsItem__content
+						.tourNewsItem__note
+							span #Hotels
+						h4.tourNewsItem__title Ha Long Bay, Vietnam
+						.tourNewsItem__rating.rating__bar
+							.star
+							.star__color(data-rating="0.7")
+						.tourNewsItem__bottom
+							.tourNewsItem__price
+								span From 
+								b $500
+							span.btn.btn__submit See more

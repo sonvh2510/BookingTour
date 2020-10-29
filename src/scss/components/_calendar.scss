@@ -16,13 +16,13 @@
 	}
 	.form__group--date {
 		label {
-			padding: 30px;
+			padding: 25px;
 			height: auto;
 		}
 		.litepicker {
 			padding: 0;
 			width: 100%;
-			max-width: 300px;
+			// max-width: 300px;
 			display: block !important;
 			margin: 0 auto;
 			.container__months,
@@ -32,6 +32,8 @@
 				width: 100%;
 				.month-item-header {
 					padding-top: 0;
+					padding-left: 0;
+					padding-right: 0;
 					.button-next-month,
 					.button-previous-month {
 						width: 40px;
@@ -73,11 +75,17 @@
 				> div {
 					width: (100% / 7);
 					// border-top: 0.5px solid #c6c8d0;
+					height: 50px;
 				}
 				.day-item {
 					border-radius: 0px;
-					border: 1px solid #c6c8d0;
+					border: 0.5px solid #c6c8d0;
 					width: (100% / 7);
+					height: 50px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					color: map-get($color, text);
 					&.is-end-date,
 					&.is-start-date {
 						background-color: #00aa71;

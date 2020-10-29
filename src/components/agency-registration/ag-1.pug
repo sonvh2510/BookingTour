@@ -98,4 +98,13 @@ section.agency-registration.pd-80
 									span(for="yes") NO
 					.col-lg-12
 						.form__group.form__group--button.text-center
-							button.btn.btn__submit--reverse(type="submit") Submit
+							button.btn.btn__submit--reverse(type="submit" data-fancybox data-src="#congratulation") Submit
+.d-none
+	section.popup-2#congratulation
+		.icon-checked
+			img(src="./assets/icons/1.png", alt="")
+		h2.main-title Congratulation!
+		h3 You have successfully 
+			span Registration!
+		p Your account has been created. We will reply within 24 hours after your booking.
+		a.btn.btn__submit--reverse(href="/") Back to home

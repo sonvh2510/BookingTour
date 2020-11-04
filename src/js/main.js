@@ -168,6 +168,7 @@ function swiperSlider() {
 		autoplay: {
 			delay: 4500,
 		},
+		loop: true,
 		spaceBetween: 20,
 		speed: 500,
 		navigation: {
@@ -264,6 +265,26 @@ function swiperSlider() {
 	if (document.querySelector('.story__itemsPerYear .swiper-container')) {
 		years.init();
 	}
+	var aboutGallery = new Swiper('.ab-7 .swiper-container', {
+		spaceBetween: 10,
+		slidesPerView: 1,
+		pagination: {
+			el: '.ab-7 .swiper__pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 3,
+			},
+			1200: {
+				slidesPerView: 4,
+			},
+		},
+	});
 }
 //scroll menu
 // function menuSroll() {
@@ -770,6 +791,40 @@ const cartSummaryToggle = () => {
 				backdropObserver.next(false);
 			}
 		});
+	}
+	if (window.innerWidth > 1025) {
+		const aside = document.querySelector('.cartAside');
+		if (aside) {
+			const asideOffsetTop =
+				aside.getBoundingClientRect().top + window.scrollY;
+			const asideWidth = aside.clientWidth;
+			const asideOffsetLeft = aside.getBoundingClientRect().left;
+			const setPos = () => {
+				if (
+					window.scrollY >
+					asideOffsetTop - header.clientHeight - 20
+				) {
+					aside.setAttribute(
+						'style',
+						`
+							position: fixed;
+							left: ${asideOffsetLeft}px;
+							top: ${header.clientHeight + 20}px;
+							z-index: 100;
+							width: ${asideWidth}px;
+						`,
+					);
+				} else {
+					aside.removeAttribute('style');
+				}
+			};
+			window.addEventListener('scroll', (e) => {
+				setPos();
+			});
+			document.addEventListener('resize', (e) => {
+				setPos();
+			});
+		}
 	}
 };
 const cartOptionsItemToggle = () => {

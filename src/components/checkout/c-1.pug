@@ -376,7 +376,7 @@
 									p.formTourSearchItem__price 235.888 đ
 
 			.checkout__fillingInformations.payment-2.pd-50
-				h2.makeMyTripOptions__sectionTitle Filling Information
+				h2.makeMyTripOptions__sectionTitle Billing Information
 				.row--custom.form-wrapper
 					.col-md-6
 						.form-profile
@@ -414,23 +414,6 @@
 						.form-profile
 							.form-group
 								textarea(type='text' name='' placeholder="Note")
-				.checkout__fillingInformationsContent
-					p.checkout__note 
-						span *
-						span NOTE
-					p - Age is calculated by date of birth:
-					p 1/ About land tour
-					ul.list-style-none
-						li - Children from 12 years old and above: Apply the same price as an adult.
-						li - Children from 6 – under 12 years old: 75% of adult tour price (no extra bed); charged 100% as an adult tour price if an extra bed is required. Every 02 (two) adults can accompany 01 (one) child from 6 – under 12 years old; for the second, please pay the same price as an adult.
-						li - Children under 6 years old: 50% of an adult tour price (no extra bed). Every 02 (two) adults can accompany 01 (one) child under 6 years old; for the second, please pay 75% of adult tour price.
-					p 2/ About transportation & other cases
-					ul.list-style-none
-						li - Tickets for airline, train and fast ferry shall be applied as the own policy for each particular transportation company.
-						li - At some attractions, children who are over-height compared to the attraction’s rules will be extra-charged.
-					p 3/ Surcharge for single room
-					ul.list-style-none
-						li - Surcharge for single room (if required) will be checked once the departure date is confirmed
 			.checkout__touristList.pd-50
 				h2.makeMyTripOptions__sectionTitle List of Tourists
 				.checkout__touristList--wrapper
@@ -544,9 +527,26 @@
 								span.fas.fa-gift
 							input.input__control(type='text' placeholder='Add voucher')
 							input.btn.btn__submit(type='Button' value='Apply')
+				.checkout__fillingInformationsContent
+					p.checkout__note 
+						span *
+						span NOTE
+					p - Age is calculated by date of birth:
+					p 1/ About land tour
+					ul.list-style-none
+						li - Children from 12 years old and above: Apply the same price as an adult.
+						li - Children from 6 – under 12 years old: 75% of adult tour price (no extra bed); charged 100% as an adult tour price if an extra bed is required. Every 02 (two) adults can accompany 01 (one) child from 6 – under 12 years old; for the second, please pay the same price as an adult.
+						li - Children under 6 years old: 50% of an adult tour price (no extra bed). Every 02 (two) adults can accompany 01 (one) child under 6 years old; for the second, please pay 75% of adult tour price.
+					p 2/ About transportation & other cases
+					ul.list-style-none
+						li - Tickets for airline, train and fast ferry shall be applied as the own policy for each particular transportation company.
+						li - At some attractions, children who are over-height compared to the attraction’s rules will be extra-charged.
+					p 3/ Surcharge for single room
+					ul.list-style-none
+						li - Surcharge for single room (if required) will be checked once the departure date is confirmed
 
 			.checkout__billingPayment.pd-50
-				h2.makeMyTripOptions__sectionTitle Billing Payment
+				h2.makeMyTripOptions__sectionTitle Payment
 				.checkout__billingPayment--wrapper
 					p Please select forms of payments
 					label.form__radio--custom-1.d-block
@@ -560,8 +560,6 @@
 						span *
 						span NOTE
 					p Please pay within 24 hours at any Era agent at home and abroad.
-			.checkout__terms.pt-50
-				h2.makeMyTripOptions__sectionTitle Terms of Payment
 				.checkout__termsScrollbox
 					p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium autem a qui velit iusto cumque possimus. Veritatis quia qui est molestias expedita cupiditate? Tempore nesciunt eius omnis, repudiandae quo magni?
 					br
@@ -604,3 +602,5 @@
 						span I agree with your payment terms of services
 				.billingPayment__buttons.checkout__termsButtons
 					a.btn.btn__submit--reverse(href="javascript:void(0)") Next Step
+			//- .checkout__terms.pt-50
+			//- 	h2.makeMyTripOptions__sectionTitle Terms of Payment

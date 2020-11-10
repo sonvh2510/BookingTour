@@ -4,12 +4,12 @@
 			.row
 				.col-lg-4.col-xl-3
 					include ../layouts/_blog-navigation
-					include ../layouts/_blog-popular
+					//- include ../layouts/_blog-popular
 				.col-lg-8.col-xl-9.pb-80
 					.row.blogWrapper__list
 						- for(i = 0;i<9;i++)
-							.col-sm-6.col-2xl-4.tourNewsItem__col
-								.tourNewsItem
+							.col-sm-6.col-2xl-4.tourNewsItem__col.blogItem__col
+								.tourNewsItem.blogItem
 									.tourNewsItem__img.overflow-hidden
 										a(href="blog-detail.html")
 											img.fullsize.object-cover(src="./assets/destinations/5.jpg")

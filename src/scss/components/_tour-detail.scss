@@ -30,6 +30,7 @@
 	.imgBox {
 		border-radius: 24px;
 		overflow: hidden;
+		@include imgscale(0.5);
 	}
 	@media (max-width: 1199.98px) {
 		.imgBox {
@@ -44,6 +45,17 @@
 }
 .tourDetail__smallSlider {
 	margin-top: 30px;
+	position: relative;
+	padding: 0 20px;
+	.swiper__btn {
+		width: 40px;
+		height: 40px;
+		border: 1px solid map-get($color, main);
+		span {
+			font-size: 1.8rem;
+			font-weight: 500;
+		}
+	}
 	.imgBox {
 		cursor: pointer;
 		border-radius: 24px;

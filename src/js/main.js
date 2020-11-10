@@ -64,6 +64,24 @@ document.addEventListener('DOMContentLoaded', () => {
 	// tour detail slider
 	tourDetailSlider();
 	questionToggle();
+
+	// Collapse toggle makeMyTrip block
+	$('.makeMyTrip__block').each(function () {
+		const title = $(this).find('.blockCanCollapse__title');
+		const content = $(this).find('.blockCanCollapse__content');
+		const arrow = title.find('.fa-chevron-down');
+		title.on('click', function (e) {
+			content.slideToggle();
+			title.toggleClass('active');
+			if (title.hasClass('active')) {
+				arrow.addClass('fa-chevron-up');
+				arrow.removeClass('fa-chevron-down');
+			} else {
+				arrow.addClass('fa-chevron-down');
+				arrow.removeClass('fa-chevron-up');
+			}
+		});
+	});
 });
 
 //swiper
@@ -169,7 +187,7 @@ function swiperSlider() {
 			delay: 4500,
 		},
 		loop: true,
-		spaceBetween: 20,
+		spaceBetween: 0,
 		speed: 500,
 		navigation: {
 			nextEl: '.review__slideWrapper .swiper__btn--next',
@@ -185,10 +203,13 @@ function swiperSlider() {
 				slidesPerView: 1,
 			},
 			1024: {
-				slidesPerView: 2,
+				slidesPerView: 2.9,
+				spaceBetween: -10,
+				centeredSlides: true,
 			},
 			1500: {
-				slidesPerView: 3,
+				slidesPerView: 2.9,
+				spaceBetween: -10,
 				centeredSlides: true,
 				loop: true,
 			},
@@ -377,9 +398,11 @@ const scrollSpy = () => {
 };
 
 const initCalendar = () => {
+	// Select date
 	Array.from(document.querySelectorAll('[data-date]')).forEach((input) => {
-		const inlineMode = Boolean(input.getAttribute('inline-mode'));
-		// console.log(inlineMode);
+		const inlineMode = Boolean(input.getAttribute('data-date-inline'));
+		const target = input.getAttribute('data-date-target');
+		const inputShow = document.querySelector(target);
 		return new Litepicker({
 			element: input,
 			format: 'DD/MM/YYYY',
@@ -389,24 +412,30 @@ const initCalendar = () => {
 			allowRepick: true,
 			singleMode: true,
 			inlineMode: inlineMode,
+			onSelect: function (date1, date2) {
+				console.log(input.value);
+				if (inputShow) {
+					inputShow.value = input.value;
+				}
+			},
 		});
 	});
-
+	// Select date range
 	Array.from(document.querySelectorAll('[date-picker]')).forEach((picker) => {
-		const target = picker.getAttribute('data-date-target');
-		const targetDom = document.querySelector(target);
+		const input = picker.querySelector('.datePicker__input');
+		// const target = picker.getAttribute('data-date-range');
 		const pickerObject = new Litepicker({
-			element: picker,
+			element: input,
 			format: 'DD/MM/YYYY',
 			mobileFriendly: true,
 			autoApply: true,
 			showTooltip: true,
 			allowRepick: true,
-			singleMode: true,
-			inlineMode: true,
+			singleMode: false,
+			inlineMode: false,
 			onSelect: function (date1, date2) {
-				targetDom.value = picker.value;
-				if (targetDom) {
+				input.value = picker.value;
+				if (input) {
 					picker.classList.add('dirtied');
 				} else {
 					picker.classList.remove('dirtied');
@@ -414,15 +443,15 @@ const initCalendar = () => {
 				}
 			},
 		});
-		// input.addEventListener('change', () => {
-		// 	const value = input.value;
-		// 	if (value) {
-		// 		picker.classList.add('dirtied');
-		// 	} else {
-		// 		pickerObject.clearSelection();
-		// 		picker.classList.remove('dirtied');
-		// 	}
-		// });
+		input.addEventListener('change', () => {
+			const value = input.value;
+			if (value) {
+				picker.classList.add('dirtied');
+			} else {
+				pickerObject.clearSelection();
+				picker.classList.remove('dirtied');
+			}
+		});
 	});
 };
 const rating = () => {
@@ -792,41 +821,39 @@ const cartSummaryToggle = () => {
 			}
 		});
 	}
-	if (window.innerWidth > 1025) {
-		const aside = document.querySelector('.cartAside');
-		if (aside) {
-			const asideOffsetTop =
-				aside.getBoundingClientRect().top + window.scrollY;
-			const asideWidth = aside.clientWidth;
-			const asideOffsetLeft = aside.getBoundingClientRect().left;
-			const setPos = () => {
-				if (
-					window.scrollY >
-					asideOffsetTop - header.clientHeight - 20
-				) {
-					aside.setAttribute(
-						'style',
-						`
-							position: fixed;
-							left: ${asideOffsetLeft}px;
-							top: ${header.clientHeight + 20}px;
-							z-index: 100;
-							width: ${asideWidth}px;
-						`,
-					);
-				} else {
-					aside.removeAttribute('style');
-				}
-			};
-			window.addEventListener('scroll', (e) => {
-				setPos();
-			});
-			document.addEventListener('resize', (e) => {
-				setPos();
-			});
-		}
-	}
 };
+
+const setPositionCartAside = () => {
+	// if (window.innerWidth > 1025) {
+	// 	let aside = document.querySelector('.cartAside__colWrapper');
+	// 	const asideHidden = document.querySelector('.cartAside__width');
+	// 	const asideOffsetTop = aside.getBoundingClientRect().top + scrollY;
+	// 	const setPos = () => {
+	// 		if (aside) {
+	// 			const headerHeight = header.clientHeight;
+	// 			const scrollY = window.scrollY;
+	// 			const asideWidth = asideHidden.clientWidth;
+	// 			const asideOffsetLeft = asideHidden.getBoundingClientRect().left;
+	// 			if (scrollY > asideOffsetTop - headerHeight - 20) {
+	// 				aside.setAttribute(
+	// 					'style',
+	// 					`position: fixed;
+	// 					left: ${asideOffsetLeft}px;
+	// 					top: ${header.clientHeight + 20}px;
+	// 					width: ${asideWidth}px;`,
+	// 				);
+	// 			}
+	// 		}
+	// 	};
+	// 	window.addEventListener('resize', () => {
+	// 		setPos();
+	// 	});
+	// 	window.addEventListener('scroll', () => {
+	// 		setPos();
+	// 	});
+	// }
+};
+
 const cartOptionsItemToggle = () => {
 	const items = Array.from(
 		document.querySelectorAll('.cartAsideOption'),
@@ -906,6 +933,10 @@ const tourDetailSlider = () => {
 	let smallSlider = new Swiper('.tourDetail__smallSlider .swiper-container', {
 		slidesPerView: 3,
 		spaceBetween: 10,
+		navigation: {
+			nextEl: '.tourDetail__smallSlider .swiper__btn--prev',
+			prevEl: '.tourDetail__smallSlider .swiper__btn--next',
+		},
 		breakpoints: {
 			576: {
 				slidesPerView: 4,

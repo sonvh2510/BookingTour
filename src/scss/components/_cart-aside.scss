@@ -1,7 +1,32 @@
-.cartAside {
-	border-radius: 24px;
-	overflow-y: auto;
-	background-color: white;
+.cartAside__colWrapper {
+	@media (min-width: 1025px) {
+		position: sticky;
+		top: 160px;
+		padding-bottom: 30px;
+		border-radius: 24px;
+		z-index: 100;
+		max-height: calc(100vh - 125px - 72px - 50px);
+		overflow-y: auto;
+		border: 1px solid darken(white, 10%);
+		&::-webkit-scrollbar {
+			width: 5px;
+			background-color: darken(map-get($color, trang), 12%);
+			border-radius: 3px;
+		}
+		&::-webkit-scrollbar-thumb {
+			width: 5px;
+			border-radius: 3px;
+			background-color: map-get($color, main);
+		}
+	}
+	@media (min-width: 1200px) {
+		max-height: calc(100vh - 60px - 72px - 50px);
+	}
+}
+
+.cartAside__col {
+	@extend .pb-80;
+	position: relative;
 }
 .cartAside__title {
 	background-color: map-get($color, main);
@@ -26,26 +51,6 @@
 }
 .cartAside__wrapper {
 	padding: 20px;
-	@media (min-width: 1025px) {
-		max-height: calc(100vh - 125px - 72px - 50px);
-		overflow-y: auto;
-		&::-webkit-scrollbar {
-			width: 5px;
-			background-color: darken(map-get($color, trang), 12%);
-			border-radius: 3px;
-		}
-		&::-webkit-scrollbar-thumb {
-			width: 5px;
-			border-radius: 3px;
-			background-color: map-get($color, main);
-		}
-	}
-	@media (min-width: 1200px) {
-		max-height: calc(100vh - 130px - 72px - 50px);
-	}
-	@media (min-width: 1440px) {
-		max-height: calc(100vh - 140px - 72px - 50px);
-	}
 	@media (max-width: 1199.98px) {
 		padding: 15px;
 	}

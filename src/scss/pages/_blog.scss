@@ -131,3 +131,15 @@
 		}
 	}
 }
+
+.tourNewsItem.blogItem {
+	.tourNewsItem__title {
+		margin-bottom: 0;
+	}
+	.tourNewsItem__review {
+		margin-top: 20px;
+	}
+	.tourNewsItem__description {
+		margin-top: 15px;
+	}
+}

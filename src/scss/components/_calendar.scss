@@ -22,7 +22,7 @@
 		.litepicker {
 			padding: 0;
 			width: 100%;
-			// max-width: 300px;
+			max-width: 400px;
 			display: block !important;
 			margin: 0 auto;
 			.container__months,
@@ -82,6 +82,7 @@
 					border: 0.5px solid #c6c8d0;
 					width: (100% / 7);
 					height: 50px;
+					// @include imgscale(1);
 					display: flex;
 					justify-content: center;
 					align-items: center;
@@ -90,6 +91,11 @@
 					&.is-start-date {
 						background-color: #00aa71;
 						border-radius: 0;
+					}
+					@media (max-width: 1024.98px) {
+					}
+					@media (max-width: 575.98px) {
+						height: 40px;
 					}
 					// &:nth-child(7n) {
 					// 	border-right: 0;

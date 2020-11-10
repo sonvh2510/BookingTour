@@ -122,16 +122,16 @@
 				text-decoration: underline;
 				color: map-get($color, main);
 				margin-left: 20px;
-				&::after {
-					content: '\f078';
-					position: absolute;
-					top: 50%;
-					right: 0;
-					transform: translateY(-50%);
-					font-family: 'Font Awesome 5 Pro';
-					font-size: 24px;
-					color: map-get($color, main);
-				}
+				// &::after {
+				// 	content: '\f078';
+				// 	position: absolute;
+				// 	top: 50%;
+				// 	right: 0;
+				// 	transform: translateY(-50%);
+				// 	font-family: 'Font Awesome 5 Pro';
+				// 	font-size: 24px;
+				// 	color: map-get($color, main);
+				// }
 			}
 			@media (max-width: 575.98px) {
 				flex-direction: column;

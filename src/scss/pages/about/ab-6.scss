@@ -7,7 +7,7 @@
 }
 
 .review__slideWrapper {
-	padding: 0 3%;
+	padding: 0 100px;
 	position: relative;
 	.swiper-container {
 		padding: 1%;
@@ -18,7 +18,7 @@
 		padding: 35px 30px;
 		box-shadow: 0 3px 6px rgba($color: #d6d6d6, $alpha: 1);
 		transition: all 0.5s ease-out;
-		transform: scale(0.9);
+		transform: scale(0.875);
 		.image-avatar {
 			position: relative;
 			overflow: hidden;
@@ -39,7 +39,7 @@
 			display: flex;
 			align-items: center;
 			.profile {
-				margin-left: 10px;
+				margin-left: 20px;
 				.name {
 					font-size: 2rem;
 					color: map-get($color, text);
@@ -87,9 +87,10 @@
 				}
 			}
 			time {
-				font-size: 1.4rem;
+				margin-top: 15px;
+				display: inline-block;
 				color: #707070;
-				padding-top: 10px;
+				font-size: 1.4rem;
 			}
 		}
 		&:after {

@@ -19,7 +19,7 @@
 	ul,
 	img {
 		color: map-get($color, text);
-		font-size: 2rem;
+		font-size: 1.6rem;
 		+ p,
 		+ ul,
 		+ img {
@@ -47,13 +47,13 @@
 	border-bottom: 1px solid #b0b0b0;
 	text-align: center;
 	p {
-		font-size: 2rem;
+		font-size: 1.6rem;
 		font-weight: 700;
 		color: #707070;
 		text-transform: uppercase;
 	}
 	h3 {
-		font-size: 3.2rem;
+		font-size: 2.6rem;
 		color: map-get($color, main);
 		font-weight: 700;
 		margin-top: 15px;
@@ -73,7 +73,7 @@
 			border-right: 1px solid #b0b0b0;
 			padding: 20px;
 			padding-left: 0;
-			font-size: 2.8rem;
+			font-size: 2.4rem;
 			color: map-get($color, text);
 		}
 		&:first-child {

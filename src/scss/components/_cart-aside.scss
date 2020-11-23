@@ -2,25 +2,18 @@
 	@media (min-width: 1025px) {
 		position: sticky;
 		top: 160px;
-		padding-bottom: 30px;
+		// padding-bottom: 30px;
 		border-radius: 24px;
 		z-index: 100;
-		max-height: calc(100vh - 125px - 72px - 50px);
-		overflow-y: auto;
+		height: calc(100vh - 200px);
+		// overflow-y: auto;
+		overflow: hidden;
 		border: 1px solid darken(white, 10%);
-		&::-webkit-scrollbar {
-			width: 5px;
-			background-color: darken(map-get($color, trang), 12%);
-			border-radius: 3px;
+		.cartAside {
+			display: flex;
+			height: 100%;
+			flex-direction: column;
 		}
-		&::-webkit-scrollbar-thumb {
-			width: 5px;
-			border-radius: 3px;
-			background-color: map-get($color, main);
-		}
-	}
-	@media (min-width: 1200px) {
-		max-height: calc(100vh - 60px - 72px - 50px);
 	}
 }
 
@@ -37,10 +30,10 @@
 	p {
 		font-weight: 700;
 		color: map-get($color, trang);
-		font-size: 2.8rem;
+		font-size: 2.4rem;
 	}
 	.cartAside__totalPrice {
-		font-size: 3.3rem;
+		font-size: 2.8rem;
 	}
 	@media (max-width: 1199.98px) {
 		padding: 15px;
@@ -56,6 +49,20 @@
 	}
 	@media (max-width: 767.98px) {
 		padding: 10px;
+	}
+	@media (min-width: 1025px) {
+		height: 100%;
+		overflow: auto;
+		&::-webkit-scrollbar {
+			width: 5px;
+			background-color: darken(map-get($color, trang), 12%);
+			border-radius: 3px;
+		}
+		&::-webkit-scrollbar-thumb {
+			width: 5px;
+			border-radius: 3px;
+			background-color: map-get($color, main);
+		}
 	}
 }
 .cartAsideOption {
@@ -75,8 +82,11 @@
 		margin-right: auto;
 		color: map-get($color, text);
 		text-transform: uppercase;
-		font-size: 1.8rem;
+		font-size: 1.5rem;
 		padding-right: 15px;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
 		a {
 			margin-left: 20px;
 			color: #b0b0b0;
@@ -95,6 +105,11 @@
 		top: 50%;
 		transform: translateY(-50%);
 	}
+	.cartAsideOption__price {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
 	@media (max-width: 1199.98px) {
 		padding: 15px;
 	}
@@ -109,10 +124,10 @@
 	}
 }
 .cartAsideOption__price {
-	font-size: 2.8rem;
+	font-size: 2.4rem;
 	margin-right: 35px;
 	@media (max-width: 1439.98px) {
-		font-size: 2.4rem;
+		font-size: 2rem;
 	}
 }
 .cartAsideOption__list {
@@ -205,7 +220,7 @@
 		display: flex;
 		justify-content: space-between;
 		span {
-			font-size: 3rem;
+			font-size: 2.5rem;
 		}
 	}
 }
@@ -230,7 +245,7 @@
 			align-items: center;
 			background-color: map-get($color, main);
 			p {
-				font-size: 2rem;
+				font-size: 1.7rem;
 			}
 		}
 	}
@@ -250,10 +265,10 @@
 		.cartAside__title {
 			padding: 10px;
 			p {
-				font-size: 3rem;
+				font-size: 2.5rem;
 			}
 			.cartAside__totalPrice {
-				font-size: 2.8rem;
+				font-size: 2rem;
 			}
 		}
 		&.show {

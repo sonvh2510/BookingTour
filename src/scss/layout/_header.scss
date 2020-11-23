@@ -231,7 +231,7 @@
 	}
 }
 .header__toggleMobile {
-	font-size: 2.2rem;
+	font-size: 2rem;
 	font-weight: 300;
 	color: map-get($color, text);
 }
@@ -381,7 +381,7 @@
 		flex-grow: 1;
 		max-width: 100%;
 		padding: 15px 0;
-		font-size: 1.8rem;
+		font-size: 1.4rem;
 		color: map-get($color, text);
 	}
 	.header__navItem {

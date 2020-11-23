@@ -9,7 +9,7 @@
 	max-width: 1160px;
 }
 .tourDetail__title {
-	font-size: 3rem;
+	font-size: 2.6rem;
 	color: map-get($color, text);
 	margin-bottom: 30px;
 	@media (max-width: 1199.98px) {
@@ -151,7 +151,7 @@
 	padding: 25px 0;
 }
 .tourDetail__table--head {
-	font-size: 2.5rem;
+	font-size: 2.2rem;
 	color: map-get($color, text);
 	font-weight: 700;
 	.tourDetail__table--th {
@@ -187,7 +187,7 @@
 }
 .tourDetail__table--body {
 	.tourDetail__table--th {
-		font-size: 2rem;
+		font-size: 1.6rem;
 	}
 	@media (max-width: 767.98px) {
 		.tourDetail__table--th,
@@ -238,12 +238,12 @@
 .tourDetailTableItem__content {
 	padding-left: 20px;
 	h4 {
-		font-size: 2rem;
+		font-size: 1.8rem;
 		color: map-get($color, text);
 		margin-bottom: 10px;
 	}
 	p {
-		font-size: 1.6rem;
+		font-size: 1.5rem;
 		color: map-get($color, text);
 	}
 	@media (max-width: 767.98px) {
@@ -350,7 +350,7 @@
 	.group-content {
 		h5 {
 			color: #20284f;
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 			margin-bottom: 20px;
 			span {
 				color: map-get($color, main);
@@ -363,7 +363,7 @@
 		}
 	}
 	.note {
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		color: #20284f;
 		span {
 			color: map-get($color, main);
@@ -416,7 +416,7 @@
 	flex: 0 0 40px;
 	max-width: 40px;
 	color: map-get($color, text);
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	font-weight: 600;
 }
 .review__data {
@@ -461,7 +461,7 @@
 	align-items: center;
 	flex-wrap: wrap;
 	h4 {
-		font-size: 2rem;
+		font-size: 1.6rem;
 		color: map-get($color, text);
 	}
 	+ .reviewCommentItem {
@@ -497,7 +497,7 @@
 	max-width: 100%;
 	margin-left: auto;
 	p {
-		font-size: 1.8rem;
+		font-size: 1.6rem;
 		color: #b0b0b0;
 	}
 	@media (max-width: 767.98px) {
@@ -569,7 +569,7 @@
 		display: flex;
 		align-items: flex-end;
 		span {
-			font-size: 2.6rem;
+			font-size: 2.2rem;
 			margin-right: 40px;
 			color: map-get($color, text);
 		}
@@ -598,7 +598,7 @@
 	}
 	th {
 		color: #20284f;
-		font-size: 2.5rem;
+		font-size: 2.2rem;
 		font-weight: 700;
 	}
 	.group-content {
@@ -629,16 +629,16 @@
 		}
 		h3 {
 			color: #20284f;
-			font-size: 2.6rem;
+			font-size: 2.2rem;
 			font-weight: 700;
 		}
 		h4 {
 			color: #20284f;
-			font-size: 2rem;
+			font-size: 1.8rem;
 			font-weight: 700;
 		}
 		span {
-			font-size: 1.4rem;
+			font-size: 1.3rem;
 			color: #b0b0b0;
 		}
 		&.d-flex {
@@ -688,13 +688,13 @@
 }
 .tourDetail__general {
 	h1 {
-		font-size: 4rem;
+		font-size: 3rem;
 		margin-bottom: 10px;
 		@media (max-width: 1199.98px) {
-			font-size: 3.5rem;
+			font-size: 2.6rem;
 		}
 		@media (max-width: 767.98px) {
-			font-size: 3rem;
+			font-size: 2.2rem;
 		}
 	}
 }
@@ -799,7 +799,7 @@
 	padding: 30px;
 	border-radius: 24px;
 	background-color: #f7f7f7;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	.fa-pig,
 	h4 {
 		color: map-get($color, main);
@@ -867,7 +867,7 @@
 			}
 			span {
 				display: block;
-				font-size: 1.4rem;
+				font-size: 1.3rem;
 				font-weight: 300;
 				color: #b0b0b0;
 			}

@@ -193,11 +193,11 @@
 	}
 	.button {
 		height: 55px;
-		padding-left: 40px;
-		-ms-flex: 0 0 auto;
-		flex: 0 0 auto;
-		width: auto;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
 		max-width: 100%;
+		text-align: center;
+		margin-top: 20px;
 		.btn__submit--reverse {
 			height: 100%;
 			padding: 0 25px;
@@ -227,16 +227,12 @@
 			-ms-flex: 0 0 100%;
 			flex: 0 0 100%;
 			max-width: 100%;
-			margin-bottom: 20px;
 		}
 		.button {
 			-ms-flex: 0 0 100%;
 			flex: 0 0 100%;
 			max-width: 100%;
 			padding-left: 0;
-			.btn__submit--reverse {
-				width: 100%;
-			}
 		}
 
 		.keyword,

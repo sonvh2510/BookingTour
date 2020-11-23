@@ -62,7 +62,7 @@
 		}
 	}
 	.stepBreadcrumb__link {
-		font-size: 1.6rem;
+		font-size: 1.5rem;
 		color: map-get($color, text);
 		white-space: nowrap;
 	}
@@ -76,7 +76,7 @@
 		height: 24px;
 		background-color: map-get($color, trang);
 		border: 1px solid map-get($color, text);
-		font-size: 1.4rem;
+		font-size: 1.3rem;
 	}
 	@media (max-width: 1024.98px) {
 		ul {

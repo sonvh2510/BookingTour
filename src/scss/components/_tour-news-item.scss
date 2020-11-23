@@ -28,7 +28,7 @@
 }
 .tourNewsItem__title {
 	color: #333333;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	margin-bottom: 10px;
 }
 .tourNewsItem__bottom {
@@ -37,7 +37,7 @@
 	margin-top: 10px;
 	.btn__submit {
 		padding: 0 20px;
-		font-size: 1.9rem;
+		font-size: 1.8rem;
 		height: 50px;
 		font-weight: 400;
 		border: 1px solid map-get($color, main);
@@ -51,13 +51,13 @@
 		font-size: 1.5rem;
 	}
 	b {
-		font-size: 2.4rem;
+		font-size: 2rem;
 		color: map-get($color, main);
 		margin-left: 5px;
 	}
 }
 .tourNewsItem__note {
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	font-weight: 700;
 	color: #b0b0b0;
 }
@@ -72,14 +72,14 @@
 	p,
 	time {
 		font-weight: 600;
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 		color: #b0b0b0;
 	}
 }
 .tourNewsItem__description {
 	margin-top: 15px;
 	p {
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		color: #333333;
 		overflow: hidden;
 		text-overflow: ellipsis;

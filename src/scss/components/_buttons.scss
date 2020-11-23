@@ -12,7 +12,7 @@
 	@extend .text-uppercase;
 	border: 1px solid map-get($color, trang);
 	color: map-get($color, trang);
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	border-radius: 8px;
 	padding: 1.5rem 2.5rem;
 	transition: all 0.3s ease;
@@ -32,16 +32,34 @@
 
 .btn__submit {
 	border-radius: 8px;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	transition: all 0.3s ease;
 	box-shadow: 0px 3px 6px rgba(map-get($color, den), 0.15);
-	padding: 0 60px;
+	padding: 0 30px;
 	color: map-get($color, main);
 	background-color: map-get($color, trang);
 	border: 1px solid map-get($color, trang);
 	@media (min-width: 1025px) {
+		padding: 0 60px;
 		&:hover {
 			background-color: darken(map-get($color, trang), 6%);
+		}
+	}
+}
+
+.btn__submit--reverse {
+	border-radius: 8px;
+	font-size: 1.4rem;
+	transition: all 0.3s ease;
+	box-shadow: 0px 3px 6px rgba(map-get($color, den), 0.15);
+	padding: 0 30px;
+	color: map-get($color, trang);
+	background-color: map-get($color, main);
+	border: 1px solid map-get($color, main);
+	@media (min-width: 1025px) {
+		padding: 0 60px;
+		&:hover {
+			background-color: darken(map-get($color, main), 6%);
 		}
 	}
 }
@@ -49,31 +67,14 @@
 .btn__outline {
 	text-transform: uppercase;
 	color: map-get($color, main);
-	font-size: 2.4rem;
+	font-size: 2rem;
 	height: 80px;
 	border: 1px solid map-get($color, main);
 	padding: 0 114px;
 	@media (max-width: 767.98px) {
 		padding: 0 44px;
 		height: 54px;
-		font-size: 1.8rem;
-	}
-}
-
-.btn__submit--reverse {
-	border-radius: 8px;
-	font-size: 1.6rem;
-	transition: all 0.3s ease;
-	box-shadow: 0px 3px 6px rgba(map-get($color, den), 0.15);
-	padding: 0 60px;
-
-	color: map-get($color, trang);
-	background-color: map-get($color, main);
-	border: 1px solid map-get($color, main);
-	@media (min-width: 1025px) {
-		&:hover {
-			background-color: darken(map-get($color, main), 6%);
-		}
+		font-size: 1.4rem;
 	}
 }
 

@@ -37,31 +37,33 @@
 		.input__group {
 			box-shadow: 0 3px 6px rgba(map-get($color, den), 0.15);
 		}
+		.form__checkbox--custom-1 > span {
+			font-size: 2rem;
+		}
 	}
 	.section__titleWrapper {
 		max-width: 940px;
 		margin: 0 auto;
 		text-align: center;
 		p {
-			font-size: 2.4rem;
+			font-size: 1.6rem;
 			color: #333;
 			padding-bottom: 80px;
 			@media (max-width: 575.98px) {
-				font-size: 1.4rem;
 				padding-bottom: 20px;
 			}
 		}
 	}
 	.form__group--button {
 		.btn__submit--reverse {
-			height: 79px;
-			font-size: 2.4rem;
+			height: 70px;
+			font-size: 2rem;
 			text-transform: uppercase;
 			@media (max-width: 1199.98px) {
-				height: 70px;
+				height: 60px;
 			}
 			@media (max-width: 767.98px) {
-				height: 60px;
+				height: 50px;
 			}
 		}
 	}

@@ -339,6 +339,13 @@
 		flex: 0 0 300px;
 		max-width: 300px;
 		padding-right: 20px;
+		span{
+			a{
+				color: #f07c00;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
 	}
 	.tourDetail__content {
 		-ms-flex-preferred-size: 0;

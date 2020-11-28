@@ -13,7 +13,7 @@
 		}
 	}
 	.contact-title {
-		font-size: 4.5rem;
+		font-size: 3.2rem;
 		color: map-get($color, text);
 		font-weight: 700;
 		text-transform: uppercase;
@@ -42,9 +42,9 @@
 	}
 	.content {
 		p {
-			font-size: 2.8rem;
+			font-size: 1.8rem;
 			span {
-				font-size: 3.2rem;
+				font-size: 2rem;
 				color: map-get($color, text);
 				font-weight: 700;
 				&.email {
@@ -52,28 +52,28 @@
 				}
 			}
 			a {
-				font-size: 3.2rem;
+				// font-size: 2rem;
 				font-weight: 700;
 				color: map-get($color, main);
 			}
-			@media (max-width: 1024.98px) {
-				font-size: 1.8rem;
-				span {
-					font-size: 2rem;
-				}
-				a {
-					font-size: 2rem;
-				}
-			}
-			@media (max-width: 575.98px) {
-				font-size: 1.6rem;
-				span {
-					font-size: 1.8rem;
-				}
-				a {
-					font-size: 1.8rem;
-				}
-			}
+			// @media (max-width: 1024.98px) {
+			// 	font-size: 1.8rem;
+			// 	span {
+			// 		font-size: 2rem;
+			// 	}
+			// 	a {
+			// 		font-size: 2rem;
+			// 	}
+			// }
+			// @media (max-width: 575.98px) {
+			// 	font-size: 1.6rem;
+			// 	span {
+			// 		font-size: 1.8rem;
+			// 	}
+			// 	a {
+			// 		font-size: 1.8rem;
+			// 	}
+			// }
 		}
 		.contact,
 		.social {
@@ -94,7 +94,7 @@
 		margin: 0 20px;
 	}
 	a {
-		font-size: 4.2rem;
+		font-size: 3rem;
 		color: #333;
 	}
 	@media (max-width: 575.98px) {

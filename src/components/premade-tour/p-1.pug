@@ -3,17 +3,17 @@
 		.mainWrapper
 			include ../layouts/tour-detail/_general
 			.tourDetail__tabSections
-				ul
+				ul.scrollspyWrapper
 					li
-						a(href="#") Overview
+						a(data-target="tabSection-1") Overview
 					li
-						a(href="#") Initerary
+						a(data-target="tabSection-2") Initerary
 					li
-						a(href="#") Inclusions & Exclusion
+						a(data-target="tabSection-3") Inclusions & Exclusion
 					li
-						a(href="#") Important Info
+						a(data-target="tabSection-4") Important Info
 					li
-						a(href="#") Reviews
+						a(data-target="tabSection-5") Reviews
 				.list-button
 					.button__item.btn.btn-icon
 						.icon
@@ -31,7 +31,8 @@
 					include ../layouts/tour-detail/_photo
 					include content
 					include ../layouts/tour-detail/_also-like
-					include ../layouts/tour-detail/_review
+					div(data-id="tabSection-5")
+						include ../layouts/tour-detail/_review
 				.col-xl-4.col-lg-5.cartAside__col
 					include ../layouts/tour-detail/_calendar
 					include ../layouts/tour-detail/_discount

@@ -3,17 +3,17 @@
 		.mainWrapper
 			include ../layouts/tour-detail/_general
 			.tourDetail__tabSections
-				ul
+				ul.scrollspyWrapper
 					li
-						a(href="") Overview
+						a(data-target="tabSection-1") Overview
 					li
-						a(href="") facilities
+						a(data-target="tabSection-2") facilities
 					li
-						a(href="") Room Types
+						a(data-target="tabSection-3") Room Types
 					li
-						a(href="") Area info
+						a(data-target="tabSection-4") Area info
 					li
-						a(href="") REVIEWS
+						a(data-target="tabSection-5") REVIEWS
 				.list-button
 					.button__item.btn.btn-icon
 						.icon
@@ -30,7 +30,8 @@
 				.col-xl-8.col-lg-7
 					include ../layouts/tour-detail/_photo
 					include content
-					include ../layouts/tour-detail/_review
+					div(data-id="tabSection-5")
+						include ../layouts/tour-detail/_review
 				.col-xl-4.col-lg-5.cartAside__col
 					include _calendar
 					include _type

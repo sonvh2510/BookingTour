@@ -358,11 +358,14 @@ const scrollSpy = () => {
 				});
 				const target = btn.getAttribute('data-target');
 				const targetDom = document.querySelector(`[data-id=${target}]`);
-				window.scrollTo({
-					top: targetDom.offsetTop - header.clientHeight,
-					left: 0,
-					behavior: 'smooth',
-				});
+				$('html,body').animate(
+					{
+						scrollTop:
+							$(`[data-id=${target}]`).offset().top -
+							header.clientHeight,
+					},
+					1000,
+				);
 			});
 		});
 	}
@@ -607,20 +610,17 @@ const homeSliders = () => {
 				nextEl: '.homePopularDestination .swiper__btn--next',
 			},
 			breakpoints: {
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 15,
-				},
-				1024: {
+				576: {
 					slidesPerView: 3,
-					spaceBetween: 30,
+					spaceBetween: 20,
 				},
 				1200: {
-					slidesPerView: 3.5,
+					slidesPerView: 4,
+					spaceBetween: 20,
 				},
-				1360: {
-					spaceBetween: 40,
-					slidesPerView: 3.7,
+				1440: {
+					slidesPerView: 4,
+					spaceBetween: 30,
 				},
 			},
 		},

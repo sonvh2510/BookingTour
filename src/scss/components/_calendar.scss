@@ -81,8 +81,6 @@
 					border-radius: 0px;
 					border: 0.5px solid #c6c8d0;
 					width: (100% / 7);
-					height: 50px;
-					// @include imgscale(1);
 					display: flex;
 					justify-content: center;
 					align-items: center;
@@ -91,6 +89,15 @@
 					&.is-start-date {
 						background-color: #00aa71;
 						border-radius: 0;
+					}
+					&.is-today {
+						background-color: #e6e6e6;
+						color: map-get($color, text);
+					}
+					&:after {
+						content: '';
+						display: block;
+						padding-bottom: 80%;
 					}
 					@media (max-width: 1024.98px) {
 					}

@@ -458,14 +458,15 @@ const initCalendar = () => {
 	});
 };
 const rating = () => {
-	Array.from(document.querySelectorAll('[data-rating]')).forEach((item) => {
-		const percent = Number(item.getAttribute('data-rating'));
-		item.setAttribute('style', `width:${percent * 100}%`);
-		const editable = Boolean(item.getAttribute('editable'));
+	Array.from(document.querySelectorAll('.rating__bar')).forEach((item) => {
+		const ratingDom = item.querySelector('[data-rating]');
+		const percent = Number(ratingDom.getAttribute('data-rating'));
+		ratingDom.setAttribute('style', `width:${percent * 100}%`);
+		const editable = Boolean(ratingDom.getAttribute('editable'));
 		if (editable) {
-			item.addEventListener('mousemove', (e) => {
+			item.addEventListener('click', (e) => {
 				const percent = e.layerX / item.clientWidth;
-				item.setAttribute('style', `width:${percent * 100}%`);
+				ratingDom.setAttribute('style', `width:${percent * 100}%`);
 			});
 		}
 	});

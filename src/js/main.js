@@ -471,6 +471,8 @@ const rating = () => {
 		}
 	});
 };
+
+
 const HeaderResponse = () => {
 	const moveMakeMyTrip = new MoveElement('.header__makeMyTrip', {
 		desktopNode: '.header__search',

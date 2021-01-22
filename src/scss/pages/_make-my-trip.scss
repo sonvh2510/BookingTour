@@ -684,6 +684,7 @@
 }
 .formTourSearchItem__editButton {
 	font-size: 2rem;
+	cursor: pointer;
 	color: map-get($color, text);
 	margin-left: 30px;
 }

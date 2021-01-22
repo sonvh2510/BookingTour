@@ -1,6 +1,7 @@
 import { Loading } from './libraries/Loading';
 import { getSVGs } from './utilities/util';
 import { MoveElement } from './libraries/MoveElement';
+import { checkoutEdit } from "./modules/checkout";
 import { Subject } from 'rxjs';
 // import Swiper from 'swiper';
 
@@ -82,6 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	});
+
+	// edit quantity in checkout page
+	checkoutEdit()
 });
 
 //swiper

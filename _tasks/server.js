@@ -105,7 +105,7 @@ const server = () => {
 		.on('unlinkDir', imageRemoveTask);
 
 	watch(
-		['src/js/main.js', 'src/js/libraries/**.js', 'src/js/utilities/**.js'],
+		['src/js/main.js', 'src/js/**/**.js'],
 		series(jsTask),
 	);
 

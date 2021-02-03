@@ -96,7 +96,6 @@
 	margin-top: 20px;
 	display: flex;
 	span {
-		// margin-left: 30px;
 		cursor: pointer;
 		color: map-get($color, main);
 		text-decoration: underline;
@@ -114,6 +113,16 @@
 		transform: translateY(-50%);
 		right: 0;
 		margin-top: 0;
+		p {
+			color: #b0b0b0;
+			span {
+				color: #b0b0b0;
+				margin-left: 10px;
+			}
+		}
+		span {
+			margin-left: 40px;
+		}
 	}
 }
 .tourDetail__table {
@@ -339,8 +348,8 @@
 		flex: 0 0 300px;
 		max-width: 300px;
 		padding-right: 20px;
-		span{
-			a{
+		span {
+			a {
 				color: #f07c00;
 				text-decoration: underline;
 				cursor: pointer;
@@ -711,8 +720,19 @@
 		flex-wrap: wrap;
 	}
 }
+.tourDetail__generalTime {
+	padding-right: 20px;
+	border-right: 1px solid #707070;
+	.fa-clock {
+		font-size: 2rem;
+	}
+	span:not(.fa-clock) {
+		font-size: 1.7rem;
+	}
+}
 .tourDetail__generalRating {
 	padding-right: 20px;
+	padding-left: 20px;
 	.fa-star {
 		color: #ffcc40;
 		font-size: 2rem;
